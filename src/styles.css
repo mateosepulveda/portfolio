@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    background: rgb(4,0,32);
+    background: linear-gradient(0deg, rgba(4,0,32,1) 0%, rgba(63,0,163,1) 100%);
+    background-attachment: fixed;
+}
