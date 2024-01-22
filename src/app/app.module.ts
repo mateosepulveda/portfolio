@@ -6,13 +6,15 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProjectNeuroneComponent } from './components/project-neurone/project-neurone.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectsComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    ProjectNeuroneComponent
   ],
   imports: [
     BrowserModule,
