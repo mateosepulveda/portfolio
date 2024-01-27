@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,11 +6,19 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  constructor(private router: Router) {}
-
+export class AppComponent implements OnInit {
   title = 'portfolio';
   menuWidth = '0%'
+  projectDataUrl = '/assets/project-data.json';
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    fetch(this.projectDataUrl).then(res => res.json())
+    .then(json => {
+      console.log(json);
+    });
+  }
 
   showMenu(): void {
     this.menuWidth = '100%';

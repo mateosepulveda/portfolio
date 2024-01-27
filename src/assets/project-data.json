@@ -4,7 +4,7 @@
         "title": "NEURONE",
         "gallery": [
             {"imageFile": "NEURONE1.jpg", "text": "NEURONE is a project."},
-            {"imageFile": "NEURONE2.jpg", "text": "In this image, you can see."},
+            {"imageFile": "NEURONE2.jpg", "text": "In this image, you can see."}
         ],
         "tags": ["Frontend", "Backend", "Angular", "MongoDB"]
     },
@@ -13,7 +13,7 @@
         "title": "VehiclEye",
         "gallery": [
             {"imageFile": "VehiclEye1.jpg", "text": "VehiclEye is a project."},
-            {"imageFile": "VehiclEye2.jpg", "text": "In this image, you can see."},
+            {"imageFile": "VehiclEye2.jpg", "text": "In this image, you can see."}
         ],
         "tags": ["Engineering"]
     }
