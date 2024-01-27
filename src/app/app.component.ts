@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(private router: Router) {}
+
   title = 'portfolio';
+  menuWidth = '0%'
+
+  showMenu(): void {
+    this.menuWidth = '100%';
+  }
+
+  hideMenu(): void {
+    this.menuWidth = '0%';
+  }
+
+  navigate(destination: string): void {
+    switch (destination) {
+      case 'about':
+        this.router.navigate(['/about']);
+        this.hideMenu();
+        break;
+      case 'projects':
+        this.router.navigate(['/projects']);
+        this.hideMenu();
+        break;
+      case 'contact':
+        this.router.navigate(['/contact']);
+        this.hideMenu();
+        break;
+      default:
+        this.router.navigate(['/about']);
+        this.hideMenu();
+    }
+  }
 }
