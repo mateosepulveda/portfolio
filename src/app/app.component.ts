@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,8 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'portfolio';
-  menuWidth = '0%'
-  projectDataUrl = '/assets/project-data.json';
+  menuWidth = '0%' ;
+  projectDataUrl = `${environment.baseHref}assets/project-data.json`;
 
   constructor(private router: Router) {}
 
