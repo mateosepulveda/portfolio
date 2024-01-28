@@ -10,7 +10,8 @@ import { environment } from '../environments/environment';
 export class AppComponent implements OnInit {
   title = 'portfolio';
   menuWidth = '0%' ;
-  projectDataUrl = `${environment.baseHref}assets/project-data.json`;
+  projectDataUrl = '/portfolio/assets/project-data.json';
+  //projectDataUrl = `${environment.baseHref}assets/project-data.json`;
 
   constructor(private router: Router) {}
 
