@@ -1,12 +1,12 @@
-interface GalleryItem {
+export interface Slide {
     imageFile: string;
-    text: string;
+    description: string;
 }
-  
-interface Project {
+
+export interface Project {
     id: number;
     title: string;
-    gallery: GalleryItem[];
+    slides: Slide[];
     tags: string[];
 }
   

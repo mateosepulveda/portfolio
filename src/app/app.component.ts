@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProjectService } from './project.service';
-import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +10,10 @@ import { environment } from '../environments/environment';
 export class AppComponent {
   title = 'portfolio';
   menuWidth = '0%' ;
-  projectDataUrl = 'assets/projects.json';
+  projectFile = 'assets/projects.json';
 
   constructor(private router: Router, private projectService: ProjectService) {
-    fetch(this.projectDataUrl).then(res => res.json())
+    fetch(this.projectFile).then(res => res.json())
     .then(json => {
       this.projectService.setProjects(json);
       console.log(json);
