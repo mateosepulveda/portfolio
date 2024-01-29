@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProjectService } from './project.service';
 import { environment } from '../environments/environment';
 
 @Component({
@@ -7,16 +8,15 @@ import { environment } from '../environments/environment';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'portfolio';
   menuWidth = '0%' ;
-  projectDataUrl = `${environment.baseHref}assets/project-data.json`;
+  projectDataUrl = 'assets/projects.json';
 
-  constructor(private router: Router) {}
-
-  ngOnInit() {
+  constructor(private router: Router, private projectService: ProjectService) {
     fetch(this.projectDataUrl).then(res => res.json())
     .then(json => {
+      this.projectService.setProjects(json);
       console.log(json);
     });
   }
@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
         this.hideMenu();
         break;
       case 'projects':
-        this.router.navigate(['/projects']);
+        this.router.navigate(['/projects-list']);
         this.hideMenu();
         break;
       case 'contact':

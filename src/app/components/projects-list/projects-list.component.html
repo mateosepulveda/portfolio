@@ -1,0 +1,23 @@
+<div class="content fadeIn">
+    <h1>Projects</h1>
+    <p>These are some of the projects I have worked on:</p>
+
+    <p *ngIf="currentFilter == ''">Showing all projects</p>
+    <p *ngIf="currentFilter != ''">Showing projects filtered by {{ currentFilter }}</p>
+
+    <div class="card-container">
+        <a *ngFor="let project of projectsFiltered" class="card" target="_blank" rel="noopener" style="color: black" (click)="navigateToProject(project.id)">
+            {{ project.title }}
+        </a>
+    </div>
+
+    <p>TAGS:</p>
+    <div class="card-container">
+        <a class="card" target="_blank" rel="noopener" style="color: black" (click)="unfilterProjects()">
+            SHOW ALL PROJECTS
+        </a>
+        <a *ngFor="let projectTag of projectTags" class="card" target="_blank" rel="noopener" style="color: black" (click)="filterProjects(projectTag)">
+            {{ projectTag }}
+        </a>
+    </div>
+</div>
