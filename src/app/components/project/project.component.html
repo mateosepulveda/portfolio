@@ -1,6 +1,9 @@
 <div class="content fadeIn">
     <h1>{{ project!.title }}</h1>
 
+    <h3>Descripción</h3>
+    <p>{{ project!.description }}</p>
+
     <!-- <div class="slider">
         <div>
             <div class="leftArrow">&lt;</div>
@@ -9,16 +12,16 @@
         <div class="slide" [ngStyle]="{ 'background-image': getCurrentSlideUrl() }"></div>
     </div> -->
 
-    <p>TAGS:</p>
-    <div class="card-container">
-        <a *ngFor="let tag of project!.tags" class="card" target="_blank" rel="noopener" style="color: black">
-            {{ tag }}
-        </a>
+    <h3>Tecnologías</h3>
+    <div>
+        <ul>
+            <li *ngFor="let technology of project!.technologies">{{ technology }}</li>
+        </ul>
     </div>
 
     <div class="card-container">
         <a class="card" class="card" target="_blank" rel="noopener" style="color: black" (click)="navigateToProjectsList()">
-            Back to projects
+            Volver a Proyectos
         </a>
     </div>
 </div>

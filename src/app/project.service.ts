@@ -45,4 +45,8 @@ export class ProjectService {
       return null;
     }
   }
+
+  projectsLoaded() {
+    return this.projects.length != 0;
+  }
 }

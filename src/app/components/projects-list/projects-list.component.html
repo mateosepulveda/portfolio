@@ -1,23 +1,26 @@
 <div class="content fadeIn">
-    <h1>Projects</h1>
-    <p>These are some of the projects I have worked on:</p>
+    <h1>Proyectos</h1>
+    <p>Estos son algunos de mis proyectos</p>
 
-    <p *ngIf="currentFilter == ''">Showing all projects</p>
-    <p *ngIf="currentFilter != ''">Showing projects filtered by {{ currentFilter }}</p>
-
-    <div class="card-container">
-        <a *ngFor="let project of projectsFiltered" class="card" target="_blank" rel="noopener" style="color: black" (click)="navigateToProject(project.id)">
-            {{ project.title }}
+    <p>Etiquetas:</p>
+    <div class="tag-container">
+        <a class="tag" style="color: black" (click)="unfilterProjects()">
+            TODOS LOS PROYECTOS
+        </a>
+        <a *ngFor="let projectTag of projectTags" class="tag" style="color: black" (click)="filterProjects(projectTag)">
+            {{ projectTag }}
         </a>
     </div>
 
-    <p>TAGS:</p>
-    <div class="card-container">
-        <a class="card" target="_blank" rel="noopener" style="color: black" (click)="unfilterProjects()">
-            SHOW ALL PROJECTS
-        </a>
-        <a *ngFor="let projectTag of projectTags" class="card" target="_blank" rel="noopener" style="color: black" (click)="filterProjects(projectTag)">
-            {{ projectTag }}
-        </a>
+    <p *ngIf="currentFilter == ''">Mostrando todos los proyectos</p>
+    <p *ngIf="currentFilter != ''">Mostrando proyectos filtrados por: {{ currentFilter }}</p>
+
+    <div>
+        <div class="card" *ngFor="let project of projectsFiltered" (click)="navigateToProject(project.id)">
+            <img src="assets/TEST1.png" alt="Avatar" style="width:100%">
+            <div class="container">
+              <p>{{ project.title }}</p>
+            </div>
+        </div>
     </div>
 </div>

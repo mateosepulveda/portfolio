@@ -6,7 +6,9 @@ export interface Slide {
 export interface Project {
     id: number;
     title: string;
+    description: string;
     slides: Slide[];
+    technologies: string[];
     tags: string[];
 }
   

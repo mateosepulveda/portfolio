@@ -26,7 +26,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 80px;
     display: flex;
     align-items: center;
     background-color: transparent;
@@ -50,9 +50,11 @@
 
   .router-outlet-content {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
     height: calc(100vh - 60px); /* Set height to 100% of the viewport height */
+  }
+
+  .centered-content {
+    align-items: center; /* Center vertically */
   }
 
   a,
@@ -109,23 +111,25 @@
   }
 </style>
 
-<div class="toolbar" role="banner">
-  <a (click)="showMenu()">
-    <svg width="40" height="40" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
-      <path fill="#ffffff" fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"/>
-    </svg>
-  </a>
-</div>
-
-<div id="menu" class="overlay" [style.width]="menuWidth">
-  <a class="closebtn" (click)="hideMenu()">&times;</a>
-  <div class="overlay-content">
-    <a (click)="navigate('about')">ABOUT</a>
-    <a (click)="navigate('projects')">PROJECTS</a>
-    <a (click)="navigate('contact')">CONTACT</a>
+<body>
+  <div class="toolbar" role="banner">
+    <a (click)="showMenu()">
+      <svg width="40" height="40" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <path fill="#ffffff" fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"/>
+      </svg>
+    </a>
   </div>
-</div>
 
-<div class="router-outlet-content" role="main">
-  <router-outlet></router-outlet>
-</div>
+  <div id="menu" class="overlay" [style.width]="menuWidth">
+    <a class="closebtn" (click)="hideMenu()">&times;</a>
+    <div class="overlay-content">
+      <a (click)="navigate('about')">Sobre mí</a>
+      <a (click)="navigate('projects')">Proyectos</a>
+      <a (click)="navigate('contact')">Contacto</a>
+    </div>
+  </div>
+
+  <div [ngClass]="{'centered-content': shouldCenter}" class="router-outlet-content" role="main">
+    <router-outlet></router-outlet>
+  </div>
+</body>

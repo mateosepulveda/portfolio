@@ -10,10 +10,21 @@ h6 {
 .content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  font-size: xx-large;
-  margin: 30px;
-  text-align: center;
+  font-size: x-large;
+  margin: 150px;
+}
+
+.content:before {
+  content: '';
+  position: absolute;
+  left: 100px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 50vh;
+  background-color: grey;
 }
 
 .fadeIn {
@@ -33,4 +44,4 @@ h6 {
 @keyframes fadeIn {
   0% {opacity: 0;}
   100% {opacity: 1;}
-} 
+}

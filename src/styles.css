@@ -1,7 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-    background: rgb(4,0,32);
+    position: relative;
     background: linear-gradient(0deg, rgba(4,0,32,1) 0%, rgba(63,0,163,1) 100%);
     background-attachment: fixed;
+}
+
+:root::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background: url('assets/3dcomputer-freepik.png') no-repeat center center / contain;
+    opacity: 0.2;
+    background-size: 70% 70%; /* Adjust as needed */
+    transform: translateY(-50%);
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
 }
