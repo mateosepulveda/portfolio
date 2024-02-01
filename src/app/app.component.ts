@@ -11,11 +11,15 @@ export class AppComponent implements OnInit {
   title = 'portfolio';
   menuWidth = '0%';
   menuTextOpacity = '0';
+  hideBottomBar = false;
 
   constructor(private router: Router) {
   }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.hideBottomBar = true;
+    }, 3000);
     this.router.events
     .pipe(filter(event => event instanceof NavigationEnd))
     .subscribe(() => {
