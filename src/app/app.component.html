@@ -50,12 +50,25 @@
 
   .router-outlet-content {
     display: flex;
-    height: calc(100vh - 60px); /* Set height to 100% of the viewport height */
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 60px); /* Set height to 100% of the viewport height */
+    overflow-y: auto hidden; /* Enable vertical scrolling if content overflows */
+    box-sizing: border-box;
   }
 
-  .centered-content {
-    align-items: center; /* Center vertically */
+  .content-wrapper {
+    max-width: 1500px; /* Adjust as needed */
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
   }
+
+  @media (max-height: 600px) {
+    .router-outlet-content {
+      align-items: flex-start; /* Align to the top when content height is less than or equal to 600px */
+    }
+  } 
 
   a,
   a:visited,
@@ -84,10 +97,18 @@
 
   .overlay-content {
     position: relative;
-    top: 25%;
-    width: 100%;
     text-align: center;
-    margin-top: 30px;
+    transition: 0.15s;
+    transition-delay: 0.1s;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .overlay-content.active {
+    transition-delay: 0s;
   }
 
   .overlay a {
@@ -121,15 +142,17 @@
   </div>
 
   <div id="menu" class="overlay" [style.width]="menuWidth">
-    <a class="closebtn" (click)="hideMenu()">&times;</a>
-    <div class="overlay-content">
+    <div class="overlay-content" [style.opacity]="menuTextOpacity">
+      <a class="closebtn" (click)="hideMenu()">&times;</a>
       <a (click)="navigate('about')">Sobre mí</a>
       <a (click)="navigate('projects')">Proyectos</a>
       <a (click)="navigate('contact')">Contacto</a>
     </div>
   </div>
 
-  <div [ngClass]="{'centered-content': shouldCenter}" class="router-outlet-content" role="main">
-    <router-outlet></router-outlet>
+  <div class="router-outlet-content" role="main">
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </body>
