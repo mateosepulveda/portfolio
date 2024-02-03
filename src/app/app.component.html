@@ -154,6 +154,10 @@
   }
 </style>
 
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@1000&display=swap" rel="stylesheet">
+</head>
+
 <body>
   <div class="toolbar" role="banner">
     <a (click)="showMenu()">
@@ -178,7 +182,7 @@
     </div>
   </div>
 
-  <div class="bottombar" [class.hidden]="hideBottomBar">
+  <div class="bottombar" [class.hidden]="hideBottomBar" *ngIf="!disableBottomBar">
     SITIO DESARROLLADO CON ANGULAR
   </div>
 </body>

@@ -2,24 +2,26 @@
     <h1>Proyectos</h1>
     <p>Estos son algunos de mis proyectos. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
-    <p>Etiquetas:</p>
-    <div class="tag-container">
-        <a class="tag" style="color: black" (click)="unfilterProjects()">
-            TODOS LOS PROYECTOS
-        </a>
-        <a *ngFor="let projectTag of projectTags" class="tag" style="color: black" (click)="filterProjects(projectTag)">
-            {{ projectTag }}
-        </a>
-    </div>
+    <div class="projects">
+        <p>Etiquetas:</p>
+        <div class="tag-container">
+            <a class="tag" style="color: black" (click)="unfilterProjects()">
+                TODOS LOS PROYECTOS
+            </a>
+            <a *ngFor="let projectTag of projectTags" class="tag" style="color: black" (click)="filterProjects(projectTag)">
+                {{ projectTag }}
+            </a>
+        </div>
 
-    <p *ngIf="currentFilter == ''">Mostrando todos los proyectos</p>
-    <p *ngIf="currentFilter != ''">Mostrando proyectos filtrados por: {{ currentFilter }}</p>
+        <p *ngIf="currentFilter == ''">Mostrando todos los proyectos</p>
+        <p *ngIf="currentFilter != ''">Mostrando proyectos filtrados por: {{ currentFilter }}</p>
 
-    <div class="card-container">
-        <div class="card" *ngFor="let project of projectsFiltered" (click)="navigateToProject(project.id)">
-            <img src="assets/TEST1.png" alt="Avatar" style="width:100%">
-            <div class="container">
-              <p>{{ project.title }}</p>
+        <div class="card-container">
+            <div class="card" *ngFor="let project of projectsFiltered" (click)="navigateToProject(project.id)">
+                <img src="assets/TEST1.png" alt="Avatar" style="width:100%">
+                <div class="container">
+                <p>{{ project.title }}</p>
+                </div>
             </div>
         </div>
     </div>

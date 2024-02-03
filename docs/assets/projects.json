@@ -1,29 +1,68 @@
 [
     {
         "id": 1,
-        "title": "NEURONE",
+        "title": "NEURONE Student Simulator Interface",
+        "description": "Desarrollo de ambiente para gestión de simulaciones de estudiantes, en el marco del ecosistema NEURONE, orientado a estudios de alfabetización informacional.",
         "slides": [
-            {"imageFile": "NEURONE1.jpg", "description": "NEURONE is a project."},
-            {"imageFile": "NEURONE2.jpg", "description": "In this image, you can see."}
+            {"imageFile": "TEST1.png", "description": "Descripción 1."},
+            {"imageFile": "TEST2.png", "description": "Descripción 2."}
         ],
-        "tags": ["Frontend", "Backend", "Angular", "MongoDB"]
+        "technologies": ["Angular", "JointJS", "Node.js", "Express", "MongoDB"],
+        "tags": ["Frontend", "Backend"]
     },
     {
         "id": 2,
-        "title": "TBD Series",
+        "title": "VehiclEye",
+        "description": "Proyecto de dispositivo tecnológico para frustrar robo de vehículos mediante tecnología de reconocimiento facial.",
         "slides": [
-            {"imageFile": "TBD1.jpg", "description": "TBD is a project."},
-            {"imageFile": "TBD2.jpg", "description": "In this image, you can see."}
+            {"imageFile": "TEST1.png", "description": "Descripción 1."},
+            {"imageFile": "TEST2.png", "description": "Descripción 2."}
         ],
-        "tags": ["Frontend", "Vue", "Highcharts"]
+        "technologies": [],
+        "tags": []
     },
     {
         "id": 3,
-        "title": "TEST",
+        "title": "Comisaría Virtual",
+        "description": "Desarrollo de sistema distribuido que simula el proceso de solicitud de permisos de Comisaría Virtual.",
         "slides": [
-            {"imageFile": "TEST1.png", "description": "TEST is a project."},
-            {"imageFile": "TEST2.png", "description": "In this image, you can see."}
+            {"imageFile": "TEST1.png", "description": "Descripción 1."},
+            {"imageFile": "TEST2.png", "description": "Descripción 2."}
         ],
-        "tags": ["TEST1", "TEST2"]
+        "technologies": ["Vue.js", "Spring Boot", "PostgreSQL", "Docker", "Git", "Artillery"],
+        "tags": ["Frontend", "Backend"]
+    },
+    {
+        "id": 4,
+        "title": "Sentiment Analyzer",
+        "description": "Pipeline de análisis de sentimientos de publicaciones en Reddit.",
+        "slides": [
+            {"imageFile": "TEST1.png", "description": "Descripción 1."},
+            {"imageFile": "TEST2.png", "description": "Descripción 2."}
+        ],
+        "technologies": ["Vue.js", "PostgreSQL", "MongoDB", "Docker", "Git"],
+        "tags": ["Frontend", "Backend"]
+    },
+    {
+        "id": 5,
+        "title": "Hotel MINGESO",
+        "description": "Plataforma para gestión de reservas de habitaciones de hotel.",
+        "slides": [
+            {"imageFile": "TEST1.png", "description": "Descripción 1."},
+            {"imageFile": "TEST2.png", "description": "Descripción 2."}
+        ],
+        "technologies": ["Vue.js", "Spring Boot", "MySQL", "Git"],
+        "tags": ["Frontend", "Backend"]
+    },
+    {
+        "id": 6,
+        "title": "TBD Series",
+        "description": "Proyecto para análisis estadístico de tuits sobre series de televisión.",
+        "slides": [
+            {"imageFile": "TEST1.png", "description": "Descripción 1."},
+            {"imageFile": "TEST2.png", "description": "Descripción 2."}
+        ],
+        "technologies": ["Vue.js", "Highcharts", "Git"],
+        "tags": ["Frontend"]
     }
 ]

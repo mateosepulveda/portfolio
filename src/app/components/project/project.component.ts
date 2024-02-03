@@ -13,11 +13,13 @@ export class ProjectComponent {
   project: Project | null
   slides: Slide[];  
   currentSlide: number;
+  displaySlides: boolean[];
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private projectService: ProjectService) {
     this.project = null;
     this.slides = [];
     this.currentSlide = -1;
+    this.displaySlides = Array(this.slides.length).fill(false);
     this.activatedRoute.params.subscribe(params => {
       const projectId = +params['id'];
       let project = this.projectService.getProjectById(projectId);
@@ -26,18 +28,50 @@ export class ProjectComponent {
       } else {
         this.project = project;
         this.slides = this.project.slides;
-        this.currentSlide = 0;
+        this.displaySlides = Array(this.slides.length).fill(false);
+        this.showSlide(0);
       }
     });
   }
 
-  getCurrentSlideUrl(): string {
-    let a = `url('${this.slides[this.currentSlide].imageFile}')`;
-    console.log(a);
-    return a;
-  }
-
   navigateToProjectsList(): void {
     this.router.navigate(['/projects-list']);
+  }
+
+  showSlide(n: number) {
+    if (n > this.slides.length - 1) {
+      return;
+    }
+
+    if (n < 0) {
+      return;
+    }
+
+    this.currentSlide = n;
+    for (let i = 0; i < this.displaySlides.length; i++) {
+      if (i != this.currentSlide) {
+        this.displaySlides[i] = false;
+      } else {
+        this.displaySlides[i] = true;
+      }
+    }
+
+    console.log(this.displaySlides);
+  }
+
+  plusSlides(move: string) {
+    if ((this.currentSlide == this.slides.length - 1) && (move === 'forward')) {
+      return;
+    }
+
+    if ((this.currentSlide == 0) && (move === 'back')) {
+      return;
+    }
+
+    if (move === 'back') {
+      this.showSlide(this.currentSlide - 1);
+    } else if (move === 'forward') {
+      this.showSlide(this.currentSlide + 1);
+    }
   }
 }
