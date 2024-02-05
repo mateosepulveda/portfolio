@@ -130,28 +130,6 @@
     right: 45px;
     font-size: 60px;
   }
-
-  .bottombar {
-    position: fixed;
-    top: auto;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(222, 0, 45, 1);
-    color: white;
-    font-weight: 600;
-    text-align: center;
-    opacity: 1;
-    transition: opacity 1s ease;
-  }
-
-  .bottombar.hidden {
-    opacity: 0;
-  }
 </style>
 
 <head>
@@ -180,9 +158,5 @@
     <div class="content-wrapper">
       <router-outlet></router-outlet>
     </div>
-  </div>
-
-  <div class="bottombar" [class.hidden]="hideBottomBar" *ngIf="!disableBottomBar">
-    SITIO DESARROLLADO CON ANGULAR
   </div>
 </body>

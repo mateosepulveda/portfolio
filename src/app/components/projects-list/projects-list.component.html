@@ -5,10 +5,10 @@
     <div class="projects">
         <p>Etiquetas:</p>
         <div class="tag-container">
-            <a class="tag" style="color: black" (click)="unfilterProjects()">
+            <a class="tag" (click)="unfilterProjects()">
                 TODOS LOS PROYECTOS
             </a>
-            <a *ngFor="let projectTag of projectTags" class="tag" style="color: black" (click)="filterProjects(projectTag)">
+            <a *ngFor="let projectTag of projectTags" class="tag" (click)="filterProjects(projectTag)">
                 {{ projectTag }}
             </a>
         </div>
@@ -18,7 +18,7 @@
 
         <div class="card-container">
             <div class="card" *ngFor="let project of projectsFiltered" (click)="navigateToProject(project.id)">
-                <img src="assets/TEST1.png" alt="Avatar" style="width:100%">
+                <img [src]="'assets/projects/' + project!.id.toString() + '/' + project!.slides[0].imageFile" style="width:100%">
                 <div class="container">
                 <p>{{ project.title }}</p>
                 </div>

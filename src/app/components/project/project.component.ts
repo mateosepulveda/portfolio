@@ -10,21 +10,23 @@ import Project, { Slide } from './../../project.interface';
   styleUrls: ['./project.component.css']
 })
 export class ProjectComponent {
-  project: Project | null
-  slides: Slide[];  
-  currentSlide: number;
-  displaySlides: boolean[];
+  project: Project | null = null;
+  slides: Slide[] = [];
+  currentSlide: number = -1;
+  firstSlide: boolean = false;
+  lastSlide: boolean = false;
+  displaySlides: boolean[] = Array(this.slides.length).fill(false);
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private projectService: ProjectService) {
-    this.project = null;
-    this.slides = [];
-    this.currentSlide = -1;
-    this.displaySlides = Array(this.slides.length).fill(false);
+  }
+
+  async ngOnInit(): Promise<void> {
+    await this.projectService.dataReady();
     this.activatedRoute.params.subscribe(params => {
       const projectId = +params['id'];
       let project = this.projectService.getProjectById(projectId);
       if (project === null) {
-        this.router.navigate(['/about']);
+        this.router.navigate(['/page-not-found']);
       } else {
         this.project = project;
         this.slides = this.project.slides;
@@ -56,22 +58,34 @@ export class ProjectComponent {
       }
     }
 
-    console.log(this.displaySlides);
+    if (this.slides.length === 1) {
+      this.firstSlide = true;
+      this.lastSlide = true;
+    } else {
+      if (this.currentSlide === this.slides.length - 1) {
+        this.firstSlide = false;
+        this.lastSlide = true;
+      } else if (this.currentSlide === 0) {
+        this.firstSlide = true;
+        this.lastSlide = false;
+      } else {
+        this.firstSlide = false;
+        this.lastSlide = false;
+      }
+    }
   }
 
-  plusSlides(move: string) {
-    if ((this.currentSlide == this.slides.length - 1) && (move === 'forward')) {
+  nextSlide() {
+    if (this.currentSlide == this.slides.length - 1) {
       return;
     }
+    this.showSlide(this.currentSlide + 1);
+  }
 
-    if ((this.currentSlide == 0) && (move === 'back')) {
+  previousSlide() {
+    if (this.currentSlide == 0) {
       return;
     }
-
-    if (move === 'back') {
-      this.showSlide(this.currentSlide - 1);
-    } else if (move === 'forward') {
-      this.showSlide(this.currentSlide + 1);
-    }
+    this.showSlide(this.currentSlide - 1);
   }
 }

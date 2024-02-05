@@ -5,21 +5,24 @@ import Project from './project.interface';
   providedIn: 'root'
 })
 export class ProjectService {
-  private projects: Project[];
-  private projectTags: string[];
+  private projectFile = 'assets/projects/projects.json';
+  private projects: Project[] = [];
+  private projectTags: string[] = [];
+  private dataPromise: Promise<void>;
 
   constructor() {
-    this.projects = [];
-    this.projectTags = [];
+    this.dataPromise = this.fetchProjects();
   }
 
-  setProjects(projects: any) {
-    this.projects = projects;
+  private async fetchProjects(): Promise<void> {
+    const response = await fetch(this.projectFile);
+    const json = await response.json();
+    this.projects = json;
     this.setProjectTags();
   }
 
-  getProjects() {
-    return this.projects;
+  async dataReady(): Promise<void> {
+    return this.dataPromise;
   }
 
   setProjectTags() {
@@ -33,6 +36,11 @@ export class ProjectService {
     this.projectTags.sort();
   }
 
+  getProjects() {
+    console.log(this.projects);
+    return this.projects;
+  }
+
   getProjectTags() {
     return this.projectTags;
   }
@@ -44,9 +52,5 @@ export class ProjectService {
     } else {
       return null;
     }
-  }
-
-  projectsLoaded() {
-    return this.projects.length != 0;
   }
 }

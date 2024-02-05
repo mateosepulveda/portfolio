@@ -35,6 +35,7 @@ h6 {
   transition: all 0.2s ease-in-out;
   line-height: 24px;
   cursor: pointer;
+  color: white;
 }
 
 a,
@@ -64,6 +65,10 @@ a:hover {
 /* On mouse-over, add a deeper shadow */
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.tag:hover {
+  transform: translateY(-3px);
 }
 
 /* Add some padding inside the card container */

@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
     .pipe(filter(event => event instanceof NavigationEnd))
     .subscribe(() => {
       window.scrollTo(0, 0);
+      this.hideMenu();
     });
   }
 

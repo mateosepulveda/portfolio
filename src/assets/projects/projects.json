@@ -5,7 +5,8 @@
         "description": "Desarrollo de ambiente para gestión de simulaciones de estudiantes, en el marco del ecosistema NEURONE, orientado a estudios de alfabetización informacional.",
         "slides": [
             {"imageFile": "TEST1.png", "description": "Descripción 1."},
-            {"imageFile": "TEST2.png", "description": "Descripción 2."}
+            {"imageFile": "TEST2.png", "description": "Descripción 2."},
+            {"imageFile": "TEST3.png", "description": "Descripción 3."}
         ],
         "technologies": ["Angular", "JointJS", "Node.js", "Express", "MongoDB"],
         "tags": ["Frontend", "Backend"]
@@ -59,8 +60,7 @@
         "title": "TBD Series",
         "description": "Proyecto para análisis estadístico de tuits sobre series de televisión.",
         "slides": [
-            {"imageFile": "TEST1.png", "description": "Descripción 1."},
-            {"imageFile": "TEST2.png", "description": "Descripción 2."}
+            {"imageFile": "TEST1.png", "description": "Descripción 1."}
         ],
         "technologies": ["Vue.js", "Highcharts", "Git"],
         "tags": ["Frontend"]
