@@ -1,18 +1,8 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0px;
-  text-align: center;
-}
-
 .content {
   display: flex;
   flex-direction: column;
   font-size: x-large;
-  margin: 150px;
+  margin: 200px;
   justify-content: center; /* Center horizontally */
 }
 
@@ -37,13 +27,6 @@ h6 {
   cursor: pointer;
   color: white;
   border: 2px solid transparent;
-}
-
-a,
-a:visited,
-a:hover {
-  color: white;
-  text-decoration: none;
 }
 
 .card-container {

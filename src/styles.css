@@ -1,5 +1,5 @@
 :root {
-  background: linear-gradient(0deg, rgba(4,0,32,1) 0%, rgba(63,0,163,1) 100%);
+  background: linear-gradient(180deg, rgba(32,39,105,1) 0%, rgba(49,0,128,1) 100%);
   background-attachment: fixed;
 }
 
@@ -15,4 +15,63 @@
   opacity: 0.2;
   transform: translateY(-50%);
   content: "";
+}
+
+h1 {
+  margin: 0;
+  color: #ffce32;
+  font-family: 'Comfortaa', sans-serif;
+  border-bottom: 2px solid #ffce32;
+  display: inline-block;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: #ffce32;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+p {
+  padding-bottom: 30px;
+}
+
+a {
+  color: #62db44;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #44cedb;
+  cursor: pointer;
+}
+
+a path {
+  transition: 0.3s;
+}
+
+a:hover path {
+  fill: #44cedb;
+}
+
+.fade-in {
+  -webkit-animation-name: fade-in;
+  animation-name: fade-in;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }

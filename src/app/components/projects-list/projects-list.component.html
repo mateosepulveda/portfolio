@@ -1,9 +1,9 @@
-<div class="content fadeIn">
+<div class="content fade-in">
     <h1>Proyectos</h1>
-    <p>Estos son algunos de mis proyectos. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p>Estos son algunos de mis proyectos. Entre otros ámbitos, estos trabajos abarcan el desarrollo de aplicaciones web mediante diferentes lenguajes y frameworks, el procesamiento de datos en streaming en tiempo real, y el uso de machine learning para análisis de datos.</p>
 
     <div class="projects">
-        <p>Etiquetas:</p>
+        <p><b>Etiquetas:</b></p>
         <div class="tag-container">
             <a class="tag" (click)="unfilterProjects()" [class.selectedtag]="currentFilter === ''">
                 TODOS LOS PROYECTOS
@@ -13,8 +13,10 @@
             </a>
         </div>
 
-        <p *ngIf="currentFilter === ''">Mostrando todos los proyectos</p>
-        <p *ngIf="currentFilter !== ''">Mostrando proyectos filtrados por: {{ currentFilter }}</p>
+        <i>
+            <p *ngIf="currentFilter === ''">Mostrando todos los proyectos</p>
+            <p *ngIf="currentFilter !== ''">Mostrando proyectos filtrados por: {{ currentFilter }}</p>
+        </i>
 
         <div class="card-container">
             <div class="card" *ngFor="let project of projectsFiltered" (click)="navigateToProject(project.id)">

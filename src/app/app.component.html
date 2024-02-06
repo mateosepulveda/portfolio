@@ -1,14 +1,21 @@
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="fade-in">
   <div class="toolbar">
     <a (click)="showMenu()">
       <svg width="40" height="40" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#818181" fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"/>
+        <path fill="#ffffff" fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"/>
       </svg>
     </a>
+  </div>
+  <div class="name">
+    Mateo Sepúlveda
+    <svg height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+      <circle r="10" cx="10" cy="10" fill="#ffce32"/>
+    </svg>
   </div>
 
   <div class="menu" [style.width]="menuWidth">

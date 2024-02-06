@@ -1,19 +1,8 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0px;
-  text-align: center;
-}
-
 .content {
   display: flex;
   flex-direction: column;
   font-size: x-large;
-  margin: 150px;
-  max-width: 1200px;
+  margin: 200px;
 }
 
 .card svg.material-icons path {

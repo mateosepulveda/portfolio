@@ -1,40 +1,21 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0px;
-  text-align: center;
-}
-
 .content {
+  margin: 200px;
   display: flex;
   flex-direction: column;
   font-size: x-large;
-  margin: 150px;
-  max-width: 1200px;
 }
 
-.fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+.introduction {
+  display: flex;
+  align-items: center;
+  padding-bottom: 30px;
 }
 
-@-webkit-keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+.introduction img {
+  height: 100px;
+  padding-right: 30px;
 }
 
-@keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-}
-
-a {
-  cursor: pointer;
+p {
+  padding-bottom: 0px;
 }

@@ -1,41 +1,10 @@
 :host {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Space Grotesk", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
   color: white;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 8px 0;
-}
-
-p {
-  margin: 0;
-}
-
-a {
-  color: #818181;
-  transition: 0.3s;
-}
-
-a:hover {
-  color: #f1f1f1;
-  cursor: pointer;
-}
-
-a path {
-  transition: 0.3s;
-}
-
-a:hover path {
-  fill: #f1f1f1;
 }
 
 .toolbar {
@@ -51,6 +20,22 @@ a:hover path {
   margin: 0 16px;
 }
 
+.name {
+  position: fixed;
+  height: 80px;
+  top: 0;
+  right: 16px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.name svg {
+  padding-left: 10px;
+  opacity: 0;
+  animation: fadeInOut 2s ease-in-out infinite alternate;
+}
+
 .menu {
   position: fixed;
   height: 100%;
@@ -60,6 +45,10 @@ a:hover path {
   background-color: rgba(0,0,0, 0.95);
   overflow-x: hidden;
   transition: 0.5s;
+}
+
+.menu a:not(:hover) {
+  color: white;
 }
 
 .menu-content {
@@ -103,6 +92,15 @@ a:hover path {
   max-width: 1500px;
   padding: 20px;
   box-sizing: border-box;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 767px) {
