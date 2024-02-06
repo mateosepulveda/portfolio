@@ -1,0 +1,118 @@
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: white;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: #818181;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #f1f1f1;
+  cursor: pointer;
+}
+
+a path {
+  transition: 0.3s;
+}
+
+a:hover path {
+  fill: #f1f1f1;
+}
+
+.toolbar {
+  position: fixed;
+  height: 80px;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.toolbar svg {
+  margin: 0 16px;
+}
+
+.menu {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0,0,0, 0.95);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.menu-content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 36px;
+  transition: opacity 0.15s ease-in-out;
+  transition-delay: 0.1s;
+}
+
+.menu-content.active {
+  transition-delay: 0s;
+}
+
+.menu-linkbtn a {
+  margin: 4px;
+  display: inline-block;
+}
+
+.menu .menu-closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+.router-outlet-content {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto hidden;
+  box-sizing: border-box;
+}
+
+.router-outlet-content-wrapper {
+  width: 100%;
+  max-width: 1500px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  .menu-content { 
+    transition-delay: 0.07s;
+  }
+}
+
+/* @media (max-height: 700px) {
+  .router-outlet-content {
+    align-items: flex-start;
+  }
+} */

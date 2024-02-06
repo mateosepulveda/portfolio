@@ -1,161 +1,27 @@
-<style>
-  :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    color: white;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 8px 0;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .toolbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-    color: white;
-    font-weight: 600;
-  }
-
-  .toolbar svg {
-    margin: 0 16px;
-  }
-
-  .content {
-    display: flex;
-    margin: 82px auto 32px;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-  }
-
-  .router-outlet-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100vh - 60px); /* Set height to 100% of the viewport height */
-    overflow-y: auto hidden; /* Enable vertical scrolling if content overflows */
-    box-sizing: border-box;
-  }
-
-  .content-wrapper {
-    max-width: 1500px; /* Adjust as needed */
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  @media (max-height: 600px) {
-    .router-outlet-content {
-      align-items: flex-start; /* Align to the top when content height is less than or equal to 600px */
-    }
-  } 
-
-  a,
-  a:visited,
-  a:hover {
-    color: white;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: pink;
-    cursor: pointer;
-  }
-
-  .overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0, 0.95);
-    overflow-x: hidden;
-    transition: 0.5s;
-  }
-
-  .overlay-content {
-    position: relative;
-    text-align: center;
-    transition: 0.15s;
-    transition-delay: 0.1s;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .overlay-content.active {
-    transition-delay: 0s;
-  }
-
-  .overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-
-  .overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;
-  }
-
-  .overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-  }
-</style>
-
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@1000&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="toolbar" role="banner">
+  <div class="toolbar">
     <a (click)="showMenu()">
-      <svg width="40" height="40" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
-        <path fill="#ffffff" fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"/>
+      <svg width="40" height="40" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#818181" fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"/>
       </svg>
     </a>
   </div>
 
-  <div id="menu" class="overlay" [style.width]="menuWidth">
-    <div class="overlay-content" [style.opacity]="menuTextOpacity">
-      <a class="closebtn" (click)="hideMenu()">&times;</a>
-      <a (click)="navigate('about')">Sobre mí</a>
-      <a (click)="navigate('projects')">Proyectos</a>
-      <a (click)="navigate('contact')">Contacto</a>
+  <div class="menu" [style.width]="menuWidth">
+    <div class="menu-content" [style.opacity]="menuTextOpacity">
+      <a class="menu-closebtn" (click)="hideMenu()">&times;</a>
+      <div class="menu-linkbtn"><a (click)="navigate('about')">Sobre mí</a></div>
+      <div class="menu-linkbtn"><a (click)="navigate('projects')">Proyectos</a></div>
+      <div class="menu-linkbtn"><a (click)="navigate('contact')">Contacto</a></div>
     </div>
   </div>
 
-  <div class="router-outlet-content" role="main">
-    <div class="content-wrapper">
+  <div class="router-outlet-content">
+    <div class="router-outlet-content-wrapper">
       <router-outlet></router-outlet>
     </div>
   </div>

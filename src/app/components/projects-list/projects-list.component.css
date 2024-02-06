@@ -36,6 +36,7 @@ h6 {
   line-height: 24px;
   cursor: pointer;
   color: white;
+  border: 2px solid transparent;
 }
 
 a,
@@ -49,6 +50,10 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.card-container img {
+  width: 100%;
 }
 
 .card {
@@ -94,6 +99,10 @@ img {
 
 .projects {
   text-align: center;
+}
+
+.selectedtag {
+  border: 2px solid white;
 }
 
 @-webkit-keyframes fadeIn {

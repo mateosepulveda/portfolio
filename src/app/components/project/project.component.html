@@ -9,8 +9,8 @@
         <!-- Full-width images with number text -->
         <div class="mySlides" *ngFor="let slide of project!.slides; let i = index" [hidden]="!displaySlides[i]">
             <div class="numbertext" [hidden]="firstSlide && lastSlide">{{ i + 1 }} / {{ project!.slides.length }}</div>
-            <img [src]="'assets/projects/' + project!.id.toString() + '/' + slide.imageFile" style="width: 80vh; border-radius: 5px;">
-            <div class="caption-container" style="width: 80vh">
+            <img [src]="'assets/projects/' + project!.id.toString() + '/' + slide.imageFile">
+            <div class="caption-container">
                 <p>{{ slide.description }}</p>
             </div>
         </div>

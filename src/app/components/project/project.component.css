@@ -112,6 +112,11 @@ h6 {
 .mySlides {
     width: 100%;
 }
+
+.mySlides img {
+    width: 80vh;
+    border-radius: 5px;
+}
   
 /* Next & previous buttons */
 .prev,
@@ -156,4 +161,5 @@ h6 {
     text-align: center;
     background-color: #222;
     color: white;
+    width: 80vh;
 }
