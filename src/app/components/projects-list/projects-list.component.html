@@ -24,7 +24,9 @@
     <div class="project-container">
       <a class="project" *ngFor="let project of projectsFiltered" (click)="navigateToProject(project.id)">
         <img [src]="'assets/projects/' + project!.id.toString() + '/' + project!.slides[0].imageFile">
-        <p>{{ project.title }}</p>
+        <div class="project-name">
+          <p>{{ project.title }}</p>
+        </div>
       </a>
     </div>
   </div>

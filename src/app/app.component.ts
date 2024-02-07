@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   title = 'portfolio';
   menuWidth = '0%';
   menuTextOpacity = '0';
+  menuOpen = false;
 
   constructor(private router: Router) {
   }
@@ -27,11 +28,13 @@ export class AppComponent implements OnInit {
   showMenu(): void {
     this.menuWidth = '100%';
     this.menuTextOpacity = '1';
+    this.menuOpen = true;
   }
 
   hideMenu(): void {
     this.menuWidth = '0%';
     this.menuTextOpacity = '0';
+    this.menuOpen = false;
   }
 
   navigate(destination: string): void {

@@ -7,6 +7,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .toolbar {
   position: fixed;
   height: 80px;
@@ -17,11 +21,15 @@
   align-items: center;
 }
 
-.toolbar svg {
+.toolbar-leftside a {
   margin: 0 16px;
 }
 
-.name {
+.toolbar-leftside svg {
+  height: 40px;
+}
+
+.toolbar-rightside {
   position: fixed;
   height: 80px;
   top: 0;
@@ -31,13 +39,16 @@
   align-items: center;
 }
 
-.name svg {
-  padding-left: 10px;
+.toolbar-rightside a {
+  margin-left: 15px;
 }
 
-.name circle {
-  fill: #ffce32;
-  animation: color-change 10s ease-in-out infinite alternate;
+.toolbar-rightside svg.github {
+  height: 30px;
+}
+
+.toolbar-rightside svg.linkedin {
+  height: 40px;
 }
 
 .menu {
@@ -96,18 +107,6 @@
   max-width: 1500px;
   padding: 20px;
   box-sizing: border-box;
-}
-
-@keyframes color-change {
-  0% {
-    fill: #ffce32;
-  }
-  50% {
-    fill: #62db44;
-  }
-  100% {
-    fill: #44cedb;
-  }
 }
 
 @media (max-width: 767px) {

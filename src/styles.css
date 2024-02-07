@@ -42,7 +42,7 @@ a {
 }
 
 a:hover {
-  color: #44cedb;
+  color: #3ebdc9;
   cursor: pointer;
 }
 
@@ -51,7 +51,7 @@ a path {
 }
 
 a:hover path {
-  fill: #44cedb;
+  fill: #3ebdc9;
 }
 
 li {

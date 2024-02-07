@@ -1,5 +1,5 @@
 .content {
-  margin: 200px;
+  margin: 250px;
   display: flex;
   flex-direction: column;
 }
@@ -34,7 +34,7 @@
 }
 
 .link:hover::before {
-  background-color: rgba(68, 206, 219, 0.6);
+  background-color: rgba(62, 189, 201, 0.6);
 }
 
 .link img {

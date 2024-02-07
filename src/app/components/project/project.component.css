@@ -1,7 +1,7 @@
 .content {
     display: flex;
     flex-direction: column;
-    margin: 200px;
+    margin: 250px;
     justify-content: center; /* Center horizontally */
 }
 

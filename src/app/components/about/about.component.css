@@ -1,9 +1,9 @@
 .content {
-  margin: 200px;
+  margin: 250px;
   display: flex;
   flex-direction: column;
 }
 
-.highlight {
+.divider {
   color: #ffce32;
 }
