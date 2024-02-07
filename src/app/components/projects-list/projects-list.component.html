@@ -1,30 +1,31 @@
 <div class="content fade-in">
-    <h1>Proyectos</h1>
-    <p>Estos son algunos de mis proyectos. Entre otros ámbitos, estos trabajos abarcan el desarrollo de aplicaciones web mediante diferentes lenguajes y frameworks, el procesamiento de datos en streaming en tiempo real, y el uso de machine learning para análisis de datos.</p>
+  <h1>Proyectos</h1>
+  <div class="block">
+    <img src="assets/project-management.png">
+    <p>Estos son algunos de mis proyectos. Estos trabajos abarcan, entre otros ámbitos, el desarrollo de aplicaciones web mediante diferentes lenguajes y frameworks, el procesamiento de datos en streaming en tiempo real, y el uso de machine learning para análisis de datos.</p>
+  </div>
 
-    <div class="projects">
-        <p><b>Etiquetas:</b></p>
-        <div class="tag-container">
-            <a class="tag" (click)="unfilterProjects()" [class.selectedtag]="currentFilter === ''">
-                TODOS LOS PROYECTOS
-            </a>
-            <a *ngFor="let projectTag of projectTags" class="tag" (click)="filterProjects(projectTag)" [class.selectedtag]="projectTag === currentFilter">
-                {{ projectTag }}
-            </a>
-        </div>
-
-        <i>
-            <p *ngIf="currentFilter === ''">Mostrando todos los proyectos</p>
-            <p *ngIf="currentFilter !== ''">Mostrando proyectos filtrados por: {{ currentFilter }}</p>
-        </i>
-
-        <div class="card-container">
-            <div class="card" *ngFor="let project of projectsFiltered" (click)="navigateToProject(project.id)">
-                <img [src]="'assets/projects/' + project!.id.toString() + '/' + project!.slides[0].imageFile">
-                <div class="container">
-                <p>{{ project.title }}</p>
-                </div>
-            </div>
-        </div>
+  <div class="project-section">
+    <p><b>Etiquetas:</b></p>
+    <div class="tag-container">
+      <a class="tag" (click)="unfilterProjects()" [class.tag-selected]="currentFilter === ''">
+        Todos los proyectos
+      </a>
+      <a *ngFor="let projectTag of projectTags" class="tag" (click)="filterProjects(projectTag)" [class.tag-selected]="projectTag === currentFilter">
+        {{ projectTag }}
+      </a>
     </div>
+
+    <div>
+      <p *ngIf="currentFilter === ''">Mostrando todos los proyectos</p>
+      <p *ngIf="currentFilter !== ''">Mostrando proyectos filtrados por: {{ currentFilter }}</p>
+    </div>
+
+    <div class="project-container">
+      <a class="project" *ngFor="let project of projectsFiltered" (click)="navigateToProject(project.id)">
+        <img [src]="'assets/projects/' + project!.id.toString() + '/' + project!.slides[0].imageFile">
+        <p>{{ project.title }}</p>
+      </a>
+    </div>
+  </div>
 </div>

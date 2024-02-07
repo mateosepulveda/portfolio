@@ -11,7 +11,7 @@
   right: 0;
   z-index: -1;
   background: url('assets/3dcomputer-freepik.png') no-repeat center center;
-  background-size: 70%;
+  background-size: contain;
   opacity: 0.2;
   transform: translateY(-50%);
   content: "";
@@ -30,16 +30,13 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
+  margin-bottom: 0;
   color: #ffce32;
   font-family: 'Comfortaa', sans-serif;
 }
 
-p {
-  padding-bottom: 30px;
-}
-
 a {
+  text-decoration: none;
   color: #62db44;
   transition: 0.3s;
 }
@@ -55,6 +52,24 @@ a path {
 
 a:hover path {
   fill: #44cedb;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+li ul {
+  margin-top: 5px;
+}
+
+.block {
+  display: flex;
+  align-items: center;
+}
+
+.block img {
+  height: 100px;
+  padding-right: 30px;
 }
 
 .fade-in {

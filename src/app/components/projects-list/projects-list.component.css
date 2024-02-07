@@ -1,99 +1,65 @@
 .content {
+  margin: 200px;
   display: flex;
   flex-direction: column;
-  font-size: x-large;
-  margin: 200px;
-  justify-content: center; /* Center horizontally */
+}
+
+.project-section {
+  text-align: center;
 }
 
 .tag-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  margin-top: 0px;
+  justify-content: center;
 }
 
 .tag {
-  all: unset;
-  border-radius: 4px;
+  position: relative;
+  padding: 0px 20px;
+  height: 60px;
   background-color: #383838;
-  height: 20px;
-  margin: 0 8px 16px;
-  padding: 16px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  transition: all 0.2s ease-in-out;
-  line-height: 24px;
-  cursor: pointer;
   color: white;
-  border: 2px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 16px;
+  border-radius: 5px;
 }
 
-.card-container {
+.tag:hover {
+  background-color: rgb(68, 206, 219);
+  color: black;
+}
+
+.tag-selected {
+  background-color: rgb(68, 206, 219);
+  color: black;
+}
+
+.project-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.card-container img {
-  width: 100%;
-}
-
-.card {
-  /* Add shadows to create the "card" effect */
-  transition: 0.3s;
-  background-color: white;
-  width: 60vh;
+.project {
+  margin: 15px;
+  width: 30vw;
   height: auto;
+  flex: 0 0 calc(50% - 40px);
+  background-color: white;
+  color: black;
   border-radius: 15px;
-  margin: 20px;
   cursor: pointer;
 }
-  
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+.project:hover {
+  background-color: rgb(68, 206, 219);
+  color: black;
 }
 
-.tag:hover {
-  transform: translateY(-3px);
-}
-
-/* Add some padding inside the card container */
-.container {
-    padding: 2px 16px;
-    background-color: white;
-    color: black;
-    border-radius: 5px;
-}
-
-img {
-  border-radius: 5px;
-}
-
-.fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.projects {
-  text-align: center;
-}
-
-.selectedtag {
-  border: 2px solid white;
-}
-
-@-webkit-keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+.project img {
+  padding-top: 10px;
+  width: 95%;
+  border-radius: 20px;
 }

@@ -1,6 +1,6 @@
 :host {
   font-family: -apple-system, BlinkMacSystemFont, "Space Grotesk", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 14px;
+  font-size: x-large;
   color: white;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -10,6 +10,7 @@
 .toolbar {
   position: fixed;
   height: 80px;
+  width: 100%;
   top: 0;
   left: 0;
   display: flex;
@@ -32,8 +33,11 @@
 
 .name svg {
   padding-left: 10px;
-  opacity: 0;
-  animation: fadeInOut 2s ease-in-out infinite alternate;
+}
+
+.name circle {
+  fill: #ffce32;
+  animation: color-change 10s ease-in-out infinite alternate;
 }
 
 .menu {
@@ -43,7 +47,7 @@
   left: 0;
   z-index: 1;
   background-color: rgba(0,0,0, 0.95);
-  overflow-x: hidden;
+  overflow: hidden;
   transition: 0.5s;
 }
 
@@ -94,12 +98,15 @@
   box-sizing: border-box;
 }
 
-@keyframes fadeInOut {
+@keyframes color-change {
   0% {
-    opacity: 0;
+    fill: #ffce32;
+  }
+  50% {
+    fill: #62db44;
   }
   100% {
-    opacity: 1;
+    fill: #44cedb;
   }
 }
 
@@ -108,9 +115,3 @@
     transition-delay: 0.07s;
   }
 }
-
-/* @media (max-height: 700px) {
-  .router-outlet-content {
-    align-items: flex-start;
-  }
-} */

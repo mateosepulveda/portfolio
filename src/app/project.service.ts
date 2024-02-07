@@ -37,7 +37,6 @@ export class ProjectService {
   }
 
   getProjects() {
-    console.log(this.projects);
     return this.projects;
   }
 
@@ -46,7 +45,7 @@ export class ProjectService {
   }
 
   getProjectById(projectId: number) {
-    var projectsFiltered = this.projects.filter(project => project.id === projectId);
+    const projectsFiltered = this.projects.filter(project => project.id === projectId);
     if (projectsFiltered.length == 1) {
       return projectsFiltered[0];
     } else {

@@ -12,7 +12,7 @@ import Project, { Slide } from './../../project.interface';
 export class ProjectComponent {
   project: Project | null = null;
   slides: Slide[] = [];
-  currentSlide: number = -1;
+  currentSlide: number = 0;
   firstSlide: boolean = false;
   lastSlide: boolean = false;
   displaySlides: boolean[] = Array(this.slides.length).fill(false);
@@ -24,14 +24,14 @@ export class ProjectComponent {
     await this.projectService.dataReady();
     this.activatedRoute.params.subscribe(params => {
       const projectId = +params['id'];
-      let project = this.projectService.getProjectById(projectId);
+      const project = this.projectService.getProjectById(projectId);
       if (project === null) {
         this.router.navigate(['/page-not-found']);
       } else {
         this.project = project;
         this.slides = this.project.slides;
         this.displaySlides = Array(this.slides.length).fill(false);
-        this.showSlide(0);
+        this.changeSlide(this.currentSlide);
       }
     });
   }
@@ -40,15 +40,13 @@ export class ProjectComponent {
     this.router.navigate(['/projects-list']);
   }
 
-  showSlide(n: number) {
+  changeSlide(n: number) {
     if (n > this.slides.length - 1) {
       return;
     }
-
     if (n < 0) {
       return;
     }
-
     this.currentSlide = n;
     for (let i = 0; i < this.displaySlides.length; i++) {
       if (i != this.currentSlide) {
@@ -57,7 +55,10 @@ export class ProjectComponent {
         this.displaySlides[i] = true;
       }
     }
+    this.checkFirstLastSlide();
+  }
 
+  checkFirstLastSlide() {
     if (this.slides.length === 1) {
       this.firstSlide = true;
       this.lastSlide = true;
@@ -79,13 +80,13 @@ export class ProjectComponent {
     if (this.currentSlide == this.slides.length - 1) {
       return;
     }
-    this.showSlide(this.currentSlide + 1);
+    this.changeSlide(this.currentSlide + 1);
   }
 
   previousSlide() {
     if (this.currentSlide == 0) {
       return;
     }
-    this.showSlide(this.currentSlide - 1);
+    this.changeSlide(this.currentSlide - 1);
   }
 }

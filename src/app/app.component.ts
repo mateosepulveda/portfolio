@@ -44,10 +44,14 @@ export class AppComponent implements OnInit {
         this.router.navigate(['/projects-list']);
         this.hideMenu();
         break;
-      case 'contact':
-        this.router.navigate(['/contact']);
+      case 'links':
+        this.router.navigate(['/links']);
         this.hideMenu();
         break;
+      case 'credits':
+          this.router.navigate(['/credits']);
+          this.hideMenu();
+          break;
       default:
         this.router.navigate(['/about']);
         this.hideMenu();

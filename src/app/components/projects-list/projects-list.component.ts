@@ -9,7 +9,7 @@ import Project from './../../project.interface';
   styleUrls: ['./projects-list.component.css']
 })
 export class ProjectsListComponent {
-  projects: Project[] = [];
+  private projects: Project[] = [];
   projectsFiltered: Project[] = [];
   projectTags: string[] = [];
   currentFilter: string = '';
@@ -31,7 +31,7 @@ export class ProjectsListComponent {
 
   unfilterProjects(): void {
     this.projectsFiltered = [...this.projects];
-    this.currentFilter = "";
+    this.currentFilter = '';
   }
 
   filterProjects(projectTag: string): void {

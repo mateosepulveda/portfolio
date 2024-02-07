@@ -1,7 +1,6 @@
 .content {
     display: flex;
     flex-direction: column;
-    font-size: x-large;
     margin: 200px;
     justify-content: center; /* Center horizontally */
 }
@@ -68,25 +67,6 @@
 
 .card.card.highlight-card span {
     margin-left: 60px;
-}
-
-.fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-@-webkit-keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
 }
 
 /* Position the image container (needed to position the left and right arrows) */

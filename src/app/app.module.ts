@@ -5,12 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { APP_BASE_HREF, PlatformLocation } from '@angular/common';
 
 import { AboutComponent } from './components/about/about.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { ProjectComponent } from './components/project/project.component';
 import { ProjectsListComponent } from './components/projects-list/projects-list.component';
+import { ProjectComponent } from './components/project/project.component';
+import { LinksComponent } from './components/links/links.component';
+import { CreditsComponent } from './components/credits/credits.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { environment } from '../environments/environment';
 import { ProjectService } from './project.service';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 export function getBaseHref(): string {
   return environment.baseHref;
@@ -20,9 +21,10 @@ export function getBaseHref(): string {
   declarations: [
     AppComponent,
     AboutComponent,
-    ContactComponent,
-    ProjectComponent,
     ProjectsListComponent,
+    ProjectComponent,
+    LinksComponent,
+    CreditsComponent,
     PageNotFoundComponent
   ],
   imports: [

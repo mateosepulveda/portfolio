@@ -2,20 +2,8 @@
   margin: 200px;
   display: flex;
   flex-direction: column;
-  font-size: x-large;
 }
 
-.introduction {
-  display: flex;
-  align-items: center;
-  padding-bottom: 30px;
-}
-
-.introduction img {
-  height: 100px;
-  padding-right: 30px;
-}
-
-p {
-  padding-bottom: 0px;
+.highlight {
+  color: #ffce32;
 }
