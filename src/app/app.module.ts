@@ -10,12 +10,7 @@ import { ProjectComponent } from './components/project/project.component';
 import { LinksComponent } from './components/links/links.component';
 import { CreditsComponent } from './components/credits/credits.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { environment } from '../environments/environment';
 import { ProjectService } from './project.service';
-
-export function getBaseHref(): string {
-  return environment.baseHref;
-}
 
 @NgModule({
   declarations: [
@@ -31,7 +26,7 @@ export function getBaseHref(): string {
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ProjectService, { provide: APP_BASE_HREF, useFactory: getBaseHref, deps: [PlatformLocation] }],
+  providers: [ProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
