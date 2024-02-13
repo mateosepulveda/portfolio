@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    baseHref: '/portfolio/',
+    baseHref: 'https://mateosepulveda.github.io/portfolio/',
 };
