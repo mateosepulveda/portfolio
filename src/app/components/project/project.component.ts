@@ -16,6 +16,7 @@ export class ProjectComponent {
   firstSlide: boolean = false;
   lastSlide: boolean = false;
   displaySlides: boolean[] = Array(this.slides.length).fill(false);
+  displayCaptions: boolean[] = Array(this.slides.length).fill(false);
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private projectService: ProjectService) {
   }
@@ -31,6 +32,7 @@ export class ProjectComponent {
         this.project = project;
         this.slides = this.project.slides;
         this.displaySlides = Array(this.slides.length).fill(false);
+        this.displayCaptions = Array(this.slides.length).fill(false);
         this.changeSlide(this.currentSlide);
       }
     });
@@ -49,10 +51,17 @@ export class ProjectComponent {
     }
     this.currentSlide = n;
     for (let i = 0; i < this.displaySlides.length; i++) {
-      if (i != this.currentSlide) {
-        this.displaySlides[i] = false;
-      } else {
+      if (i <= this.currentSlide) {
         this.displaySlides[i] = true;
+      } else {
+        this.displaySlides[i] = false;
+      }
+    }
+    for (let i = 0; i < this.displayCaptions.length; i++) {
+      if (i === this.currentSlide) {
+        this.displayCaptions[i] = true;
+      } else {
+        this.displayCaptions[i] = false;
       }
     }
     this.checkFirstLastSlide();
@@ -77,16 +86,10 @@ export class ProjectComponent {
   }
 
   nextSlide() {
-    if (this.currentSlide == this.slides.length - 1) {
-      return;
-    }
     this.changeSlide(this.currentSlide + 1);
   }
 
   previousSlide() {
-    if (this.currentSlide == 0) {
-      return;
-    }
     this.changeSlide(this.currentSlide - 1);
   }
 }

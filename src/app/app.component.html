@@ -1,15 +1,17 @@
-<head>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
-</head>
-
-<body class="fade-in" [class.no-scroll]="menuOpen">
+<div *ngIf="introEnabled" class="intro intro-fade">
+  <div>
+    <h1>Bienvenido</h1>
+  </div>
+</div>
+<div *ngIf="!introEnabled" class="fade-in">
   <div class="toolbar">
     <div class="toolbar-leftside">
-      <a (click)="showMenu()">
-        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#ffffff" fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"/>
-        </svg>
+      <a (click)="toggleMenu()">
+        <div class="menu-openbtn" [class.menu-closebtn]="menuOpen">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
       </a>
     </div>
     <div class="toolbar-rightside">
@@ -29,7 +31,6 @@
 
   <div class="menu" [style.width]="menuWidth">
     <div class="menu-content" [style.opacity]="menuTextOpacity">
-      <a class="menu-closebtn" (click)="hideMenu()">&times;</a>
       <div class="menu-linkbtn"><a (click)="navigate('about')">Sobre mí</a></div>
       <div class="menu-linkbtn"><a (click)="navigate('projects')">Proyectos</a></div>
       <div class="menu-linkbtn"><a (click)="navigate('links')">Links</a></div>
@@ -42,4 +43,4 @@
       <router-outlet></router-outlet>
     </div>
   </div>
-</body>
+</div>

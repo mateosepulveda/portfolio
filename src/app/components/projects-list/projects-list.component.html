@@ -11,7 +11,7 @@
       <a class="tag" (click)="unfilterProjects()" [class.tag-selected]="currentFilter === ''">
         Todos los proyectos
       </a>
-      <a *ngFor="let projectTag of projectTags" class="tag" (click)="filterProjects(projectTag)" [class.tag-selected]="projectTag === currentFilter">
+      <a class="tag" *ngFor="let projectTag of projectTags" (click)="filterProjects(projectTag)" [class.tag-selected]="projectTag === currentFilter">
         {{ projectTag }}
       </a>
     </div>

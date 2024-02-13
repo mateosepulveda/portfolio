@@ -2,67 +2,81 @@
     {
         "id": 1,
         "title": "NEURONE Student Simulator Interface",
+        "date": "Marzo 2022 - Septiembre 2022",
         "description": "Desarrollo de ambiente para gestión de simulaciones de estudiantes, en el marco del ecosistema NEURONE, orientado a estudios de alfabetización informacional.",
         "slides": [
-            {"imageFile": "TEST1.png", "description": "Descripción 1."},
-            {"imageFile": "TEST2.png", "description": "Descripción 2."},
-            {"imageFile": "TEST3.png", "description": "Descripción 3."}
+            {"imageFile": "TEST1.png", "caption": "Descripción 1 Descripción 1 Descripción 1 Descripción 1 Descripción 1 Descripción 1 Descripción 1 Descripción 1 Descripción 1 Descripción 1 Descripción 1 Descripción 1 Descripción 1 Descripción 1 Descripción 1 Descripción 1 Descripción 1 Descripción 1 Descripción 1 Descripción 1."},
+            {"imageFile": "TEST2.png", "caption": "Descripción 2."},
+            {"imageFile": "TEST3.png", "caption": "Descripción 3."}
         ],
         "technologies": ["Angular", "JointJS", "Node.js", "Express", "MongoDB"],
+        "links": [
+            {"url": "https://neurone.info/", "caption": "Sitio web de NEURONE"}
+        ],
         "tags": ["Frontend", "Backend"]
     },
     {
         "id": 2,
         "title": "VehiclEye",
+        "date": "Abril 2021 - Agosto 2021",
         "description": "Proyecto de dispositivo tecnológico para frustrar robo de vehículos mediante tecnología de reconocimiento facial.",
         "slides": [
-            {"imageFile": "TEST1.png", "description": "Descripción 1."},
-            {"imageFile": "TEST2.png", "description": "Descripción 2."}
+            {"imageFile": "TEST1.png", "caption": "Descripción 1."},
+            {"imageFile": "TEST2.png", "caption": "Descripción 2."}
         ],
         "technologies": [],
+        "links": [],
         "tags": []
     },
     {
         "id": 3,
         "title": "Comisaría Virtual",
+        "date": "Marzo 2021",
         "description": "Desarrollo de sistema distribuido que simula el proceso de solicitud de permisos de Comisaría Virtual.",
         "slides": [
-            {"imageFile": "TEST1.png", "description": "Descripción 1."},
-            {"imageFile": "TEST2.png", "description": "Descripción 2."}
+            {"imageFile": "TEST1.png", "caption": "Descripción 1."},
+            {"imageFile": "TEST2.png", "caption": "Descripción 2."}
         ],
         "technologies": ["Vue.js", "Spring Boot", "PostgreSQL", "Docker", "Git", "Artillery"],
+        "links": [],
         "tags": ["Frontend", "Backend"]
     },
     {
         "id": 4,
         "title": "Sentiment Analyzer",
+        "date": "Diciembre 2020 - Marzo 2021",
         "description": "Pipeline de análisis de sentimientos de publicaciones en Reddit.",
         "slides": [
-            {"imageFile": "TEST1.png", "description": "Descripción 1."},
-            {"imageFile": "TEST2.png", "description": "Descripción 2."}
+            {"imageFile": "TEST1.png", "caption": "Descripción 1."},
+            {"imageFile": "TEST2.png", "caption": "Descripción 2."}
         ],
         "technologies": ["Vue.js", "PostgreSQL", "MongoDB", "Docker", "Git"],
+        "links": [],
         "tags": ["Frontend", "Backend"]
     },
     {
         "id": 5,
         "title": "Hotel MINGESO",
+        "date": "Octubre 2019",
         "description": "Plataforma para gestión de reservas de habitaciones de hotel.",
         "slides": [
-            {"imageFile": "TEST1.png", "description": "Descripción 1."},
-            {"imageFile": "TEST2.png", "description": "Descripción 2."}
+            {"imageFile": "TEST1.png", "caption": "Descripción 1."},
+            {"imageFile": "TEST2.png", "caption": "Descripción 2."}
         ],
         "technologies": ["Vue.js", "Spring Boot", "MySQL", "Git"],
+        "links": [],
         "tags": ["Frontend", "Backend"]
     },
     {
         "id": 6,
         "title": "TBD Series",
+        "date": "Mayo 2019 - Julio 2019",
         "description": "Proyecto para análisis estadístico de tuits sobre series de televisión.",
         "slides": [
-            {"imageFile": "TEST1.png", "description": "Descripción 1."}
+            {"imageFile": "TEST1.png", "caption": "Descripción 1."}
         ],
         "technologies": ["Vue.js", "Highcharts", "Git"],
+        "links": [],
         "tags": ["Frontend"]
     }
 ]
