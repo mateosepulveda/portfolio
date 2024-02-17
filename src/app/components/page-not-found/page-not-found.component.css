@@ -1,13 +1,30 @@
-.content {
-  margin: 250px;
-  display: flex;
-  flex-direction: column;
-}
-
 .block {
   padding-top: 30px;
 }
 
 p {
   margin: 0px;
+}
+
+.navigate-about {
+  text-align: right;
+}
+
+.arrow {
+  font-size: 20px;
+}
+
+@media (max-width: 700px) {
+  h1 {
+    text-align: center;
+  }
+  
+  .block {
+    flex-direction: column;
+  }
+
+  .block img {
+    margin-bottom: 25px;
+    padding-right: 0px;
+  }
 }

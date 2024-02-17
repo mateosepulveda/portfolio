@@ -75,9 +75,9 @@ export class AppComponent implements OnInit {
         this.hideMenu();
         break;
       case 'credits':
-          this.router.navigate(['/credits']);
-          this.hideMenu();
-          break;
+        this.router.navigate(['/credits']);
+        this.hideMenu();
+        break;
       default:
         this.router.navigate(['/about']);
         this.hideMenu();

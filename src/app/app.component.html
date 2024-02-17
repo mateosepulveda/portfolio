@@ -4,28 +4,32 @@
   </div>
 </div>
 <div *ngIf="!introEnabled" class="fade-in">
-  <div class="toolbar">
-    <div class="toolbar-leftside">
-      <a (click)="toggleMenu()">
-        <div class="menu-openbtn" [class.menu-closebtn]="menuOpen">
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-        </div>
-      </a>
-    </div>
-    <div class="toolbar-rightside">
-      <div class="name">Mateo Sepúlveda</div>
-      <a href="https://github.com/mateosepulveda" target="_blank">
-        <svg class="github" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-width="0" fill="#ffffff" d="M32 0 C14 0 0 14 0 32 0 53 19 62 22 62 24 62 24 61 24 60 L24 55 C17 57 14 53 13 50 13 50 13 49 11 47 10 46 6 44 10 44 13 44 15 48 15 48 18 52 22 51 24 50 24 48 26 46 26 46 18 45 12 42 12 31 12 27 13 24 15 22 15 22 13 18 15 13 15 13 20 13 24 17 27 15 37 15 40 17 44 13 49 13 49 13 51 20 49 22 49 22 51 24 52 27 52 31 52 42 45 45 38 46 39 47 40 49 40 52 L40 60 C40 61 40 62 42 62 45 62 64 53 64 32 64 14 50 0 32 0 Z" />
-        </svg>
-      </a>
-      <a href="https://cl.linkedin.com/" target="_blank">
-        <svg class="linkedin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <path fill="#ffffff" d="M417.2 64H96.8C79.3 64 64 76.6 64 93.9V415c0 17.4 15.3 32.9 32.8 32.9h320.3c17.6 0 30.8-15.6 30.8-32.9V93.9C448 76.6 434.7 64 417.2 64zM183 384h-55V213h55v171zm-25.6-197h-.4c-17.6 0-29-13.1-29-29.5 0-16.7 11.7-29.5 29.7-29.5s29 12.7 29.4 29.5c0 16.4-11.4 29.5-29.7 29.5zM384 384h-55v-93.5c0-22.4-8-37.7-27.9-37.7-15.2 0-24.2 10.3-28.2 20.3-1.5 3.6-1.9 8.5-1.9 13.5V384h-55V213h55v23.8c8-11.4 20.5-27.8 49.6-27.8 36.1 0 63.4 23.8 63.4 75.1V384z"/>
-        </svg>
-      </a>
+  <div class="toolbar-container">
+    <div class="toolbar">
+      <div class="toolbar-leftside">
+        <a (click)="toggleMenu()">
+          <div class="menu-openbtn" [class.menu-closebtn]="menuOpen">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+        </a>
+      </div>
+      <div class="toolbar-middle">
+        <div class="name">Mateo Sepúlveda</div>
+      </div>
+      <div class="toolbar-rightside">
+        <a href="https://github.com/mateosepulveda" target="_blank">
+          <svg class="github" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-width="0" fill="#ffffff" d="M32 0 C14 0 0 14 0 32 0 53 19 62 22 62 24 62 24 61 24 60 L24 55 C17 57 14 53 13 50 13 50 13 49 11 47 10 46 6 44 10 44 13 44 15 48 15 48 18 52 22 51 24 50 24 48 26 46 26 46 18 45 12 42 12 31 12 27 13 24 15 22 15 22 13 18 15 13 15 13 20 13 24 17 27 15 37 15 40 17 44 13 49 13 49 13 51 20 49 22 49 22 51 24 52 27 52 31 52 42 45 45 38 46 39 47 40 49 40 52 L40 60 C40 61 40 62 42 62 45 62 64 53 64 32 64 14 50 0 32 0 Z" />
+          </svg>
+        </a>
+        <a href="https://cl.linkedin.com/" target="_blank">
+          <svg class="linkedin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path fill="#ffffff" d="M417.2 64H96.8C79.3 64 64 76.6 64 93.9V415c0 17.4 15.3 32.9 32.8 32.9h320.3c17.6 0 30.8-15.6 30.8-32.9V93.9C448 76.6 434.7 64 417.2 64zM183 384h-55V213h55v171zm-25.6-197h-.4c-17.6 0-29-13.1-29-29.5 0-16.7 11.7-29.5 29.7-29.5s29 12.7 29.4 29.5c0 16.4-11.4 29.5-29.7 29.5zM384 384h-55v-93.5c0-22.4-8-37.7-27.9-37.7-15.2 0-24.2 10.3-28.2 20.3-1.5 3.6-1.9 8.5-1.9 13.5V384h-55V213h55v23.8c8-11.4 20.5-27.8 49.6-27.8 36.1 0 63.4 23.8 63.4 75.1V384z"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -38,8 +42,8 @@
     </div>
   </div>
 
-  <div class="router-outlet-content">
-    <div class="router-outlet-content-wrapper">
+  <div class="router-outlet-content-container">
+    <div class="router-outlet-content">
       <router-outlet></router-outlet>
     </div>
   </div>

@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProjectService } from './../../project.service';
-import Project from './../../project.interface';
+import { ProjectService } from '../../services/project/project.service';
+import Project from './../../interfaces/project.interface';
 
 @Component({
   selector: 'app-projects-list',
   templateUrl: './projects-list.component.html',
   styleUrls: ['./projects-list.component.css']
 })
-export class ProjectsListComponent {
+export class ProjectsListComponent implements OnInit {
   private projects: Project[] = [];
   projectsFiltered: Project[] = [];
   projectTags: string[] = [];
+  projectsFadeIn: boolean = false;
   currentFilter: string = '';
 
   constructor(private router: Router, private projectService: ProjectService) {
@@ -25,17 +26,29 @@ export class ProjectsListComponent {
     this.currentFilter = '';
   }
 
-  navigateToProject(projectId: number): void {
-    this.router.navigate(['/project/', projectId]);
-  }
-
   unfilterProjects(): void {
-    this.projectsFiltered = [...this.projects];
-    this.currentFilter = '';
+    if (this.projectsFadeIn === false) {
+      this.projectsFadeIn = true;
+      this.projectsFiltered = [...this.projects];
+      this.currentFilter = '';
+      setTimeout(() => {
+        this.projectsFadeIn = false;
+      }, 1000);
+    }
   }
 
   filterProjects(projectTag: string): void {
-    this.projectsFiltered = this.projects.filter(project => project.tags.includes(projectTag));
-    this.currentFilter = projectTag;
+    if (this.projectsFadeIn === false) {
+      this.projectsFadeIn = true;
+      this.projectsFiltered = this.projects.filter(project => project.tags.includes(projectTag));
+      this.currentFilter = projectTag;
+      setTimeout(() => {
+        this.projectsFadeIn = false;
+      }, 1000);
+    }
+  }
+
+  navigateToProject(projectId: number): void {
+    this.router.navigate(['/project/', projectId]);
   }
 }

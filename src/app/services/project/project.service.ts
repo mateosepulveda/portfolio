@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import Project from './project.interface';
+import Project from '../../interfaces/project.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +25,7 @@ export class ProjectService {
     return this.dataPromise;
   }
 
-  setProjectTags() {
+  setProjectTags(): void {
     for (let i = 0; i < this.projects.length; i++) {
       for (let j = 0; j < this.projects[i].tags.length; j++) {
         if (this.projectTags.indexOf(this.projects[i].tags[j]) === -1) {
@@ -36,17 +36,17 @@ export class ProjectService {
     this.projectTags.sort();
   }
 
-  getProjects() {
+  getProjects(): Project[] {
     return this.projects;
   }
 
-  getProjectTags() {
+  getProjectTags(): string[] {
     return this.projectTags;
   }
 
-  getProjectById(projectId: number) {
+  getProjectById(projectId: number): Project | null {
     const projectsFiltered = this.projects.filter(project => project.id === projectId);
-    if (projectsFiltered.length == 1) {
+    if (projectsFiltered.length === 1) {
       return projectsFiltered[0];
     } else {
       return null;

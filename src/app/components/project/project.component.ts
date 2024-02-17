@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { ProjectService } from '../../project.service';
-import Project, { Slide } from './../../project.interface';
+import { ProjectService } from '../../services/project/project.service';
+import Project, { Slide } from './../../interfaces/project.interface';
 
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.css']
 })
-export class ProjectComponent {
+export class ProjectComponent implements OnInit {
   project: Project | null = null;
   slides: Slide[] = [];
   currentSlide: number = 0;
@@ -38,11 +38,11 @@ export class ProjectComponent {
     });
   }
 
-  navigateToProjectsList(): void {
+  navigateProjectsList(): void {
     this.router.navigate(['/projects-list']);
   }
 
-  changeSlide(n: number) {
+  changeSlide(n: number): void {
     if (n > this.slides.length - 1) {
       return;
     }
@@ -67,17 +67,17 @@ export class ProjectComponent {
     this.checkFirstLastSlide();
   }
 
-  checkFirstLastSlide() {
+  checkFirstLastSlide(): void {
     if (this.slides.length === 1) {
       this.firstSlide = true;
       this.lastSlide = true;
     } else {
-      if (this.currentSlide === this.slides.length - 1) {
-        this.firstSlide = false;
-        this.lastSlide = true;
-      } else if (this.currentSlide === 0) {
+      if (this.currentSlide === 0) {
         this.firstSlide = true;
         this.lastSlide = false;
+      } else if (this.currentSlide === this.slides.length - 1) {
+        this.firstSlide = false;
+        this.lastSlide = true;
       } else {
         this.firstSlide = false;
         this.lastSlide = false;
@@ -85,11 +85,11 @@ export class ProjectComponent {
     }
   }
 
-  nextSlide() {
+  nextSlide(): void {
     this.changeSlide(this.currentSlide + 1);
   }
 
-  previousSlide() {
+  previousSlide(): void {
     this.changeSlide(this.currentSlide - 1);
   }
 }

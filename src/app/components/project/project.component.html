@@ -1,10 +1,10 @@
-<div class="content fade-in">
+<div class="fade-in">
   <h1>{{ project!.title }}</h1>
 
   <div class="date-and-navigate">
     <span>{{ project!.date }}</span>
-    <span>
-      <a (click)="navigateToProjectsList()">
+    <span class="navigate-projects-list-top">
+      <a (click)="navigateProjectsList()">
         <b><span class="arrow">&#10094;&#10094;</span> Volver a Proyectos</b>
       </a>
     </span>
@@ -14,19 +14,20 @@
 
   <div class="slideshow">
     <img [src]="'assets/projects/' + project!.id.toString() + '/' + slide.imageFile" *ngFor="let slide of project!.slides; let i = index" [class.image-fade-in]="displaySlides[i]" [class.image-fade-out]="!displaySlides[i]">
-    <div class="caption">
-      <p>{{ project!.slides[currentSlide].caption }}</p>
-    </div>
-    <div class="dot-container" [hidden]="firstSlide && lastSlide">
-      <span class="dot" *ngFor="let slide of project!.slides; let i = index" (click)="changeSlide(i)" [class.dot-active]="displayCaptions[i]"></span> 
-    </div>
     <div class="prev-next">
       <a class="prev" (click)="previousSlide()" [hidden]="firstSlide">&#10094;</a>
       <a class="next" (click)="nextSlide()" [hidden]="lastSlide">&#10095;</a>
     </div>
+    <div class="caption-container">
+      <div class="caption">
+        <p>{{ project!.slides[currentSlide].caption }}</p>
+      </div>
+    </div>
   </div>
-
-  <div class="spacer"></div>
+  
+  <div class="dot-container" *ngIf="!(firstSlide && lastSlide)">
+    <span class="dot" *ngFor="let slide of project!.slides; let i = index" (click)="changeSlide(i)" [class.dot-active]="displayCaptions[i]"></span> 
+  </div>
 
   <div class="technologies-and-links">
     <h3 *ngIf="project!.technologies.length > 0">Tecnologías</h3>
@@ -40,7 +41,7 @@
     </ul>
   </div>
 
-  <a class="navigate-projects-list-bottom" (click)="navigateToProjectsList()">
+  <a class="navigate-projects-list-bottom" (click)="navigateProjectsList()">
     <b><span class="arrow">&#10094;&#10094;</span> Volver a Proyectos</b>
   </a>
 </div>

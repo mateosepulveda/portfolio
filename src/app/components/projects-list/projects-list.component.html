@@ -1,4 +1,4 @@
-<div class="content fade-in">
+<div class="fade-in">
   <h1>Proyectos</h1>
   <div class="block">
     <img src="assets/project-management.png">
@@ -6,22 +6,26 @@
   </div>
 
   <div class="project-section">
-    <p><b>Etiquetas:</b></p>
     <div class="tag-container">
-      <a class="tag" (click)="unfilterProjects()" [class.tag-selected]="currentFilter === ''">
-        Todos los proyectos
-      </a>
-      <a class="tag" *ngFor="let projectTag of projectTags" (click)="filterProjects(projectTag)" [class.tag-selected]="projectTag === currentFilter">
-        {{ projectTag }}
-      </a>
+      <div class="tag-title">
+        <p><b>Etiquetas:</b></p>
+      </div>
+      <div class="tags">
+        <a class="tag" (click)="unfilterProjects()" [class.tag-selected]="currentFilter === ''">
+          Todos los proyectos
+        </a>
+        <a class="tag" *ngFor="let projectTag of projectTags" (click)="filterProjects(projectTag)" [class.tag-selected]="projectTag === currentFilter">
+          {{ projectTag }}
+        </a>
+      </div>
     </div>
 
-    <div>
+    <div class="filter-info">
       <p *ngIf="currentFilter === ''">Mostrando todos los proyectos</p>
       <p *ngIf="currentFilter !== ''">Mostrando proyectos filtrados por: {{ currentFilter }}</p>
     </div>
 
-    <div class="project-container">
+    <div class="project-container" [class.fade-in]="projectsFadeIn">
       <a class="project" *ngFor="let project of projectsFiltered" (click)="navigateToProject(project.id)">
         <img [src]="'assets/projects/' + project!.id.toString() + '/' + project!.slides[0].imageFile">
         <div class="project-name">

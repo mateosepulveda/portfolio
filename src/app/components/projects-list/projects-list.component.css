@@ -1,14 +1,12 @@
-.content {
-  margin: 250px;
-  display: flex;
-  flex-direction: column;
-}
-
 .project-section {
   text-align: center;
 }
 
-.tag-container {
+.tag-title p {
+  margin-bottom: 5px;
+}
+
+.tags {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -18,14 +16,14 @@
   position: relative;
   margin: 10px;
   padding: 0px 20px;
-  height: 60px;
+  min-height: 60px;
   background-color: #383838;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  white-space: nowrap;
   border-radius: 5px;
+  user-select: none;
 }
 
 .tag:hover {
@@ -41,13 +39,12 @@
 .project-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 30px;
   justify-content: center;
 }
 
 .project {
-  margin: 15px;
-  height: auto;
-  flex: 0 0 calc(50% - 40px);
+  width: 485px;
   background-color: white;
   color: black;
   border-radius: 15px;
@@ -74,4 +71,19 @@
 
 .project p {
   padding: 0 5px;
+}
+
+@media (max-width: 700px) {
+  h1 {
+    text-align: center;
+  }
+  
+  .block {
+    flex-direction: column;
+  }
+
+  .block img {
+    margin-top: 30px;
+    padding-right: 0px;
+  }
 }
