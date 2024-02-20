@@ -1,4 +1,4 @@
-<div *ngIf="introEnabled" class="intro intro-fade">
+<div *ngIf="introEnabled" class="intro intro-typewriter intro-fade">
   <div>
     <h1>Bienvenido</h1>
   </div>
@@ -33,12 +33,12 @@
     </div>
   </div>
 
-  <div class="menu" [style.width]="menuWidth">
-    <div class="menu-content" [style.opacity]="menuTextOpacity">
-      <div class="menu-linkbtn"><a (click)="navigate('about')">Sobre mí</a></div>
-      <div class="menu-linkbtn"><a (click)="navigate('projects')">Proyectos</a></div>
-      <div class="menu-linkbtn"><a (click)="navigate('links')">Links</a></div>
-      <div class="menu-linkbtn"><a (click)="navigate('credits')">Créditos</a></div>
+  <div class="menu" [style.height]="menuHeight">
+    <div class="menu-content">
+      <div class="menu-linkbtn"><a (click)="hideMenu()" routerLink="/about">Sobre mí</a></div>
+      <div class="menu-linkbtn"><a (click)="hideMenu()" routerLink="/projects-list">Proyectos</a></div>
+      <div class="menu-linkbtn"><a (click)="hideMenu()" routerLink="/links">Links</a></div>
+      <div class="menu-linkbtn"><a (click)="hideMenu()" routerLink="/credits">Créditos</a></div>
     </div>
   </div>
 

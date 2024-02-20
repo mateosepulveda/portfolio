@@ -9,16 +9,17 @@
 .toolbar-container {
   position: fixed;
   height: 70px;
+  max-height: 30vh;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 2;
-  background: linear-gradient(180deg, rgb(24, 29, 79) 0%, rgb(32, 1, 82) 100%);
+  background-color: rgb(32,1,82);
 }
 
 .toolbar {
   margin: 0 auto;
-  height: 70px;
+  height: 100%;
   max-width: 1000px;
   display: flex;
   align-items: center;
@@ -97,6 +98,27 @@
 
 .intro h1 {
   display: inline-block;
+  border-bottom: none;
+}
+
+.intro-typewriter h1 {
+  margin: 0 auto;
+  border-right: .15em solid #3ebdc9;
+  overflow: hidden;
+  white-space: nowrap;
+  animation:
+    intro-typing 1.5s steps(200, end),
+    intro-blink-caret .5s step-end infinite;
+}
+
+@keyframes intro-typing {
+  from { max-width: 0 }
+  to { max-width: 450px }
+}
+
+@keyframes intro-blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #3ebdc9 }
 }
 
 .intro-fade {
@@ -122,6 +144,17 @@
   100% {opacity: 0;}
 }
 
+.menu {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: linear-gradient(0deg, rgba(24,29,79,0.97) 0%, rgb(32,1,82,0.97) 100%);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
 .menu-content {
   height: 100vh;
   display: flex;
@@ -130,41 +163,23 @@
   text-align: center;
   font-family: 'Comfortaa', sans-serif;
   font-size: 32px;
-  transition: opacity 0.15s ease-in-out;
-  transition-delay: 0.1s;
 }
 
-.menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  background-color: rgba(0,0,0, 0.95);
-  overflow: hidden;
-  transition: 0.5s;
-}
-
-.menu a:not(:hover) {
+.menu-content a:not(:hover) {
   color: white;
-}
-
-.menu-content.active {
-  transition-delay: 0s;
 }
 
 .menu-linkbtn a {
   margin: 4px;
   width: 300px;
   display: inline-block;
-  border: 2px solid #292929;
+  border: 2px solid white;
+  border-radius: 8px;
   padding: 5px;
 }
 
-.menu .menu-closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
+.menu-linkbtn a:hover {
+  border-color: #3ebdc9;
 }
 
 .router-outlet-content-container {

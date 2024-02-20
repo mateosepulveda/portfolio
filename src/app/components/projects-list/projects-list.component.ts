@@ -9,7 +9,7 @@ import Project from './../../interfaces/project.interface';
   styleUrls: ['./projects-list.component.css']
 })
 export class ProjectsListComponent implements OnInit {
-  private projects: Project[] = [];
+  projects: Project[] | null = null;
   projectsFiltered: Project[] = [];
   projectTags: string[] = [];
   projectsFadeIn: boolean = false;
@@ -27,7 +27,7 @@ export class ProjectsListComponent implements OnInit {
   }
 
   unfilterProjects(): void {
-    if (this.projectsFadeIn === false) {
+    if ((this.projects !== null) && (this.projectsFadeIn === false)) {
       this.projectsFadeIn = true;
       this.projectsFiltered = [...this.projects];
       this.currentFilter = '';
@@ -38,7 +38,7 @@ export class ProjectsListComponent implements OnInit {
   }
 
   filterProjects(projectTag: string): void {
-    if (this.projectsFadeIn === false) {
+    if ((this.projects !== null) && (this.projectsFadeIn === false)) {
       this.projectsFadeIn = true;
       this.projectsFiltered = this.projects.filter(project => project.tags.includes(projectTag));
       this.currentFilter = projectTag;
@@ -46,9 +46,5 @@ export class ProjectsListComponent implements OnInit {
         this.projectsFadeIn = false;
       }, 1000);
     }
-  }
-
-  navigateToProject(projectId: number): void {
-    this.router.navigate(['/project/', projectId]);
   }
 }

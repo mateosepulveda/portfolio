@@ -10,6 +10,21 @@ export class ProjectService {
   private projectTags: string[] = [];
   private dataPromise: Promise<void>;
 
+  private monthsDictionary: { [key: number]: string } = {
+    1: 'Enero',
+    2: 'Febrero',
+    3: 'Marzo',
+    4: 'Abril',
+    5: 'Mayo',
+    6: 'Junio',
+    7: 'Julio',
+    8: 'Agosto',
+    9: 'Septiembre',
+    10: 'Octubre',
+    11: 'Noviembre',
+    12: 'Diciembre'
+  }
+
   constructor() {
     this.dataPromise = this.fetchProjects();
   }
@@ -18,11 +33,39 @@ export class ProjectService {
     const response = await fetch(this.projectFile);
     const json = await response.json();
     this.projects = json;
+    this.sortProjects();
+    this.addDateStrings();
     this.setProjectTags();
   }
 
   async dataReady(): Promise<void> {
     return this.dataPromise;
+  }
+
+  sortProjects(): void {
+    this.projects.sort((a, b) => {
+      const yearComparison = b.startDate.year - a.startDate.year;
+      if (yearComparison !== 0) {
+        return yearComparison;
+      } else {
+        return b.startDate.month - a.startDate.month;
+      }
+    });
+  }
+
+  addDateStrings(): void {
+    for (let i = 0; i < this.projects.length; i++) {
+      var dateString = '';
+      if ((this.projects[i].startDate.month === this.projects[i].endDate.month) &&
+          (this.projects[i].startDate.year === this.projects[i].endDate.year)) {
+        dateString = dateString.concat(`${this.monthsDictionary[this.projects[i].startDate.month]} ${this.projects[i].startDate.year}`);
+      } else {
+        dateString = dateString.concat(`${this.monthsDictionary[this.projects[i].startDate.month]} ${this.projects[i].startDate.year}`);
+        dateString = dateString.concat(' - ');
+        dateString = dateString.concat(`${this.monthsDictionary[this.projects[i].endDate.month]} ${this.projects[i].endDate.year}`);
+      }
+      this.projects[i]['dateString'] = dateString;
+    }
   }
 
   setProjectTags(): void {
@@ -46,6 +89,15 @@ export class ProjectService {
 
   getProjectById(projectId: number): Project | null {
     const projectsFiltered = this.projects.filter(project => project.id === projectId);
+    if (projectsFiltered.length === 1) {
+      return projectsFiltered[0];
+    } else {
+      return null;
+    }
+  }
+
+  getProjectByShortTitle(projectShortTitle: string): Project | null {
+    const projectsFiltered = this.projects.filter(project => project.shortTitle === projectShortTitle);
     if (projectsFiltered.length === 1) {
       return projectsFiltered[0];
     } else {

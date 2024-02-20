@@ -15,17 +15,17 @@ export class ProjectComponent implements OnInit {
   currentSlide: number = 0;
   firstSlide: boolean = false;
   lastSlide: boolean = false;
-  displaySlides: boolean[] = Array(this.slides.length).fill(false);
-  displayCaptions: boolean[] = Array(this.slides.length).fill(false);
+  displaySlides: boolean[] = []
+  displayCaptions: boolean[] = []
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private projectService: ProjectService) {
   }
 
   async ngOnInit(): Promise<void> {
     await this.projectService.dataReady();
-    this.activatedRoute.params.subscribe(params => {
-      const projectId = +params['id'];
-      const project = this.projectService.getProjectById(projectId);
+    this.activatedRoute.params.subscribe(async params => {
+      const projectShortTitle = params['shorttitle'];
+      const project = this.projectService.getProjectByShortTitle(projectShortTitle);
       if (project === null) {
         this.router.navigate(['/page-not-found']);
       } else {
@@ -36,10 +36,6 @@ export class ProjectComponent implements OnInit {
         this.changeSlide(this.currentSlide);
       }
     });
-  }
-
-  navigateProjectsList(): void {
-    this.router.navigate(['/projects-list']);
   }
 
   changeSlide(n: number): void {

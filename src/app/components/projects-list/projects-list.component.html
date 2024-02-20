@@ -5,10 +5,10 @@
     <p>Estos son algunos de mis proyectos. Estos trabajos abarcan, entre otros ámbitos, el desarrollo de aplicaciones web mediante diferentes lenguajes y frameworks, el procesamiento de datos en streaming en tiempo real, y el uso de machine learning para análisis de datos.</p>
   </div>
 
-  <div class="project-section">
+  <div class="project-section fade-in" *ngIf="projects !== null">
     <div class="tag-container">
       <div class="tag-title">
-        <p><b>Etiquetas:</b></p>
+        <p>Etiquetas:</p>
       </div>
       <div class="tags">
         <a class="tag" (click)="unfilterProjects()" [class.tag-selected]="currentFilter === ''">
@@ -26,12 +26,15 @@
     </div>
 
     <div class="project-container" [class.fade-in]="projectsFadeIn">
-      <a class="project" *ngFor="let project of projectsFiltered" (click)="navigateToProject(project.id)">
-        <img [src]="'assets/projects/' + project!.id.toString() + '/' + project!.slides[0].imageFile">
+      <a class="project" *ngFor="let project of projectsFiltered" [routerLink]="'/project/' + project.shortTitle">
+        <img [src]="'assets/projects/' + project.shortTitle.toString() + '/' + project.slides[0].imageFile">
         <div class="project-name">
-          <p>{{ project.title }}</p>
+          <p>{{ project.longTitle }}</p>
         </div>
       </a>
     </div>
+  </div>
+  <div class="wait" *ngIf="projects === null">
+    <p>Espere por favor...</p>
   </div>
 </div>

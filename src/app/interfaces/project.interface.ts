@@ -1,3 +1,8 @@
+export interface Date {
+    month: number;
+    year: number;
+}
+
 export interface Slide {
     imageFile: string;
     caption: string;
@@ -10,8 +15,11 @@ export interface Link {
 
 export interface Project {
     id: number;
-    title: string;
-    date: string;
+    shortTitle: string;
+    longTitle: string;
+    startDate: Date;
+    endDate: Date;
+    dateString?: string;
     description: string;
     slides: Slide[];
     technologies: string[];

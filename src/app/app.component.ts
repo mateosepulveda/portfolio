@@ -10,14 +10,15 @@ import { filter } from 'rxjs/operators';
 export class AppComponent implements OnInit {
   title = 'portfolio';
   introEnabled = true;
-  menuWidth = '0%';
-  menuTextOpacity = '0';
+  menuHeight = '0%';
   menuOpen = false;
 
   constructor(private renderer2: Renderer2, private router: Router) {
   }
 
   ngOnInit(): void {
+    this.renderer2.setStyle(document.body, 'overflow-y', 'scroll');
+
     setTimeout(() => {
       this.introEnabled = false;
     }, 3000);
@@ -34,22 +35,20 @@ export class AppComponent implements OnInit {
     .pipe(filter(event => event instanceof NavigationEnd))
     .subscribe(() => {
       window.scrollTo(0, 0);
-      this.hideMenu();
     });
   }
 
   showMenu(): void {
-    this.menuWidth = '100%';
-    this.menuTextOpacity = '1';
+    this.menuHeight = '100%';
     this.menuOpen = true;
-    this.renderer2.setStyle(document.body, 'overflow', 'hidden');
+    this.renderer2.setStyle(document.body, 'height', '100vh');
+    //this.renderer2.setStyle(document.body, 'overflow-y', 'hidden');
   }
 
   hideMenu(): void {
-    this.menuWidth = '0%';
-    this.menuTextOpacity = '0';
+    this.menuHeight = '0%';
     this.menuOpen = false;
-    this.renderer2.removeStyle(document.body, 'overflow');
+    //this.renderer2.setStyle(document.body, 'overflow-y', 'scroll');
   }
 
   toggleMenu(): void {
@@ -57,30 +56,6 @@ export class AppComponent implements OnInit {
       this.showMenu();
     } else {
       this.hideMenu();
-    }
-  }
-
-  navigate(destination: string): void {
-    switch (destination) {
-      case 'about':
-        this.router.navigate(['/about']);
-        this.hideMenu();
-        break;
-      case 'projects':
-        this.router.navigate(['/projects-list']);
-        this.hideMenu();
-        break;
-      case 'links':
-        this.router.navigate(['/links']);
-        this.hideMenu();
-        break;
-      case 'credits':
-        this.router.navigate(['/credits']);
-        this.hideMenu();
-        break;
-      default:
-        this.router.navigate(['/about']);
-        this.hideMenu();
     }
   }
 }

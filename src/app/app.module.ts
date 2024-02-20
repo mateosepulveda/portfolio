@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { APP_BASE_HREF, PlatformLocation } from '@angular/common';
+import { RouteReuseStrategy } from '@angular/router';
+import { CustomRouteReuseStrategy } from './custom-route-reuse-strategy';
 
 import { AboutComponent } from './components/about/about.component';
 import { ProjectsListComponent } from './components/projects-list/projects-list.component';
@@ -26,7 +27,7 @@ import { ProjectService } from './services/project/project.service';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ProjectService],
+  providers: [ProjectService, { provide: RouteReuseStrategy, useClass: CustomRouteReuseStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

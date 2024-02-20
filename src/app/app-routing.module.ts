@@ -10,7 +10,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'projects-list', component: ProjectsListComponent },
-  { path: 'project/:id', component: ProjectComponent },
+  { path: 'project/:shorttitle', component: ProjectComponent },
   { path: 'links', component: LinksComponent },
   { path: 'credits', component: CreditsComponent },
   { path: '', component: AboutComponent },
