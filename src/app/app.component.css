@@ -156,10 +156,6 @@
   overflow-y: auto;
 }
 
-.menu-content a:not(:hover) {
-  color: white;
-}
-
 .menu-linkbtn a {
   margin: 0.2rem;
   width: 10rem;
@@ -172,6 +168,10 @@
 
 .menu-linkbtn a:hover {
   border-color: var(--linkcolor);
+}
+
+.menu-linkbtn a:not(:hover) {
+  color: white;
 }
 
 .router-outlet-content-container {
