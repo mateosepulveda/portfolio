@@ -107,7 +107,7 @@
 
 @keyframes intro-blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: var(--linkcolor) }
+  50% { border-color: #3ebdc9 }
 }
 
 .intro-fade {
