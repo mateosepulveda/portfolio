@@ -10,7 +10,7 @@ import { filter } from 'rxjs/operators';
 export class AppComponent implements OnInit {
   title = 'portfolio';
   introEnabled = true;
-  menuHeight = '0%';
+  menuHeight = '0vh';
   menuOpen = false;
 
   constructor(private renderer2: Renderer2, private router: Router) {
@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
   }
 
   showMenu(): void {
-    this.menuHeight = '100%';
+    this.menuHeight = '100vh';
     this.menuOpen = true;
     setTimeout(() => {
       this.renderer2.setStyle(document.body, 'overflow-y', 'hidden');

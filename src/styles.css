@@ -13,10 +13,9 @@
 :root::before {
   position: fixed;
   width: 50%;
-  height: 0;
+  height: 100vh;
   top: 50%;
   right: 0;
-  padding-bottom: 100%;
   z-index: -1;
   background: url('assets/3dcomputer-freepik.png') no-repeat center center;
   background-size: contain;
