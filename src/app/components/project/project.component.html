@@ -42,9 +42,11 @@
       </ul>
     </div>
 
-    <a class="navigate-projects-list-bottom" routerLink="/projects-list">
-      <b><span class="arrow">&#10094;&#10094;</span> Volver a Proyectos</b>
-    </a>
+    <div class="navigate-projects-list-bottom">
+      <a routerLink="/projects-list">
+        <b><span class="arrow">&#10094;&#10094;</span> Volver a Proyectos</b>
+      </a>
+    </div>
   </div>
   <div class="wait" *ngIf="project === null">
     <p>Espere por favor...</p>

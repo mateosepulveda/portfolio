@@ -78,7 +78,7 @@
 }
 
 .wait {
-  color: #ffce32;
+  color: var(--titlecolor);
   text-align: center;
 }
 

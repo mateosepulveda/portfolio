@@ -1,5 +1,5 @@
 .divider {
-  color: #ffce32;
+  color: var(--titlecolor);
 }
 
 @media screen and (max-width: 700px) {

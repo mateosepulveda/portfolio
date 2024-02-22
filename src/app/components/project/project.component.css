@@ -1,7 +1,7 @@
 .date-and-navigate {
   margin-top: 10px;
   display: flex;
-  color: #ffce32;
+  color: var(--titlecolor);
   justify-content: space-between;
 }
 
@@ -136,7 +136,7 @@
 
 .dot-active,
 .dot:hover {
-  background-color: #3ebdc9;
+  background-color: var(--linkcolor);
 }
 
 .technologies-and-links {
@@ -144,15 +144,14 @@
 }
 
 .navigate-projects-list-bottom {
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 .wait {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #ffce32;
+  color: var(--titlecolor);
   text-align: center;
   font-size: 3.5rem;
 }
@@ -201,6 +200,6 @@
   }
 
   .navigate-projects-list-bottom {   
-    display: inline;
+    text-align: left;
   }
 }

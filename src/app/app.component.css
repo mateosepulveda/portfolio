@@ -21,7 +21,7 @@
 }
 
 .toolbar-leftside a:hover .menu-openbtn .line {
-  background-color: #3ebdc9;
+  background-color: var(--linkcolor);
 }
 
 .toolbar-leftside .menu-openbtn {
@@ -54,7 +54,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  color: #ffce32;
+  color: var(--titlecolor);
   font-size: 20px;
 }
 
@@ -92,7 +92,7 @@
 
 .intro-typewriter h1 {
   margin: 0 auto;
-  border-right: .15em solid #3ebdc9;
+  border-right: .15em solid var(--linkcolor);
   overflow: hidden;
   white-space: nowrap;
   animation:
@@ -107,7 +107,7 @@
 
 @keyframes intro-blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: #3ebdc9 }
+  50% { border-color: var(--linkcolor) }
 }
 
 .intro-fade {
@@ -168,12 +168,10 @@
   display: inline-block;
   border: 2px solid white;
   border-radius: 8px;
-  transition: color 0.3s;
 }
 
 .menu-linkbtn a:hover {
-  border-color: #3ebdc9;
-  transition: 0.3s;
+  border-color: var(--linkcolor);
 }
 
 .router-outlet-content-container {

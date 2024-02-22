@@ -6,6 +6,8 @@
   color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --titlecolor: #ffce32;
+  --linkcolor: #3ebdc9
 }
 
 :root::before {
@@ -26,9 +28,9 @@ h1 {
   margin: 0;
   display: flex;
   flex-direction: column;
-  color: #ffce32;
+  color: var(--titlecolor);
   font-family: 'Comfortaa', sans-serif;
-  border-bottom: 2px solid #ffce32;
+  border-bottom: 2px solid var(--titlecolor);
 }
 
 h2,
@@ -37,27 +39,27 @@ h4,
 h5,
 h6 {
   margin-bottom: 0;
-  color: #ffce32;
+  color: var(--titlecolor);
   font-family: 'Comfortaa', sans-serif;
 }
 
 a {
   text-decoration: none;
   color: #62db44;
-  transition: 0.3s;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
 }
 
 a:hover {
-  color: #3ebdc9;
+  color: var(--linkcolor);
   cursor: pointer;
 }
 
 a path {
-  transition: 0.3s;
+  transition: fill 0.3s;
 }
 
 a:hover path {
-  fill: #3ebdc9;
+  fill: var(--linkcolor);
 }
 
 li {
