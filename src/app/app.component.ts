@@ -19,10 +19,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.renderer2.setStyle(document.body, 'overflow-y', 'scroll');
 
-    setTimeout(() => {
-      this.introEnabled = false;
-    }, 3000);
-
     this.router.events.pipe(
       filter((event): event is NavigationEnd => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
@@ -31,24 +27,30 @@ export class AppComponent implements OnInit {
       }
     });
 
+    setTimeout(() => {
+      this.introEnabled = false;
+    }, 3000);
+
     this.router.events
     .pipe(filter(event => event instanceof NavigationEnd))
     .subscribe(() => {
       window.scrollTo(0, 0);
+      this.hideMenu();
     });
   }
 
   showMenu(): void {
     this.menuHeight = '100%';
     this.menuOpen = true;
-    this.renderer2.setStyle(document.body, 'height', '100vh');
-    //this.renderer2.setStyle(document.body, 'overflow-y', 'hidden');
+    setTimeout(() => {
+      this.renderer2.setStyle(document.body, 'overflow-y', 'hidden');
+    }, 300);
   }
 
   hideMenu(): void {
+    this.renderer2.setStyle(document.body, 'overflow-y', 'scroll');
     this.menuHeight = '0%';
     this.menuOpen = false;
-    //this.renderer2.setStyle(document.body, 'overflow-y', 'scroll');
   }
 
   toggleMenu(): void {

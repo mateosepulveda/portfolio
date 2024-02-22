@@ -61,9 +61,10 @@
 }
 
 .project img {
-  padding-top: 10px;
+  margin-top: 10px;
   width: 95%;
-  border-radius: 20px;
+  border: 1px solid gray;
+  border-radius: 3% / 5.33%;
 }
 
 .project-name {
@@ -81,7 +82,7 @@
   text-align: center;
 }
 
-@media (max-width: 700px) {
+@media screen and (max-width: 700px) {
   h1 {
     text-align: center;
   }
@@ -93,5 +94,9 @@
   .block img {
     margin-top: 30px;
     padding-right: 0px;
+  }
+
+  .tag {
+    min-height: 40px;
   }
 }

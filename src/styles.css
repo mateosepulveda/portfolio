@@ -1,6 +1,11 @@
 :root {
   background: linear-gradient(180deg, rgba(32,39,105,1) 0%, rgba(49,0,128,1) 100%);
   background-attachment: fixed;
+  font-family: -apple-system, BlinkMacSystemFont, "Space Grotesk", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 25px;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 :root::before {
@@ -73,6 +78,11 @@ li ul {
   padding-right: 30px;
 }
 
+.arrow {
+  margin-right: 5px;
+  font-size: 1rem;
+}
+
 .fade-in {
   -webkit-animation-name: fade-in;
   animation-name: fade-in;
@@ -92,33 +102,8 @@ li ul {
   100% {opacity: 1;}
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
- 
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* TEST ON FIREFOX */
-
-body {
-  scrollbar-width: thin;
-  scrollbar-color: #888 #f1f1f1;
-}
-
-body::-moz-scrollbar-thumb {
-  background: #888;
-}
-
-body::-moz-scrollbar-thumb:hover {
-  background: #555;
+@media screen and (max-width: 700px) {
+  :root {
+    font-size: 17px;
+  }
 }

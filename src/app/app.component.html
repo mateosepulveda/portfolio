@@ -3,7 +3,7 @@
     <h1>Bienvenido</h1>
   </div>
 </div>
-<div *ngIf="!introEnabled" class="fade-in">
+<div [hidden]="introEnabled" class="fade-in">
   <div class="toolbar-container">
     <div class="toolbar">
       <div class="toolbar-leftside">
@@ -16,7 +16,7 @@
         </a>
       </div>
       <div class="toolbar-middle">
-        <div class="name">Mateo Sepúlveda</div>
+        Mateo Sepúlveda
       </div>
       <div class="toolbar-rightside">
         <a href="https://github.com/mateosepulveda" target="_blank">
@@ -34,11 +34,13 @@
   </div>
 
   <div class="menu" [style.height]="menuHeight">
-    <div class="menu-content">
-      <div class="menu-linkbtn"><a (click)="hideMenu()" routerLink="/about">Sobre mí</a></div>
-      <div class="menu-linkbtn"><a (click)="hideMenu()" routerLink="/projects-list">Proyectos</a></div>
-      <div class="menu-linkbtn"><a (click)="hideMenu()" routerLink="/links">Links</a></div>
-      <div class="menu-linkbtn"><a (click)="hideMenu()" routerLink="/credits">Créditos</a></div>
+    <div class="menu-content-wrapper">
+      <div class="menu-content">
+        <div class="menu-linkbtn"><a (click)="hideMenu()" routerLink="/about">Sobre mí</a></div>
+        <div class="menu-linkbtn"><a (click)="hideMenu()" routerLink="/projects-list">Proyectos</a></div>
+        <div class="menu-linkbtn"><a (click)="hideMenu()" routerLink="/links">Links</a></div>
+        <div class="menu-linkbtn"><a (click)="hideMenu()" routerLink="/credits">Créditos</a></div>
+      </div>
     </div>
   </div>
 

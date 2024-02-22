@@ -37,8 +37,12 @@
   height: 100%;
 }
 
-@media (max-width: 700px) {
+@media screen and (max-width: 900px) {
   h1 {
+    text-align: center;
+  }
+
+  p {
     text-align: center;
   }
   
@@ -49,5 +53,14 @@
 
   .link {
     margin-bottom: 20px;
+    width: 200px;
+    height: 48px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .link-container {
+    display: inline;
+    align-items: left;
   }
 }

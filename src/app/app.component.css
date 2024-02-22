@@ -1,16 +1,8 @@
-:host {
-  font-family: -apple-system, BlinkMacSystemFont, "Space Grotesk", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: x-large;
-  color: white;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 .toolbar-container {
   position: fixed;
+  width: 100vw;
   height: 70px;
   max-height: 30vh;
-  width: 100%;
   top: 0;
   left: 0;
   z-index: 2;
@@ -19,15 +11,13 @@
 
 .toolbar {
   margin: 0 auto;
+  padding-right: 20px;
   height: 100%;
-  max-width: 1000px;
+  max-width: 1010px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.toolbar-leftside {
-  margin-left: -7px;
+  overflow: hidden;
 }
 
 .toolbar-leftside a:hover .menu-openbtn .line {
@@ -69,13 +59,12 @@
 }
 
 .toolbar-rightside {
-  margin-right: -5px;
   display: flex;
   align-items: center;
 }
 
 .toolbar-rightside a {
-  margin-top: 10px;
+  margin-top: 6px;
   margin-left: 16px;
 }
 
@@ -93,7 +82,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  font-size: 36px;
+  font-size: 1.5rem;
 }
 
 .intro h1 {
@@ -150,19 +139,21 @@
   top: 0;
   left: 0;
   z-index: 1;
-  background: linear-gradient(0deg, rgba(24,29,79,0.97) 0%, rgb(32,1,82,0.97) 100%);
+  background: linear-gradient(0deg, rgba(24,29,79,1) 0%, rgb(32,1,82,1) 100%);
   overflow: hidden;
   transition: 0.3s;
 }
 
-.menu-content {
+.menu-content-wrapper {
+  padding-left: calc(100vw - 100%);
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   font-family: 'Comfortaa', sans-serif;
-  font-size: 32px;
+  font-size: 1.4rem;
+  overflow-y: auto;
 }
 
 .menu-content a:not(:hover) {
@@ -170,20 +161,24 @@
 }
 
 .menu-linkbtn a {
-  margin: 4px;
-  width: 300px;
+  margin: 0.2rem;
+  width: 10rem;
+  height: 1rem;
+  padding: 0.4rem 0.4rem 0.8rem 0.4rem;
   display: inline-block;
   border: 2px solid white;
   border-radius: 8px;
-  padding: 5px;
+  transition: color 0.3s;
 }
 
 .menu-linkbtn a:hover {
   border-color: #3ebdc9;
+  transition: 0.3s;
 }
 
 .router-outlet-content-container {
   min-height: calc(100vh - 70px);
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -195,21 +190,39 @@
   max-width: 1000px;
 }
 
-@media (max-width: 500px) {
-  .toolbar-middle .name {
+@media screen and (max-height: 400px) {
+  .menu-content {
+    margin-top: 70px;
+    scale: 0.7;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .toolbar {
+    margin-left: 10px;
+    margin-right: 14px;
+  }
+
+  .toolbar-leftside {
+    margin-left: 14px;
+  }
+  
+  .router-outlet-content {
+    margin: 100px auto 25px auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .toolbar-middle {
     display: none;
   }
 }
 
-@media (max-width: 700px) {
-  .router-outlet-content {
-    margin: 100px auto 20px auto;
+@media screen and (max-width: 200px) {
+  .toolbar-middle {
+    display: none;
   }
-}
-
-@media (max-width: 1000px) {
-  .toolbar {
-    margin-left: 14px;
-    margin-right: 14px;
+  .toolbar-rightside {
+    display: none;
   }
 }
