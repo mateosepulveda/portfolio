@@ -8,9 +8,14 @@
   -moz-osx-font-smoothing: grayscale;
   --titlecolor: #ffce32;
   --linkcolor: #3ebdc9;
+  
+  height: 100%;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-:root::before {
+/* :root::before {
   position: fixed;
   width: 50%;
   height: 100%;
@@ -22,7 +27,7 @@
   opacity: 0.2;
   transform: translateY(-50%);
   content: "";
-}
+} */
 
 h1 {
   margin: 0;
@@ -107,11 +112,5 @@ li ul {
 @media screen and (max-width: 700px) {
   :root {
     font-size: 17px;
-  }
-}
-
-@media screen and (max-device-width: 600px) {
-  :root::before {
-    display: none;
   }
 }
