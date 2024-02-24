@@ -110,8 +110,8 @@ li ul {
   }
 }
 
-/* @media screen and (max-device-width: 600px) {
+@media screen and (max-device-width: 600px) {
   :root::before {
     display: none;
   }
-} */
+}
