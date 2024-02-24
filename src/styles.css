@@ -1,5 +1,4 @@
 :root {
-  height: 110%;
   background: linear-gradient(180deg, rgba(32,39,105,1) 0%, rgba(49,0,128,1) 100%);
   background-attachment: fixed;
   font-family: -apple-system, BlinkMacSystemFont, "Space Grotesk", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -9,12 +8,16 @@
   -moz-osx-font-smoothing: grayscale;
   --titlecolor: #ffce32;
   --linkcolor: #3ebdc9;
+  
+  height: 100%;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
 :root::before {
   position: fixed;
   width: 50%;
-  height: 110%;
+  height: 100%;
   top: 50%;
   right: 0;
   z-index: -1;
