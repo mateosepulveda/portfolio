@@ -8,10 +8,6 @@
   -moz-osx-font-smoothing: grayscale;
   --titlecolor: #ffce32;
   --linkcolor: #3ebdc9;
-  
-  height: 100%;
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
 }
 
 :root::before {
@@ -111,5 +107,12 @@ li ul {
 @media screen and (max-width: 700px) {
   :root {
     font-size: 17px;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  :root {
+    height: calc(100% + 60px);
+    min-height: calc(100% + 60px);
   }
 }
