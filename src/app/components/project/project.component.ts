@@ -13,6 +13,7 @@ export class ProjectComponent implements OnInit {
   project: Project | null = null;
   slides: Slide[] = [];
   currentSlide: number = 0;
+  zIndexSlide: number = 0;
   firstSlide: boolean = false;
   lastSlide: boolean = false;
   displaySlides: boolean[] = []
@@ -38,14 +39,15 @@ export class ProjectComponent implements OnInit {
     });
   }
 
-  changeSlide(n: number): void {
-    if (n > this.slides.length - 1) {
+  changeSlide(slideIndex: number): void {
+    if (slideIndex > this.slides.length - 1) {
       return;
     }
-    if (n < 0) {
+    if (slideIndex < 0) {
       return;
     }
-    this.currentSlide = n;
+    var currentSlideSnapshot = this.currentSlide;
+    this.currentSlide = slideIndex;
     for (let i = 0; i < this.displaySlides.length; i++) {
       if (i <= this.currentSlide) {
         this.displaySlides[i] = true;
@@ -61,6 +63,7 @@ export class ProjectComponent implements OnInit {
       }
     }
     this.checkFirstLastSlide();
+    this.changeZIndex(currentSlideSnapshot, slideIndex);
   }
 
   checkFirstLastSlide(): void {
@@ -78,6 +81,16 @@ export class ProjectComponent implements OnInit {
         this.firstSlide = false;
         this.lastSlide = false;
       }
+    }
+  }
+
+  changeZIndex(currentSlideSnapshot: number, slideIndex: number): void {
+    if (slideIndex > currentSlideSnapshot) {
+      this.zIndexSlide = this.currentSlide;
+    } else {
+      setTimeout(() => {
+        this.zIndexSlide = this.currentSlide;
+      }, 500);
     }
   }
 

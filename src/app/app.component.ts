@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.renderer2.setStyle(document.body, 'height', '100vh');
     this.renderer2.setStyle(document.body, 'overflow-y', 'scroll');
 
     this.router.events.pipe(

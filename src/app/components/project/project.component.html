@@ -14,7 +14,7 @@
     <p>{{ project.description }}</p>
 
     <div class="slideshow">
-      <img [src]="'assets/projects/' + project.shortTitle.toString() + '/' + slide.imageFile" *ngFor="let slide of project.slides; let i = index" [class.image-fade-in]="displaySlides[i]" [class.image-fade-out]="!displaySlides[i]">
+      <img [src]="'assets/projects/' + project.shortTitle + '/' + slide.imageFile" *ngFor="let slide of project.slides; let i = index" [class.image-fade-in]="displaySlides[i]" [class.image-fade-out]="!displaySlides[i]" [style.z-index]="zIndexSlide === i ? 1 : 0">
       <div class="prev-next">
         <a class="prev" (click)="previousSlide()" [hidden]="firstSlide">&#10094;</a>
         <a class="next" (click)="nextSlide()" [hidden]="lastSlide">&#10095;</a>

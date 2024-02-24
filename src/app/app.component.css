@@ -92,7 +92,7 @@
 
 .intro-typewriter h1 {
   margin: 0 auto;
-  border-right: .15em solid var(--linkcolor);
+  border-right: .15em solid #3ebdc9;
   overflow: hidden;
   white-space: nowrap;
   animation:

@@ -70,7 +70,7 @@
   display: flex;
   align-items: center;
   grid-area: 1/1/2/4;
-  z-index: 1;
+  z-index: 10;
 }
 
 .prev,
@@ -102,7 +102,7 @@
   align-items: flex-end;
   justify-content: center;
   grid-area: 1/1/2/4;
-  z-index: 0;
+  z-index: 9;
 }
 
 .caption {
@@ -156,7 +156,8 @@
   font-size: 3.5rem;
 }
 
-@media screen and (max-width: 900px) and (max-height: 400px) {
+@media screen and (max-device-width: 400px) and (max-device-height: 900px) {
+/* @media screen and (max-width: 900px) and (max-height: 400px) { */
   .slideshow {
     width: 500px;
   }
