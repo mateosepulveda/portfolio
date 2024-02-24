@@ -1,5 +1,4 @@
 :root {
-  height: 100vh;
   background: linear-gradient(180deg, rgba(32,39,105,1) 0%, rgba(49,0,128,1) 100%);
   background-attachment: fixed;
   font-family: -apple-system, BlinkMacSystemFont, "Space Grotesk", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -14,12 +13,12 @@
 :root::before {
   position: fixed;
   width: 50%;
-  height: 100vh;
+  height: 100%;
   top: 50%;
   right: 0;
   z-index: -1;
   background: url('assets/3dcomputer-freepik.png') no-repeat center center;
-  background-size: cover;
+  background-size: contain;
   opacity: 0.2;
   transform: translateY(-50%);
   content: "";
@@ -110,3 +109,9 @@ li ul {
     font-size: 17px;
   }
 }
+
+/* @media screen and (max-device-width: 600px) {
+  :root::before {
+    display: none;
+  }
+} */

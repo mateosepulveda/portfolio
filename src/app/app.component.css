@@ -97,7 +97,7 @@
   white-space: nowrap;
   animation:
     intro-typing 1.5s steps(200, end),
-    intro-blink-caret .5s step-end infinite;
+    intro-blink-caret 1s step-end infinite;
 }
 
 @keyframes intro-typing {
