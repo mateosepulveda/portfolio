@@ -8,7 +8,6 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'portfolio';
   introEnabled = true;
   menuHeight = '0vh';
   menuOpen = false;

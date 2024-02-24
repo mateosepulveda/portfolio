@@ -111,15 +111,15 @@
 }
 
 @-webkit-keyframes intro-blink-caret {
-  0% {border-color: transparent;}
+  0% {border-color: pink;}
   50% {border-color: #3ebdc9;}
-  100% {border-color: transparent;}
+  100% {border-color: pink;}
 }
 
 @keyframes intro-blink-caret {
-  0% {border-color: transparent;}
+  0% {border-color: pink;}
   50% {border-color: #3ebdc9;}
-  100% {border-color: transparent;}
+  100% {border-color: pink;}
 }
 
 .intro-fade {
