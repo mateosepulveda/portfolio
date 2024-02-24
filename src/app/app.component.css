@@ -96,8 +96,8 @@
   overflow: hidden;
   white-space: nowrap;
   animation:
-    intro-reveal-text 1.5s steps(200, end),
-    intro-blink-caret 0.5s step-end infinite;
+    intro-blink-caret 0.5s step-end infinite,
+    intro-reveal-text 1.5s steps(200, end);
 }
 
 @-webkit-keyframes intro-reveal-text {
@@ -111,15 +111,15 @@
 }
 
 @-webkit-keyframes intro-blink-caret {
-  0% {border-color: pink;}
+  0% {border-color: transparent;}
   50% {border-color: #3ebdc9;}
-  100% {border-color: pink;}
+  100% {border-color: transparent;}
 }
 
 @keyframes intro-blink-caret {
-  0% {border-color: pink;}
+  0% {border-color: transparent;}
   50% {border-color: #3ebdc9;}
-  100% {border-color: pink;}
+  100% {border-color: transparent;}
 }
 
 .intro-fade {
