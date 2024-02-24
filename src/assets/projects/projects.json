@@ -90,9 +90,8 @@
         "description": "Desarrollo de ambiente para gestión de simulaciones de estudiantes, en el marco del ecosistema NEURONE, orientado a estudios de alfabetización informacional.",
         "slides": [
             {"imageFile": "neurone1.jpg", "caption": "Herramienta de diseño gráfico para modelos de comportamiento."},
-            {"imageFile": "neurone2.jpg", "caption": "Descripción 2."},
-            {"imageFile": "TEST3.png", "caption": "Descripción 3."},
-            {"imageFile": "TEST4.png", "caption": "Descripción 4."}
+            {"imageFile": "TEST2.png", "caption": "Descripción 2."},
+            {"imageFile": "TEST3.png", "caption": "Descripción 3."}
         ],
         "technologies": ["Angular", "JointJS", "Node.js", "Express", "MongoDB"],
         "links": [

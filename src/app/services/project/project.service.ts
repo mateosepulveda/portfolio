@@ -87,15 +87,6 @@ export class ProjectService {
     return this.projectTags;
   }
 
-  getProjectById(projectId: number): Project | null {
-    const projectsFiltered = this.projects.filter(project => project.id === projectId);
-    if (projectsFiltered.length === 1) {
-      return projectsFiltered[0];
-    } else {
-      return null;
-    }
-  }
-
   getProjectByShortTitle(projectShortTitle: string): Project | null {
     const projectsFiltered = this.projects.filter(project => project.shortTitle === projectShortTitle);
     if (projectsFiltered.length === 1) {

@@ -92,41 +92,34 @@
 
 .intro-typewriter h1 {
   margin: 0 auto;
+  padding-right: 10px;
   border-right: .15em solid #3ebdc9;
   overflow: hidden;
   white-space: nowrap;
-  animation:
-    intro-text-reveal 1.5s steps(50, end);
+  animation-name: intro-text, intro-caret;
+  animation-duration: 1.5s, 0.7s;
+  animation-timing-function: steps(200, end), step-end;
+  animation-iteration-count: 1, infinite;
 }
 
-@-webkit-keyframes intro-text-reveal {
-  0% {
-    max-width: 0px;
-    border-color: #3ebdc9;
-  }
-  50% {
-    max-width: 225px;
-    border-color: transparent;
-  }
-  100% {
-    max-width: 450px;
-    border-color: #3ebdc9;
-  }
+@-webkit-keyframes intro-text {
+  0% {max-width: 0;}
+  100% {max-width: 450px;}
 }
 
-@keyframes intro-text-reveal {
-  0% {
-    max-width: 0px;
-    border-color: #3ebdc9;
-  }
-  50% {
-    max-width: 225px;
-    border-color: transparent;
-  }
-  100% {
-    max-width: 450px;
-    border-color: #3ebdc9;
-  }
+@keyframes intro-text {
+  0% {max-width: 0;}
+  100% {max-width: 450px;}
+}
+
+@-webkit-keyframes intro-caret {
+  0%, 100% {border-color: transparent;}
+  50% {border-color: #3ebdc9;}
+}
+
+@keyframes intro-caret {
+  0%, 100% {border-color: transparent;}
+  50% {border-color: #3ebdc9;}
 }
 
 .intro-fade {
