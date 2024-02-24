@@ -110,9 +110,9 @@ li ul {
   }
 }
 
-@media only screen and (max-device-width: 480px) {
+@media screen and (max-width: 900px) {
   :root {
-    height: calc(100% + 60px);
-    min-height: calc(100% + 60px);
+    height: calc(100% + 800px);
+    min-height: calc(100% + 800px);
   }
 }

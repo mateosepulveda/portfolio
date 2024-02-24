@@ -96,30 +96,30 @@
   overflow: hidden;
   white-space: nowrap;
   animation:
-    intro-typing 1.5s steps(200, end),
-    intro-blink-caret .5s step-end infinite;
+    intro-reveal-text 1.5s steps(200, end),
+    intro-blink-caret 0.5s step-end infinite;
 }
 
-@-webkit-keyframes intro-typing {
-  0% { max-width: 0 }
-  100% { max-width: 450px }
+@-webkit-keyframes intro-reveal-text {
+  0% {max-width: 0;}
+  100% {max-width: 450px;}
 }
 
-@keyframes intro-typing {
-  0% { max-width: 0 }
-  100% { max-width: 450px }
+@keyframes intro-reveal-text {
+  0% {max-width: 0;}
+  100% {max-width: 450px;}
 }
 
 @-webkit-keyframes intro-blink-caret {
-  0% { border-color: transparent }
-  50% { border-color: #3ebdc9 }
-  100% { border-color: transparent }
+  0% {border-color: transparent;}
+  50% {border-color: #3ebdc9;}
+  100% {border-color: transparent;}
 }
 
 @keyframes intro-blink-caret {
-  0% { border-color: transparent }
-  50% { border-color: #3ebdc9 }
-  100% { border-color: transparent }
+  0% {border-color: transparent;}
+  50% {border-color: #3ebdc9;}
+  100% {border-color: transparent;}
 }
 
 .intro-fade {
