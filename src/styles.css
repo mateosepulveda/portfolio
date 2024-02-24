@@ -1,4 +1,5 @@
 :root {
+  height: 110%;
   background: linear-gradient(180deg, rgba(32,39,105,1) 0%, rgba(49,0,128,1) 100%);
   background-attachment: fixed;
   font-family: -apple-system, BlinkMacSystemFont, "Space Grotesk", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -8,17 +9,12 @@
   -moz-osx-font-smoothing: grayscale;
   --titlecolor: #ffce32;
   --linkcolor: #3ebdc9;
-  
-  /* height: 100%;
-  /* margin: 0; /* Remove default margin */
-  /* padding: 0; /* Remove default padding */
-  /* overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* :root::before {
+:root::before {
   position: fixed;
   width: 50%;
-  height: 100%;
+  height: 110%;
   top: 50%;
   right: 0;
   z-index: -1;
@@ -27,7 +23,7 @@
   opacity: 0.2;
   transform: translateY(-50%);
   content: "";
-} */
+}
 
 h1 {
   margin: 0;
