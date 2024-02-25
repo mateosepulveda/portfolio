@@ -10,12 +10,14 @@ import { filter } from 'rxjs/operators';
 export class AppComponent implements OnInit {
   introEnabled = true;
   menuHeight = '0vh';
+  menuTransition = false;
   menuOpen = false;
 
   constructor(private renderer2: Renderer2, private router: Router) {
   }
 
   ngOnInit(): void {
+    this.renderer2.setStyle(document.body, 'margin', '0');
     this.renderer2.setStyle(document.body, 'overflow-y', 'scroll');
 
     this.router.events.pipe(
@@ -39,21 +41,29 @@ export class AppComponent implements OnInit {
   }
 
   showMenu(): void {
+    this.menuTransition = true;
     this.menuHeight = '100vh';
     this.menuOpen = true;
     setTimeout(() => {
+      this.menuTransition = false;
       this.renderer2.setStyle(document.body, 'overflow-y', 'hidden');
     }, 300);
   }
 
   hideMenu(): void {
     this.renderer2.setStyle(document.body, 'overflow-y', 'scroll');
-    this.menuHeight = '0%';
+    this.menuTransition = true;
+    this.menuHeight = '0vh';
     this.menuOpen = false;
+    setTimeout(() => {
+      this.menuTransition = false;
+    }, 300);
   }
 
   toggleMenu(): void {
-    if (this.menuOpen === false) {
+    if (this.menuTransition === true) {
+      return;
+    } else if (this.menuOpen === false) {
       this.showMenu();
     } else {
       this.hideMenu();

@@ -1,3 +1,12 @@
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(32,39,105,1) 0%, rgba(49,0,128,1) 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .toolbar-container {
   position: fixed;
   width: 100vw;
@@ -147,17 +156,19 @@
 
 .menu {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   top: 0;
   left: 0;
   z-index: 1;
   background: linear-gradient(0deg, rgba(24,29,79,1) 0%, rgb(32,1,82,1) 100%);
   overflow: hidden;
-  transition: 0.3s;
+}
+
+.menu-transition {
+  transition: 0.3s height;
 }
 
 .menu-content-wrapper {
-  padding-left: calc(100vw - 100%);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -232,6 +243,7 @@
   .toolbar-middle {
     display: none;
   }
+
   .toolbar-rightside {
     display: none;
   }

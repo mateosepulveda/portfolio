@@ -1,54 +1,52 @@
-<div class="fade-in">
-  <div *ngIf="project !== null">
-    <h1>{{ project.longTitle }}</h1>
+<div class="fade-in" *ngIf="project !== null">
+  <h1>{{ project.longTitle }}</h1>
 
-    <div class="date-and-navigate">
-      <span class="project-date">{{ project.dateString }}</span>
-      <span class="navigate-projects-list-top">
-        <a routerLink="/projects-list">
-          <b><span class="arrow">&#10094;&#10094;</span> Volver a Proyectos</b>
-        </a>
-      </span>
-    </div>
-
-    <p>{{ project.description }}</p>
-
-    <div class="slideshow">
-      <img [src]="'assets/projects/' + project.shortTitle + '/' + slide.imageFile" *ngFor="let slide of project.slides; let i = index" [class.image-fade-in]="displaySlides[i]" [class.image-fade-out]="!displaySlides[i]" [style.z-index]="zIndexSlide === i ? 1 : 0">
-      <div class="prev-next">
-        <a class="prev" (click)="previousSlide()" [hidden]="firstSlide">&#10094;</a>
-        <a class="next" (click)="nextSlide()" [hidden]="lastSlide">&#10095;</a>
-      </div>
-      <div class="caption-container">
-        <div class="caption">
-          <p>{{ project.slides[currentSlide].caption }}</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="dot-container" *ngIf="!(firstSlide && lastSlide)">
-      <span class="dot" *ngFor="let slide of project.slides; let i = index" (click)="changeSlide(i)" [class.dot-active]="displayCaptions[i]"></span> 
-    </div>
-
-    <div class="technologies-and-links">
-      <h3 *ngIf="project.technologies.length > 0">Tecnologías</h3>
-      <ul>
-        <li *ngFor="let technology of project.technologies">{{ technology }}</li>
-      </ul>
-      <h3 *ngIf="project.links.length > 0">Links</h3>
-      <ul>
-        <li *ngFor="let link of project.links"><a href="{{ link.url }}" target="_blank">{{ link.caption }}</a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="navigate-projects-list-bottom">
+  <div class="date-and-navigate">
+    <span class="project-date">{{ project.dateString }}</span>
+    <span class="navigate-projects-list-top">
       <a routerLink="/projects-list">
         <b><span class="arrow">&#10094;&#10094;</span> Volver a Proyectos</b>
       </a>
+    </span>
+  </div>
+
+  <p>{{ project.description }}</p>
+
+  <div class="slideshow">
+    <img [src]="'assets/projects/' + project.shortTitle + '/' + slide.imageFile" *ngFor="let slide of project.slides; let i = index" [class.image-fade-in]="displaySlides[i]" [class.image-fade-out]="!displaySlides[i]" [style.z-index]="zIndexSlide === i ? 1 : 0">
+    <div class="prev-next">
+      <a class="prev" (click)="previousSlide()" [hidden]="firstSlide">&#10094;</a>
+      <a class="next" (click)="nextSlide()" [hidden]="lastSlide">&#10095;</a>
+    </div>
+    <div class="caption-container">
+      <div class="caption">
+        <p>{{ project.slides[currentSlide].caption }}</p>
+      </div>
     </div>
   </div>
-  <div class="wait" *ngIf="project === null">
-    <p>Espere por favor...</p>
+  
+  <div class="dot-container" *ngIf="!(firstSlide && lastSlide)">
+    <span class="dot" *ngFor="let slide of project.slides; let i = index" (click)="changeSlide(i)" [class.dot-active]="displayCaptions[i]"></span> 
   </div>
+
+  <div class="technologies-and-links">
+    <h3 *ngIf="project.technologies.length > 0">Tecnologías</h3>
+    <ul>
+      <li *ngFor="let technology of project.technologies">{{ technology }}</li>
+    </ul>
+    <h3 *ngIf="project.links.length > 0">Links</h3>
+    <ul>
+      <li *ngFor="let link of project.links"><a href="{{ link.url }}" target="_blank">{{ link.caption }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="navigate-projects-list-bottom">
+    <a routerLink="/projects-list">
+      <b><span class="arrow">&#10094;&#10094;</span> Volver a Proyectos</b>
+    </a>
+  </div>
+</div>
+<div class="fade-in wait" *ngIf="project === null">
+  <p>Espere por favor...</p>
 </div>

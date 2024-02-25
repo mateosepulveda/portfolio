@@ -153,7 +153,7 @@
   justify-content: center;
   color: var(--titlecolor);
   text-align: center;
-  font-size: 3.5rem;
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 900px) and (max-height: 400px) {
