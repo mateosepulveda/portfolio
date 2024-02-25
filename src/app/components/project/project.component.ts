@@ -18,6 +18,8 @@ export class ProjectComponent implements OnInit {
   lastSlide: boolean = false;
   displaySlides: boolean[] = []
   displayCaptions: boolean[] = []
+  carouselIntervalId: any = null;
+  carouselDirection: string = 'forward';
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private projectService: ProjectService) {
   }
@@ -34,16 +36,15 @@ export class ProjectComponent implements OnInit {
         this.slides = this.project.slides;
         this.displaySlides = Array(this.slides.length).fill(false);
         this.displayCaptions = Array(this.slides.length).fill(false);
-        this.changeSlide(this.currentSlide);
+        this.handleSlideChange(this.currentSlide);
+        this.updateCarousel = this.updateCarousel.bind(this);
+        this.startCarousel();
       }
     });
   }
 
-  changeSlide(slideIndex: number): void {
-    if (slideIndex > this.slides.length - 1) {
-      return;
-    }
-    if (slideIndex < 0) {
+  handleSlideChange(slideIndex: number): void {
+    if ((slideIndex < 0) || (slideIndex > this.slides.length - 1)) {
       return;
     }
     var currentSlideSnapshot = this.currentSlide;
@@ -95,10 +96,47 @@ export class ProjectComponent implements OnInit {
   }
 
   nextSlide(): void {
-    this.changeSlide(this.currentSlide + 1);
+    clearInterval(this.carouselIntervalId);
+    this.handleSlideChange(this.currentSlide + 1);
+    this.carouselDirection = 'forward';
   }
 
   previousSlide(): void {
-    this.changeSlide(this.currentSlide - 1);
+    clearInterval(this.carouselIntervalId);
+    this.handleSlideChange(this.currentSlide - 1);
+    this.carouselDirection = 'backward';
+  }
+
+  changeSlide(slideIndex: number): void {
+    if (slideIndex > this.currentSlide) {
+      this.carouselDirection = 'forward';
+    } else if (slideIndex < this.currentSlide) {
+      this.carouselDirection = 'backward';
+    }
+    this.handleSlideChange(slideIndex);
+  }
+
+  startCarousel(): void {
+    this.carouselIntervalId = setInterval(this.updateCarousel, 5000);
+  }
+
+  pauseCarousel(): void {
+    clearInterval(this.carouselIntervalId);
+  }
+
+  updateCarousel(): void {
+    if (this.carouselDirection === 'forward') {
+      if (this.currentSlide === this.slides.length - 1) {
+        this.handleSlideChange(0);
+      } else {
+        this.handleSlideChange(this.currentSlide + 1);
+      }
+    } else {
+      if (this.currentSlide === 0) {
+        this.handleSlideChange(this.slides.length - 1);
+      } else {
+        this.handleSlideChange(this.currentSlide - 1);
+      }
+    }
   }
 }
