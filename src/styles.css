@@ -1,6 +1,4 @@
 :root {
-  /* background: linear-gradient(180deg, rgba(32,39,105,1) 0%, rgba(49,0,128,1) 100%);
-  background-attachment: fixed; */
   font-family: -apple-system, BlinkMacSystemFont, "Space Grotesk", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 25px;
   color: white;
@@ -9,20 +7,6 @@
   --titlecolor: #ffce32;
   --linkcolor: #3ebdc9;
 }
-
-/* :root::before {
-  position: fixed;
-  width: 50%;
-  height: 100%;
-  top: 50%;
-  right: 0;
-  z-index: -1;
-  background: url('assets/3dcomputer-freepik.png') no-repeat center center;
-  background-size: contain;
-  opacity: 0.2;
-  transform: translateY(-50%);
-  content: "";
-} */
 
 h1 {
   margin: 0;
