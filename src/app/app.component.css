@@ -38,7 +38,7 @@
 .intro-typewriter h1 {
   margin: 0 auto;
   padding-right: 10px;
-  border-right: .15em solid #3ebdc9;
+  border-right: .15em solid var(--linkcolor);
   overflow: hidden;
   white-space: nowrap;
   animation-name: intro-text, intro-caret;
@@ -59,12 +59,12 @@
 
 @-webkit-keyframes intro-caret {
   0%, 100% {border-color: transparent;}
-  50% {border-color: #3ebdc9;}
+  50% {border-color: var(--linkcolor);}
 }
 
 @keyframes intro-caret {
   0%, 100% {border-color: transparent;}
-  50% {border-color: #3ebdc9;}
+  50% {border-color: var(--linkcolor);}
 }
 
 .intro-fade {
