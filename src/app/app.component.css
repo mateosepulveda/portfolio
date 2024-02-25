@@ -1,4 +1,4 @@
-.background {
+.background-gradient {
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -7,18 +7,87 @@
   background-position: center;
 }
 
-.background::before {
-  position: fixed;
-  width: 50%;
-  height: 100%;
+.background-image {
+  position: fixed; 
+  width: 50vw;
+  height: 100vh;
   top: 50%;
   right: 0;
-  z-index: -1;
-  background: url('../assets/3dcomputer-freepik.png') no-repeat center center;
+  background: url('../assets/3dcomputer-freepik.png');
   background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   opacity: 0.2;
   transform: translateY(-50%);
-  content: "";
+}
+
+.intro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.intro h1 {
+  display: inline-block;
+  border-bottom: none;
+}
+
+.intro-typewriter h1 {
+  margin: 0 auto;
+  padding-right: 10px;
+  border-right: .15em solid #3ebdc9;
+  overflow: hidden;
+  white-space: nowrap;
+  animation-name: intro-text, intro-caret;
+  animation-duration: 1.5s, 0.7s;
+  animation-timing-function: steps(200, end), step-end;
+  animation-iteration-count: 1, infinite;
+}
+
+@-webkit-keyframes intro-text {
+  0% {max-width: 0;}
+  100% {max-width: 450px;}
+}
+
+@keyframes intro-text {
+  0% {max-width: 0;}
+  100% {max-width: 450px;}
+}
+
+@-webkit-keyframes intro-caret {
+  0%, 100% {border-color: transparent;}
+  50% {border-color: #3ebdc9;}
+}
+
+@keyframes intro-caret {
+  0%, 100% {border-color: transparent;}
+  50% {border-color: #3ebdc9;}
+}
+
+.intro-fade {
+  -webkit-animation-name: intro-fade;
+  animation-name: intro-fade;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes intro-fade {
+  0% {opacity: 0;}
+  33% {opacity: 1;}
+  67% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@keyframes intro-fade {
+  0% {opacity: 0;}
+  33% {opacity: 1;}
+  67% {opacity: 1;}
+  100% {opacity: 0;}
 }
 
 .toolbar-container {
@@ -97,75 +166,6 @@
 
 .toolbar-rightside svg.linkedin {
   height: 40px;
-}
-
-.intro {
-  height: calc(100vh - 30px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-.intro h1 {
-  display: inline-block;
-  border-bottom: none;
-}
-
-.intro-typewriter h1 {
-  margin: 0 auto;
-  padding-right: 10px;
-  border-right: .15em solid #3ebdc9;
-  overflow: hidden;
-  white-space: nowrap;
-  animation-name: intro-text, intro-caret;
-  animation-duration: 1.5s, 0.7s;
-  animation-timing-function: steps(200, end), step-end;
-  animation-iteration-count: 1, infinite;
-}
-
-@-webkit-keyframes intro-text {
-  0% {max-width: 0;}
-  100% {max-width: 450px;}
-}
-
-@keyframes intro-text {
-  0% {max-width: 0;}
-  100% {max-width: 450px;}
-}
-
-@-webkit-keyframes intro-caret {
-  0%, 100% {border-color: transparent;}
-  50% {border-color: #3ebdc9;}
-}
-
-@keyframes intro-caret {
-  0%, 100% {border-color: transparent;}
-  50% {border-color: #3ebdc9;}
-}
-
-.intro-fade {
-  -webkit-animation-name: intro-fade;
-  animation-name: intro-fade;
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-@-webkit-keyframes intro-fade {
-  0% {opacity: 0;}
-  33% {opacity: 1;}
-  67% {opacity: 1;}
-  100% {opacity: 0;}
-}
-
-@keyframes intro-fade {
-  0% {opacity: 0;}
-  33% {opacity: 1;}
-  67% {opacity: 1;}
-  100% {opacity: 0;}
 }
 
 .menu {
