@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   menuHeight = '0vh';
   menuTransition = false;
   menuOpen = false;
+  currentPage = '/';
 
   constructor(private renderer2: Renderer2, private router: Router) {
   }
@@ -26,6 +27,9 @@ export class AppComponent implements OnInit {
       if (event.url !== '/') {
         this.introEnabled = false;
       }
+      setTimeout(() => {
+        this.currentPage = event.url;
+      }, 300);
     });
 
     setTimeout(() => {

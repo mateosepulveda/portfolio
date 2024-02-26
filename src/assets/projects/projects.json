@@ -84,10 +84,10 @@
     {
         "id": 6,
         "shortTitle": "neurone",
-        "longTitle": "NEURONE Student Simulator Interface",
+        "longTitle": "NEURONE",
         "startDate": {"month": 3, "year": 2022},
         "endDate": {"month": 9, "year": 2022},
-        "description": "Desarrollo de ambiente para gestión de simulaciones de estudiantes, en el marco del ecosistema NEURONE, orientado a estudios de alfabetización informacional.",
+        "description": "En el marco del ecosistema NEURONE, orientado a estudios de alfabetización informacional, se desarrolló NEURONE Student Simulator Interface. Este módulo es un ambiente dedicado a gestionar simulaciones de estudiantes.",
         "slides": [
             {"imageFile": "neurone1.jpg", "caption": "Herramienta de diseño gráfico para modelos de comportamiento."},
             {"imageFile": "TEST2.png", "caption": "Descripción 2."},

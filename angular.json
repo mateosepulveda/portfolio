@@ -43,7 +43,8 @@
                   "maximumError": "5kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "https://mateosepulveda.github.io/portfolio/"
             },
             "development": {
               "buildOptimizer": false,

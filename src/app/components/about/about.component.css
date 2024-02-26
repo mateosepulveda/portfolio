@@ -1,12 +1,25 @@
+.hello {
+  margin: 0;
+  color: var(--titlecolor);
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  border-bottom: 2px solid var(--titlecolor);
+}
+
+.hello-line {
+  display: inline-block;
+}
+
 .divider {
   color: var(--titlecolor);
 }
 
 @media screen and (max-width: 700px) {
-  h1 {
+  .hello, h3 {
     text-align: center;
   }
-  
+
   .block {
     flex-direction: column;
   }

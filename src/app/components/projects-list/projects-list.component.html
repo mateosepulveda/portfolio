@@ -8,7 +8,7 @@
   <div class="project-section fade-in" *ngIf="projects !== null">
     <div class="tag-container">
       <div class="tag-title">
-        <p>Etiquetas:</p>
+        <p>Filtros:</p>
       </div>
       <div class="tags">
         <a class="tag" (click)="unfilterProjects()" [class.tag-selected]="currentFilter === ''">
@@ -25,7 +25,7 @@
       <p *ngIf="currentFilter !== ''">Mostrando proyectos filtrados por: {{ currentFilter }}</p>
     </div>
 
-    <div class="project-container" [class.fade-in]="projectsFadeIn">
+    <div class="project-list" [class.fade-in]="projectsFadeIn">
       <a class="project" *ngFor="let project of projectsFiltered" [routerLink]="'/project/' + project.shortTitle">
         <img [src]="'assets/projects/' + project.shortTitle + '/' + project.slides[0].imageFile">
         <div class="project-name">

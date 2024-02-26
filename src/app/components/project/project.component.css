@@ -27,7 +27,7 @@
 .slideshow img {
   width: 100%;
   flex: 1;
-  border-radius: 1.5% / 2.66%;
+  border-radius: 0.75% / 1.33%;
   grid-area: 1/1/2/4;
 }
 
@@ -118,7 +118,7 @@
   color: white;
   font-size: 0.75rem;
   text-align: center;
-  border-radius: 2vh;
+  border-radius: 0.9vh;
 }
 
 .dot-container {

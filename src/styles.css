@@ -4,8 +4,9 @@
   color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --titlecolor: #ffce32;
-  --linkcolor: #3ebdc9;
+  --titlecolor: rgb(255, 206, 50);
+  --linkcolor: rgb(96, 227, 240);
+  --linkcolor2: rgb(190, 242, 247);
 }
 
 h1 {
@@ -29,7 +30,7 @@ h6 {
 
 a {
   text-decoration: none;
-  color: #62db44;
+  color: rgb(98, 219, 68);
   transition: color 0.3s, background-color 0.3s, border-color 0.3s;
 }
 
