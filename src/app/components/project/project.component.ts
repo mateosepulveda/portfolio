@@ -37,8 +37,10 @@ export class ProjectComponent implements OnInit {
         this.displaySlides = Array(this.slides.length).fill(false);
         this.displayCaptions = Array(this.slides.length).fill(false);
         this.handleSlideChange(this.currentSlide);
-        this.updateCarousel = this.updateCarousel.bind(this);
-        this.startCarousel();
+        if (this.slides.length > 1) {
+          this.updateCarousel = this.updateCarousel.bind(this);
+          this.startCarousel();
+        }
       }
     });
   }
