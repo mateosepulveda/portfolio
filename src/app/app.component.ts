@@ -20,10 +20,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.renderer2.setStyle(document.body, 'margin', '0');
     this.renderer2.setStyle(document.body, 'overflow-y', 'scroll');
-    if (this.hasTouch() === false) {
-      console.log("AAA");
-      this.renderer2.addClass(document.body, 'has-hover');
-    }
+    this.watchForHover();
 
     this.router.events.pipe(
       filter((event): event is NavigationEnd => event instanceof NavigationEnd)
@@ -77,9 +74,27 @@ export class AppComponent implements OnInit {
       this.hideMenu();
     }
   }
+
+  watchForHover(): void {
+    let lastTouchTime = 0;
   
-  hasTouch(): boolean {
-    return 'ontouchstart' in document.documentElement
-      || navigator.maxTouchPoints > 0;
+    const enableHover = (): void => {
+      if (new Date().getTime() - lastTouchTime < 500) return;
+      document.body.classList.add('hasHover');
+    };
+  
+    const disableHover = (): void => {
+      document.body.classList.remove('hasHover');
+    };
+  
+    const updateLastTouchTime = (): void => {
+      lastTouchTime = Date.now();
+    };
+
+    document.addEventListener('touchstart', updateLastTouchTime, true);
+    document.addEventListener('touchstart', disableHover, true);
+    document.addEventListener('mousemove', enableHover, true);
+  
+    enableHover();
   }
 }
