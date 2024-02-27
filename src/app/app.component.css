@@ -21,18 +21,12 @@
   transform: translateY(-50%);
 }
 
-.intro {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-}
-
 .intro h1 {
-  display: inline-block;
-  border-bottom: none;
+  position: absolute;
+  top: 47vh;
+  left: 50vw;
+  font-size: 3rem;
+  transform: translate(-50%, -50%);
 }
 
 .intro-typewriter h1 {
@@ -235,13 +229,6 @@
   max-width: 1000px;
 }
 
-@media screen and (max-height: 400px) {
-  .menu-content {
-    margin-top: 70px;
-    scale: 0.7;
-  }
-}
-
 @media screen and (max-width: 1000px) {
   .toolbar {
     margin-left: 10px;
@@ -270,5 +257,12 @@
 
   .toolbar-rightside {
     display: none;
+  }
+}
+
+@media screen and (max-height: 400px) {
+  .menu-content {
+    margin-top: 70px;
+    scale: 0.7;
   }
 }
