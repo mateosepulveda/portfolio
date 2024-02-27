@@ -67,6 +67,6 @@
 
 @media (hover: none) {
   .link:hover::before {
-    background-color: white;
+    background-color: transparent;
   }
 }

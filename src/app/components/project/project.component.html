@@ -10,6 +10,7 @@
     </span>
   </div>
 
+  {{ hoverEnabled }}
   <p>{{ project.description }}</p>
 
   <div class="slideshow" (mouseenter)="((hoverEnabled === true) && (slides.length > 1)) ? pauseCarousel() : null" (mouseleave)="((hoverEnabled === true) && (slides.length > 1)) ? startCarousel() : null">

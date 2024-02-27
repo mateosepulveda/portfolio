@@ -211,7 +211,11 @@
 @media (hover: none) {
   .prev:hover,
   .next:hover {
-    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .dot-active {
+    background-color: var(--linkcolor2);
   }
   
   .dot:hover {
