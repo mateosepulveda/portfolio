@@ -8,11 +8,11 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  introEnabled = true;
-  menuHeight = '0vh';
-  menuTransition = false;
-  menuOpen = false;
-  currentPage = '/';
+  introEnabled: boolean = true;
+  menuHeight: string = '0vh';
+  menuTransition: boolean = false;
+  menuOpen: boolean = false;
+  currentPage: string = '/';
 
   constructor(private renderer2: Renderer2, private router: Router) {
   }
@@ -20,7 +20,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.renderer2.setStyle(document.body, 'margin', '0');
     this.renderer2.setStyle(document.body, 'overflow-y', 'scroll');
-    this.watchForHover();
 
     this.router.events.pipe(
       filter((event): event is NavigationEnd => event instanceof NavigationEnd)
@@ -73,28 +72,5 @@ export class AppComponent implements OnInit {
     } else {
       this.hideMenu();
     }
-  }
-
-  watchForHover(): void {
-    let lastTouchTime = 0;
-  
-    const enableHover = (): void => {
-      if (new Date().getTime() - lastTouchTime < 500) return;
-      document.body.classList.add('hasHover');
-    };
-  
-    const disableHover = (): void => {
-      document.body.classList.remove('hasHover');
-    };
-  
-    const updateLastTouchTime = (): void => {
-      lastTouchTime = Date.now();
-    };
-
-    document.addEventListener('touchstart', updateLastTouchTime, true);
-    document.addEventListener('touchstart', disableHover, true);
-    document.addEventListener('mousemove', enableHover, true);
-  
-    enableHover();
   }
 }

@@ -94,3 +94,13 @@ li ul {
     font-size: 17px;
   }
 }
+
+@media (hover: none) {
+  a:hover {
+    color: inherit;
+  }
+  
+  a:hover path {
+    fill: inherit;
+  }
+}

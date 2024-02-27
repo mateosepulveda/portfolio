@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import Project from '../../interfaces/project.interface';
+import Project from '../interfaces/project.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
-  private projectFile = 'assets/projects/projects.json';
+  private projectFile: string = 'assets/projects/projects.json';
   private projects: Project[] = [];
   private projectTags: string[] = [];
   private dataPromise: Promise<void>;

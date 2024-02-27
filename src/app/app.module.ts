@@ -11,7 +11,7 @@ import { ProjectComponent } from './components/project/project.component';
 import { LinksComponent } from './components/links/links.component';
 import { CreditsComponent } from './components/credits/credits.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { ProjectService } from './services/project/project.service';
+import { ProjectService } from './services/project.service';
 
 @NgModule({
   declarations: [
