@@ -140,7 +140,7 @@
 
 .dot-active,
 .dot:hover {
-  background-color: var(--linkcolor);
+  background-color: var(--linkcolor2);
 }
 
 .technologies-and-links {
@@ -205,5 +205,16 @@
 
   .navigate-projects-list-bottom {   
     text-align: left;
+  }
+}
+
+@media (hover: none) {
+  .prev:hover,
+  .next:hover {
+    color: white;
+  }
+  
+  .dot:hover {
+    background-color: white;
   }
 }

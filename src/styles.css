@@ -5,8 +5,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --titlecolor: rgb(255, 206, 50);
-  --linkcolor: rgb(96, 227, 240);
-  --linkcolor2: rgb(190, 242, 247);
+  --linkcolor: rgb(98, 219, 68);
+  --linkcolor2: rgb(96, 227, 240);
+  --linkcolor3: rgb(190, 242, 247);
 }
 
 h1 {
@@ -30,12 +31,12 @@ h6 {
 
 a {
   text-decoration: none;
-  color: rgb(98, 219, 68);
+  color: var(--linkcolor);
   transition: color 0.3s, background-color 0.3s, border-color 0.3s;
 }
 
 a:hover {
-  color: var(--linkcolor);
+  color: var(--linkcolor2);
   cursor: pointer;
 }
 
@@ -44,7 +45,7 @@ a path {
 }
 
 a:hover path {
-  fill: var(--linkcolor);
+  fill: var(--linkcolor2);
 }
 
 li {
@@ -97,10 +98,10 @@ li ul {
 
 @media (hover: none) {
   a:hover {
-    color: inherit;
+    color: var(--linkcolor);
   }
   
   a:hover path {
-    fill: inherit;
+    fill: white;
   }
 }

@@ -32,7 +32,7 @@
 .intro-typewriter h1 {
   margin: 0 auto;
   padding-right: 10px;
-  border-right: .15em solid var(--linkcolor);
+  border-right: .15em solid var(--linkcolor2);
   border-bottom: none;
   overflow: hidden;
   white-space: nowrap;
@@ -54,12 +54,12 @@
 
 @-webkit-keyframes intro-caret {
   0%, 100% {border-color: transparent;}
-  50% {border-color: var(--linkcolor);}
+  50% {border-color: var(--linkcolor2);}
 }
 
 @keyframes intro-caret {
   0%, 100% {border-color: transparent;}
-  50% {border-color: var(--linkcolor);}
+  50% {border-color: var(--linkcolor2);}
 }
 
 .intro-fade {
@@ -108,7 +108,7 @@
 }
 
 .toolbar-leftside a:hover .menu-openbtn .line {
-  background-color: var(--linkcolor);
+  background-color: var(--linkcolor2);
 }
 
 .toolbar-leftside .menu-openbtn {
@@ -200,20 +200,20 @@
 }
 
 .menu-linkbtn a:hover {
-  color: var(--linkcolor);
-  border-color: var(--linkcolor);
-}
-
-.menu-linkbtn a.current-page {
-  background-color: var(--linkcolor2);
-  color: black;
+  color: var(--linkcolor2);
   border-color: var(--linkcolor2);
 }
 
-.menu-linkbtn a.current-page:hover {
-  background-color: var(--linkcolor);
+.menu-linkbtn a.current-page {
+  background-color: var(--linkcolor3);
   color: black;
-  border-color: var(--linkcolor);
+  border-color: var(--linkcolor3);
+}
+
+.menu-linkbtn a.current-page:hover {
+  background-color: var(--linkcolor2);
+  color: black;
+  border-color: var(--linkcolor2);
 }
 
 .router-outlet-content-container {
@@ -265,5 +265,22 @@
   .menu-content {
     margin-top: 70px;
     scale: 0.7;
+  }
+}
+
+@media (hover: none) {
+  .toolbar-leftside a:hover .menu-openbtn .line {
+    background-color: white;
+  }
+  
+  .menu-linkbtn a:hover {
+    color: white;
+    border-color: white;
+  }
+
+  .menu-linkbtn a.current-page:hover {
+    background-color: var(--linkcolor3);
+    color: black;
+    border-color: var(--linkcolor3);
   }
 }

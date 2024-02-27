@@ -1,3 +1,7 @@
+:host {
+  --tagcolor: rgb(56, 56, 56);
+}
+
 .project-section {
   text-align: center;
 }
@@ -17,7 +21,7 @@
   margin: 10px;
   padding: 0px 20px;
   min-height: 60px;
-  background-color: rgb(56, 56, 56);
+  background-color: var(--tagcolor);
   color: white;
   display: flex;
   justify-content: center;
@@ -27,12 +31,12 @@
 }
 
 .tag:hover {
-  background-color: var(--linkcolor);
+  background-color: var(--linkcolor2);
   color: black;
 }
 
 .tag-selected {
-  background-color: var(--linkcolor2);
+  background-color: var(--linkcolor3);
   color: black;
 }
 
@@ -56,7 +60,7 @@
 }
 
 .project:hover {
-  background-color: var(--linkcolor);
+  background-color: var(--linkcolor2);
   color: black;
 }
 
@@ -104,5 +108,17 @@
 
   .tag {
     min-height: 40px;
+  }
+}
+
+@media (hover: none) {
+  .tag:hover {
+    background-color: var(--tagcolor);
+    color: white;
+  }
+  
+  .project:hover {
+    background-color: white;
+    color: black;
   }
 }

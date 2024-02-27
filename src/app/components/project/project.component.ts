@@ -20,6 +20,7 @@ export class ProjectComponent implements OnInit {
   displayCaptions: boolean[] = []
   carouselIntervalId: any = null;
   carouselDirection: string = 'forward';
+  hoverEnabled: boolean = true;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private projectService: ProjectService) {
   }
@@ -40,6 +41,9 @@ export class ProjectComponent implements OnInit {
         if (this.slides.length > 1) {
           this.updateCarousel = this.updateCarousel.bind(this);
           this.startCarousel();
+        }
+        if (this.hasTouch() === true) {
+          this.hoverEnabled = false;
         }
       }
     });
@@ -140,5 +144,9 @@ export class ProjectComponent implements OnInit {
         this.handleSlideChange(this.currentSlide - 1);
       }
     }
+  }
+
+  hasTouch(): boolean {
+    return 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0;
   }
 }

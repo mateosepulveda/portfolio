@@ -64,3 +64,9 @@
     align-items: left;
   }
 }
+
+@media (hover: none) {
+  .link:hover::before {
+    background-color: white;
+  }
+}

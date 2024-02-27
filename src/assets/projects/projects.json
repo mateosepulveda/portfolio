@@ -21,9 +21,9 @@
         "longTitle": "Hotel App",
         "startDate": {"month": 10, "year": 2019},
         "endDate": {"month": 10, "year": 2019},
-        "description": "Plataforma para gestión de reservas de habitaciones de hotel.",
+        "description": "Plataforma para gestión de reservas de habitaciones de hotel. Incluye creación de usuarios (huéspedes), con su respectivo login, así como creación de habitaciones, y asignación de habitaciones a usuarios. Se trabajó tanto en backend como en frontend.",
         "slides": [
-            {"imageFile": "happ1.jpg", "caption": "Línea de tiempo con las reservas realizadas en cada habitación."}
+            {"imageFile": "happ1.jpg", "caption": "Línea de tiempo con las reservas realizadas en cada habitación, mostrando la información relevante de cada reserva mediante un tooltip."}
         ],
         "technologies": ["Vue.js", "Spring Boot", "MySQL", "Git"],
         "links": [
