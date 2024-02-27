@@ -34,7 +34,7 @@ a {
   transition: color 0.3s, background-color 0.3s, border-color 0.3s;
 }
 
-a:hover {
+body.has-hover a:hover {
   color: var(--linkcolor);
   cursor: pointer;
 }
@@ -43,7 +43,7 @@ a path {
   transition: fill 0.3s;
 }
 
-a:hover path {
+body.has-hover a:hover path {
   fill: var(--linkcolor);
 }
 

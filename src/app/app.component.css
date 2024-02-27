@@ -23,7 +23,7 @@
 
 .intro h1 {
   position: absolute;
-  top: 46vh;
+  top: 45vh;
   left: 50vw;
   font-size: 3rem;
   transform: translate(-50%, -50%);
@@ -33,6 +33,7 @@
   margin: 0 auto;
   padding-right: 10px;
   border-right: .15em solid var(--linkcolor);
+  border-bottom: none;
   overflow: hidden;
   white-space: nowrap;
   animation-name: intro-text, intro-caret;

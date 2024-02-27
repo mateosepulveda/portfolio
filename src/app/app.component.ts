@@ -20,6 +20,10 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.renderer2.setStyle(document.body, 'margin', '0');
     this.renderer2.setStyle(document.body, 'overflow-y', 'scroll');
+    if (this.hasTouch() === false) {
+      console.log("AAA");
+      this.renderer2.addClass(document.body, 'has-hover');
+    }
 
     this.router.events.pipe(
       filter((event): event is NavigationEnd => event instanceof NavigationEnd)
@@ -72,5 +76,10 @@ export class AppComponent implements OnInit {
     } else {
       this.hideMenu();
     }
+  }
+  
+  hasTouch(): boolean {
+    return 'ontouchstart' in document.documentElement
+      || navigator.maxTouchPoints > 0;
   }
 }
