@@ -113,11 +113,6 @@
 
 @media (hover: none) {
   .tag:hover {
-    background-color: var(--tagcolor);
-    color: white;
-  }
-
-  .tag-selected {
     background-color: var(--linkcolor3);
     color: black;
   }
