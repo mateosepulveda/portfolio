@@ -14,15 +14,15 @@
         <a class="tag" (click)="unfilterProjects()" [class.tag-selected]="currentFilter === ''">
           Todos los proyectos
         </a>
-        <a class="tag" *ngFor="let projectTag of projectTags" (click)="filterProjects(projectTag)" [class.tag-selected]="projectTag === currentFilter">
+        <a class="tag" *ngFor="let projectTag of projectTags; let i = index" (click)="filterProjects(projectTag)" [class.tag-selected]="projectTag === currentFilter">
           {{ projectTag }}
         </a>
       </div>
     </div>
 
     <div class="filter-info">
-      <p *ngIf="currentFilter === ''">Mostrando todos los proyectos</p>
-      <p *ngIf="currentFilter !== ''">Mostrando proyectos filtrados por: {{ currentFilter }}</p>
+      <p *ngIf="currentFilter === ''"><i>Mostrando todos los proyectos</i></p>
+      <p *ngIf="currentFilter !== ''"><i>Mostrando proyectos filtrados por: {{ currentFilter }}</i></p>
     </div>
 
     <div class="project-list" [class.fade-in]="projectsFadeIn">

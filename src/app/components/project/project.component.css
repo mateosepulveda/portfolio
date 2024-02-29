@@ -13,6 +13,10 @@
   text-align: right;
 }
 
+.mouseSlideshowInfo {
+  text-align: center;
+}
+
 .slideshow {
   position: relative;
   width: 1000px;
@@ -74,7 +78,7 @@
   display: flex;
   align-items: center;
   grid-area: 1/1/2/4;
-  z-index: 10;
+  z-index: 5;
 }
 
 .prev,
@@ -106,7 +110,7 @@
   align-items: flex-end;
   justify-content: center;
   grid-area: 1/1/2/4;
-  z-index: 9;
+  z-index: 4;
 }
 
 .caption {

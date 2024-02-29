@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ProjectService } from '../../services/project.service';
 import Project from './../../interfaces/project.interface';
 
@@ -12,10 +11,11 @@ export class ProjectsListComponent implements OnInit {
   projects: Project[] | null = null;
   projectsFiltered: Project[] = [];
   projectTags: string[] = [];
-  projectsFadeIn: boolean = false;
   currentFilter: string = '';
+  projectsFadeIn: boolean = false;
+  hoverEnabled: boolean = true;
 
-  constructor(private router: Router, private projectService: ProjectService) {
+  constructor(private projectService: ProjectService) {
   }
 
   async ngOnInit(): Promise<void> {
@@ -24,27 +24,42 @@ export class ProjectsListComponent implements OnInit {
     this.projectsFiltered = [...this.projects];
     this.projectTags = this.projectService.getProjectTags();
     this.currentFilter = '';
+    if (this.hasTouch() === true) {
+      this.hoverEnabled = false;
+    }
   }
 
   unfilterProjects(): void {
     if ((this.projects !== null) && (this.projectsFadeIn === false)) {
-      this.projectsFadeIn = true;
+      if (this.hoverEnabled === true) {
+        this.projectsFadeIn = true;
+      }
       this.projectsFiltered = [...this.projects];
       this.currentFilter = '';
-      setTimeout(() => {
-        this.projectsFadeIn = false;
-      }, 1000);
+      if (this.hoverEnabled === true) {
+        setTimeout(() => {
+          this.projectsFadeIn = false;
+        }, 1000);
+      }
     }
   }
 
   filterProjects(projectTag: string): void {
     if ((this.projects !== null) && (this.projectsFadeIn === false)) {
-      this.projectsFadeIn = true;
+      if (this.hoverEnabled === true) {
+        this.projectsFadeIn = true;
+      }
       this.projectsFiltered = this.projects.filter(project => project.tags.includes(projectTag));
       this.currentFilter = projectTag;
-      setTimeout(() => {
-        this.projectsFadeIn = false;
-      }, 1000);
+      if (this.hoverEnabled === true) {
+        setTimeout(() => {
+          this.projectsFadeIn = false;
+        }, 1000);
+      }
     }
+  }
+
+  hasTouch(): boolean {
+    return 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0;
   }
 }

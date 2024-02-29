@@ -12,8 +12,10 @@
   
   <p>{{ project.description }}</p>
 
+  <p class="mouseSlideshowInfo" *ngIf="slides.length > 1 && hoverEnabled === true"><i>Ponga el cursor sobre la imagen para pausar la galería</i></p>
+
   <div class="slideshow" (mouseenter)="slides.length > 1 ? pauseCarousel() : null" (mouseleave)="(hoverEnabled === true) && (slides.length > 1) ? startCarousel() : null">
-    <img [src]="'assets/projects/' + project.shortTitle + '/' + slide.imageFile" *ngFor="let slide of slides; let i = index" [class.image-fade-in]="displaySlides[i]" [class.image-fade-out]="!displaySlides[i]" [style.z-index]="zIndexSlide === i ? 1 : 0">
+    <img [src]="'assets/projects/' + project.shortTitle + '/' + slide.imageFile" *ngFor="let slide of slides; let i = index" [class.image-fade-in]="displaySlides[i]" [class.image-fade-out]="!displaySlides[i]" [style.z-index]="zIndexSlide === i ? 3 : 0">
     <div class="prev-next" *ngIf="slides.length > 1">
       <a class="prev" (click)="previousSlide()" [hidden]="firstSlide">&#10094;</a>
       <a class="next" (click)="nextSlide()" [hidden]="lastSlide">&#10095;</a>

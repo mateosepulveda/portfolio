@@ -5,6 +5,7 @@
   background: linear-gradient(180deg, rgb(32, 39, 105) 0%, rgb(49, 0, 128) 100%);
   background-repeat: no-repeat;
   background-position: center;
+  z-index: -2;
 }
 
 .background-image {
@@ -19,6 +20,7 @@
   background-repeat: no-repeat;
   opacity: 0.2;
   transform: translateY(-50%);
+  z-index: -1;
 }
 
 .intro h1 {

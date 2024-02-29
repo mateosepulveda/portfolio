@@ -1,102 +1,102 @@
 [
-    {
-        "id": 1,
-        "shortTitle": "tbdseries",
-        "longTitle": "TBD Series",
-        "startDate": {"month": 5, "year": 2019},
-        "endDate": {"month": 7, "year": 2019},
-        "description": "Proyecto para análisis estadístico de tuits sobre series de televisión.",
-        "slides": [
-            {"imageFile": "TEST1.png", "caption": "Descripción 1."}
-        ],
-        "technologies": ["Vue.js", "Highcharts", "Git"],
-        "links": [
-            {"url": "https://github.com/mateosepulveda/TBDgrupo6", "caption": "Repositorio en GitHub"}
-        ],
-        "tags": ["Frontend"]
-    },
-    {
-        "id": 2,
-        "shortTitle": "happ",
-        "longTitle": "Hotel App",
-        "startDate": {"month": 10, "year": 2019},
-        "endDate": {"month": 10, "year": 2019},
-        "description": "Plataforma para gestión de reservas de habitaciones de hotel. Incluye creación de usuarios (huéspedes), con su respectivo login, así como creación de habitaciones, y asignación de habitaciones a usuarios. Se trabajó tanto en backend como en frontend. En backend se desarrolló código para los modelos y controladores (como parte del patrón MVC), y en frontend se trabajó en la lógica y diseño de todas las vistas.",
-        "slides": [
-            {"imageFile": "happ1.jpg", "caption": "Línea de tiempo con las reservas realizadas en cada habitación, mostrando la información relevante de cada reserva mediante un tooltip."}
-        ],
-        "technologies": ["Vue.js", "Spring Boot", "MySQL", "Git"],
-        "links": [
-            {"url": "https://github.com/mateosepulveda/hotel-mingeso-front", "caption": "Repositorio en GitHub (frontend)"},
-            {"url": "https://github.com/mateosepulveda/hotel-mingeso-back", "caption": "Repositorio en GitHub (backend)"}
-        ],
-        "tags": ["Frontend", "Backend"]
-    },
-    {
-        "id": 3,
-        "shortTitle": "sanalyzer",
-        "longTitle": "Sentiment Analyzer",
-        "startDate": {"month": 12, "year": 2020},
-        "endDate": {"month": 3, "year": 2021},
-        "description": "Pipeline de análisis de sentimientos de publicaciones en Reddit.",
-        "slides": [
-            {"imageFile": "TEST1.png", "caption": "Descripción 1."},
-            {"imageFile": "TEST2.png", "caption": "Descripción 2."}
-        ],
-        "technologies": ["Vue.js", "PostgreSQL", "MongoDB", "Docker", "Git"],
-        "links": [
-            {"url": "https://github.com/mateosepulveda/Sentiment_analyzer", "caption": "Repositorio en GitHub"}
-        ],
-        "tags": ["Frontend", "Backend"]
-    },
-    {
-        "id": 4,
-        "shortTitle": "cvirtual",
-        "longTitle": "Comisaría Virtual",
-        "startDate": {"month": 3, "year": 2021},
-        "endDate": {"month": 3, "year": 2021},
-        "description": "Desarrollo de sistema distribuido que simula el proceso de solicitud de permisos de Comisaría Virtual.",
-        "slides": [
-            {"imageFile": "TEST1.png", "caption": "Descripción 1."},
-            {"imageFile": "TEST2.png", "caption": "Descripción 2."}
-        ],
-        "technologies": ["Vue.js", "Spring Boot", "PostgreSQL", "Docker", "Git", "Artillery"],
-        "links": [
-            {"url": "https://github.com/mateosepulveda/comisariaVirtual", "caption": "Repositorio en GitHub"}
-        ],
-        "tags": ["Frontend", "Backend"]
-    },
-    {
-        "id": 5,
-        "shortTitle": "vehicleye",
-        "longTitle": "VehiclEye",
-        "startDate": {"month": 4, "year": 2021},
-        "endDate": {"month": 8, "year": 2021},
-        "description": "Proyecto de dispositivo tecnológico para frustrar robo de vehículos mediante tecnología de reconocimiento facial.",
-        "slides": [
-            {"imageFile": "TEST1.png", "caption": "Descripción 1."},
-            {"imageFile": "TEST2.png", "caption": "Descripción 2."}
-        ],
-        "technologies": [],
-        "links": [],
-        "tags": []
-    },
-    {
-        "id": 6,
-        "shortTitle": "neurone",
-        "longTitle": "NEURONE",
-        "startDate": {"month": 3, "year": 2022},
-        "endDate": {"month": 9, "year": 2022},
-        "description": "En el marco del ecosistema NEURONE, orientado a estudios de alfabetización informacional, se desarrolló NEURONE Student Simulator Interface. Este módulo es un ambiente dedicado a gestionar simulaciones de estudiantes.",
-        "slides": [
-            {"imageFile": "neurone1.jpg", "caption": "Herramienta de diseño gráfico para modelos de comportamiento."},
-            {"imageFile": "TEST2.png", "caption": "Descripción 2."},
-            {"imageFile": "TEST3.png", "caption": "Descripción 3."}
-        ],
-        "technologies": ["Angular", "JointJS", "Node.js", "Express", "MongoDB"],
-        "links": [
-            {"url": "https://neurone.info/", "caption": "Sitio web de NEURONE"}
-        ],
-        "tags": ["Frontend", "Backend"]
-    }
+  {
+    "id": 1,
+    "shortTitle": "tbdseries",
+    "longTitle": "TBD Series",
+    "startDate": {"month": 5, "year": 2019},
+    "endDate": {"month": 7, "year": 2019},
+    "description": "Proyecto enfocado en tuits sobre series de televisión, en el cual se buscaba hacer un análisis de sentimiento sobre los gustos y tendencias del público en esta materia, para luego presentar esta información mediante una plataforma web. En el proyecto, se trabajó en el frontend, diseñando las vistas mediante Vue.js y la biblioteca Highcharts. Además, fue necesario elegir las representaciones visuales adecuadas que hicieran que el análisis fuese intuitivo y comprensible para el usuario.",
+    "slides": [
+      {"imageFile": "TEST1.png", "caption": "Descripción 1."}
+    ],
+    "technologies": ["Vue.js", "Highcharts"],
+    "links": [
+      {"url": "https://github.com/mateosepulveda/TBDgrupo6", "caption": "Repositorio en GitHub"}
+    ],
+    "tags": ["Frontend"]
+  },
+  {
+    "id": 2,
+    "shortTitle": "happ",
+    "longTitle": "Hotel App",
+    "startDate": {"month": 10, "year": 2019},
+    "endDate": {"month": 10, "year": 2019},
+    "description": "Plataforma para gestión de reservas de habitaciones de hotel. Incluye creación de usuarios (huéspedes), con su respectivo login, así como creación de habitaciones, y asignación de habitaciones a usuarios. Se trabajó tanto en backend como en frontend. En backend, como parte del patrón MVC, se desarrolló código para los modelos y controladores usando Spring Boot en conexión con MySQL, y en frontend se trabajó en la lógica y diseño de todas las vistas mediante Vue.js.",
+    "slides": [
+      {"imageFile": "happ1.jpg", "caption": "Línea de tiempo con las reservas realizadas en cada habitación, mostrando la información relevante de cada reserva mediante un tooltip."}
+    ],
+    "technologies": ["Vue.js", "Spring Boot", "MySQL"],
+    "links": [
+      {"url": "https://github.com/mateosepulveda/hotel-mingeso-front", "caption": "Repositorio en GitHub (frontend)"},
+      {"url": "https://github.com/mateosepulveda/hotel-mingeso-back", "caption": "Repositorio en GitHub (backend)"}
+    ],
+    "tags": ["Frontend", "Backend"]
+  },
+  {
+    "id": 3,
+    "shortTitle": "sanalyzer",
+    "longTitle": "Sentiment Analyzer",
+    "startDate": {"month": 12, "year": 2020},
+    "endDate": {"month": 3, "year": 2021},
+    "description": "Pipeline de análisis de sentimientos de publicaciones en Reddit.",
+    "slides": [
+      {"imageFile": "TEST1.png", "caption": "Descripción 1."},
+      {"imageFile": "TEST2.png", "caption": "Descripción 2."}
+    ],
+    "technologies": ["Vue.js", "PostgreSQL", "MongoDB", "Docker"],
+    "links": [
+      {"url": "https://github.com/mateosepulveda/Sentiment_analyzer", "caption": "Repositorio en GitHub"}
+    ],
+    "tags": ["Frontend", "Backend"]
+  },
+  {
+    "id": 4,
+    "shortTitle": "cvirtual",
+    "longTitle": "Comisaría Virtual",
+    "startDate": {"month": 3, "year": 2021},
+    "endDate": {"month": 3, "year": 2021},
+    "description": "Desarrollo de sistema distribuido que simula el proceso de solicitud de permisos de Comisaría Virtual.",
+    "slides": [
+      {"imageFile": "TEST1.png", "caption": "Descripción 1."},
+      {"imageFile": "TEST2.png", "caption": "Descripción 2."}
+    ],
+    "technologies": ["Vue.js", "Spring Boot", "PostgreSQL", "Docker", "Artillery"],
+    "links": [
+      {"url": "https://github.com/mateosepulveda/comisariaVirtual", "caption": "Repositorio en GitHub"}
+    ],
+    "tags": ["Frontend", "Backend"]
+  },
+  {
+    "id": 5,
+    "shortTitle": "vehicleye",
+    "longTitle": "VehiclEye",
+    "startDate": {"month": 4, "year": 2021},
+    "endDate": {"month": 8, "year": 2021},
+    "description": "Proyecto de dispositivo tecnológico para frustrar robo de vehículos mediante tecnología de reconocimiento facial.",
+    "slides": [
+      {"imageFile": "TEST1.png", "caption": "Descripción 1."},
+      {"imageFile": "TEST2.png", "caption": "Descripción 2."}
+    ],
+    "technologies": [],
+    "links": [],
+    "tags": []
+  },
+  {
+    "id": 6,
+    "shortTitle": "neurone",
+    "longTitle": "NEURONE",
+    "startDate": {"month": 3, "year": 2022},
+    "endDate": {"month": 9, "year": 2022},
+    "description": "Este proyecto se realizó en el contexto de la plataforma de software NEURONE, la cual ofrece un ambiente de investigación y captura de datos para estudios de alfabetización informacional. Específicamente, se desarrolló el módulo NEURONE Student Simulator Interface, un ambiente dedicado a gestionar simulaciones de estudiantes con múltiples propósitos. Se trabajó en la totalidad del proyecto, abarcando frontend, backend, motor de base de datos y comunicación con otros módulos preexistentes de NEURONE.",
+    "slides": [
+      {"imageFile": "neurone1.jpg", "caption": "Herramienta de diseño gráfico tipo drag-and-drop para modelos de comportamiento necesarios para las simulaciones. Esta herramienta fue desarrollada con la biblioteca JointJS."},
+      {"imageFile": "TEST2.png", "caption": "Descripción 2."},
+      {"imageFile": "TEST3.png", "caption": "Descripción 3."}
+    ],
+    "technologies": ["Angular", "JointJS", "Node.js", "Express", "MongoDB"],
+    "links": [
+      {"url": "https://neurone.info/", "caption": "Sitio web de NEURONE"}
+    ],
+    "tags": ["Frontend", "Backend"]
+  }
 ]
