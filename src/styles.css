@@ -1,6 +1,8 @@
 :root {
   font-family: -apple-system, BlinkMacSystemFont, "Space Grotesk", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 25px;
+  font-weight: normal;
+  font-style: normal;
   color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -16,6 +18,8 @@ h1 {
   flex-direction: column;
   color: var(--titlecolor);
   font-family: 'Comfortaa', sans-serif;
+  font-weight: normal;
+  font-style: normal;
   border-bottom: 2px solid var(--titlecolor);
 }
 
@@ -27,6 +31,8 @@ h6 {
   margin-bottom: 0;
   color: var(--titlecolor);
   font-family: 'Comfortaa', sans-serif;
+  font-weight: bold;
+  font-style: normal;
 }
 
 a {
