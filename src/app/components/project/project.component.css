@@ -13,6 +13,10 @@
   text-align: right;
 }
 
+.project-description {
+  margin-bottom: 20px;
+}
+
 .mouseSlideshowInfo {
   text-align: center;
 }
@@ -148,6 +152,7 @@
 }
 
 .technologies-and-links {
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
