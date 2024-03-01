@@ -218,6 +218,10 @@
 }
 
 @media (hover: none) {
+  .project-description {
+    margin-bottom: 30px;
+  }
+
   .prev:hover,
   .next:hover {
     background-color: rgba(0, 0, 0, 0.6);

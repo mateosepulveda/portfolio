@@ -116,6 +116,10 @@ li ul {
   :root {
     font-size: 17px;
   }
+
+  button {
+    font-size: 17px;
+  }
 }
 
 @media (hover: none) {
@@ -125,9 +129,5 @@ li ul {
   
   a:hover path {
     fill: white;
-  }
-
-  button:hover {
-    cursor: auto;
   }
 }
