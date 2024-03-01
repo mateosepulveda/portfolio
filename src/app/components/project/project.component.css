@@ -13,11 +13,7 @@
   text-align: right;
 }
 
-.project-description {
-  margin-bottom: 15px;
-}
-
-.mouseSlideshowInfo {
+.mouse-slideshow-info {
   text-align: center;
 }
 
@@ -152,7 +148,7 @@
 }
 
 .technologies-and-links {
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 
@@ -218,8 +214,8 @@
 }
 
 @media (hover: none) {
-  .project-description {
-    margin-bottom: 30px;
+  .slideshow {
+    margin-top: 40px;
   }
 
   .prev:hover,
