@@ -17,8 +17,8 @@
   <div class="slideshow" (mouseenter)="slides.length > 1 ? pauseCarousel() : null" (mouseleave)="(hoverEnabled === true) && (slides.length > 1) ? startCarousel() : null">
     <img [src]="'assets/projects/' + project.shortTitle + '/' + slide.imageFile" *ngFor="let slide of slides; let i = index" [class.image-fade-in]="displaySlides[i]" [class.image-fade-out]="!displaySlides[i]" [style.z-index]="zIndexSlide === i ? 3 : 0">
     <div class="prev-next" *ngIf="slides.length > 1">
-      <a class="prev" (click)="previousSlide()" [hidden]="firstSlide">&#10094;</a>
-      <a class="next" (click)="nextSlide()" [hidden]="lastSlide">&#10095;</a>
+      <button class="prev" (click)="previousSlide()" [hidden]="firstSlide">&#10094;</button>
+      <button class="next" (click)="nextSlide()" [hidden]="lastSlide">&#10095;</button>
     </div>
     <div class="caption-container">
       <div class="caption">
@@ -28,7 +28,7 @@
   </div>
   
   <div class="dot-container" *ngIf="slides.length > 1">
-    <span class="dot" *ngFor="let slide of slides; let i = index" (click)="currentSlide !== i ? changeSlide(i) : null" (mouseenter)="slides.length > 1 ? pauseCarousel() : null" (mouseleave)="(hoverEnabled === true) && (slides.length > 1) ? startCarousel() : null" [class.dot-active]="displayCaptions[i]"></span> 
+    <button class="dot" *ngFor="let slide of slides; let i = index" (click)="currentSlide !== i ? changeSlide(i) : null" (mouseenter)="slides.length > 1 ? pauseCarousel() : null" (mouseleave)="(hoverEnabled === true) && (slides.length > 1) ? startCarousel() : null" [class.dot-active]="displayCaptions[i]"></button> 
   </div>
 
   <div class="technologies-and-links">

@@ -11,12 +11,12 @@
         <p>Filtros:</p>
       </div>
       <div class="tags">
-        <a class="tag" (click)="unfilterProjects()" [class.tag-selected]="currentFilter === ''">
+        <button class="tag" (click)="unfilterProjects()" [class.tag-selected]="currentFilter === ''">
           Todos los proyectos
-        </a>
-        <a class="tag" *ngFor="let projectTag of projectTags; let i = index" (click)="filterProjects(projectTag)" [class.tag-selected]="projectTag === currentFilter">
+        </button>
+        <button class="tag" *ngFor="let projectTag of projectTags; let i = index" (click)="filterProjects(projectTag)" [class.tag-selected]="projectTag === currentFilter">
           {{ projectTag }}
-        </a>
+        </button>
       </div>
     </div>
 

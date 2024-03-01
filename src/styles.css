@@ -54,6 +54,22 @@ a:hover path {
   fill: var(--linkcolor2);
 }
 
+button {
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 25px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: transparent;
+  border: none;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 li {
   margin-bottom: 5px;
 }
@@ -109,5 +125,9 @@ li ul {
   
   a:hover path {
     fill: white;
+  }
+
+  button:hover {
+    cursor: auto;
   }
 }
