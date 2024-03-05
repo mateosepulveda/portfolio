@@ -6,7 +6,7 @@
     "startDate": {"month": 5, "year": 2019},
     "endDate": {"month": 7, "year": 2019},
     "description": "Proyecto enfocado en tuits sobre series de televisión, en el cual se buscaba hacer un análisis de sentimiento sobre los gustos y tendencias del público en esta materia, para luego presentar esta información mediante una plataforma web. En el proyecto, se trabajó en el frontend, diseñando las vistas mediante Vue.js y la biblioteca Highcharts. Además, fue necesario elegir las representaciones visuales adecuadas que hicieran que el análisis fuese intuitivo y comprensible para el usuario.",
-    "slides": ["TEST1.png"],
+    "images": ["TEST1.png"],
     "technologies": ["Vue.js", "Highcharts"],
     "links": [
       {"url": "https://github.com/mateosepulveda/TBDgrupo6", "caption": "Repositorio en GitHub"}
@@ -20,7 +20,7 @@
     "startDate": {"month": 10, "year": 2019},
     "endDate": {"month": 10, "year": 2019},
     "description": "Plataforma para gestión de reservas de habitaciones de hotel. Incluye creación de usuarios (huéspedes), con su respectivo login, así como creación de habitaciones, y asignación de habitaciones a usuarios. Se trabajó tanto en backend como en frontend. En backend, como parte del patrón MVC, se desarrolló código para los modelos y controladores usando Spring Boot en conexión con MySQL, y en frontend se trabajó en la lógica y diseño de todas las vistas mediante Vue.js.",
-    "slides": ["happ1.jpg"],
+    "images": ["happ1.jpg"],
     "technologies": ["Vue.js", "Spring Boot", "MySQL"],
     "links": [
       {"url": "https://github.com/mateosepulveda/hotel-mingeso-front", "caption": "Repositorio en GitHub (frontend)"},
@@ -34,8 +34,8 @@
     "longTitle": "Sentiment Analyzer",
     "startDate": {"month": 12, "year": 2020},
     "endDate": {"month": 3, "year": 2021},
-    "description": "Pipeline de análisis de sentimiento de publicaciones en Reddit. El proceso comienza con la obtención de las publicaciones mediante la API de Reddit, para luego filtrarlas y aplicarles un procesamiento de lenguaje, a partir del cual se puede realizar el análisis de sentimiento en sí, mediante la herramienta VADER. Tanto las publicaciones como los resultados del análisis son almacenados en bases de datos, las cuales pueden ser consultadas por el usuario mediante una plataforma web. Se trabajó en el frontend de esta plataforma y en la configuración de las diferentes etapas del pipeline.",
-    "slides": ["TEST1.png"],
+    "description": "Pipeline de análisis de sentimiento de publicaciones en Reddit. El proceso comienza con la obtención de las publicaciones en un stream de datos, utilizando la API de Reddit. Posteriormente, las publicaciones son filtradas y se les aplica un procesamiento de lenguaje, a partir del cual se puede realizar el análisis de sentimiento en sí, mediante la herramienta VADER. Tanto las publicaciones como los resultados del análisis son almacenados en bases de datos, las cuales pueden ser consultadas por el usuario mediante una plataforma web. Se trabajó en el frontend de esta plataforma y en la configuración de las diferentes etapas del pipeline.",
+    "images": ["TEST1.png"],
     "technologies": ["Vue.js", "Python", "PostgreSQL", "MongoDB", "Docker"],
     "links": [
       {"url": "https://github.com/mateosepulveda/Sentiment_analyzer", "caption": "Repositorio en GitHub"}
@@ -49,7 +49,7 @@
     "startDate": {"month": 3, "year": 2021},
     "endDate": {"month": 3, "year": 2021},
     "description": "Desarrollo de plataforma web que simula el proceso de solicitud de permisos otorgados durante la pandemia de COVID-19, desde el sitio web de Comisaría Virtual. Se trabajó tanto en frontend como en backend (aplicando el patrón MVC en este último), para luego dockerizar el software desarrollado. Además, se implementó el envío de correos electrónicos de confirmación a la dirección especificada por el usuario.",
-    "slides": ["cvirtual1.jpg", "cvirtual2.jpg"],
+    "images": ["cvirtual1.jpg", "cvirtual2.jpg"],
     "technologies": ["Vue.js", "Spring Boot", "PostgreSQL", "Docker", "Artillery"],
     "links": [
       {"url": "https://github.com/mateosepulveda/comisariaVirtual", "caption": "Repositorio en GitHub"}
@@ -63,7 +63,7 @@
     "startDate": {"month": 4, "year": 2021},
     "endDate": {"month": 8, "year": 2021},
     "description": "Proyecto de dispositivo tecnológico para frustrar robo de vehículos mediante tecnología de reconocimiento facial. Se trabajó en la planificación y evaluación del proyecto a lo largo de todas sus etapas, contemplando la creación de una empresa ficticia, análisis de mercado para el producto, ingeniería para el desarrollo y producción, aspectos legales, y evaluación financiera y económica. Además, se diseñaron los flujos de proceso de soporte para el producto, y se realizó un análisis de relación con proveedores tecnológicos para la manufactura del mismo.",
-    "slides": ["TEST1.png"],
+    "images": ["TEST1.png"],
     "technologies": [],
     "links": [],
     "tags": []
@@ -75,7 +75,7 @@
     "startDate": {"month": 3, "year": 2022},
     "endDate": {"month": 9, "year": 2022},
     "description": "Este proyecto se realizó en el contexto de la plataforma de software NEURONE, la cual ofrece un ambiente de investigación y captura de datos para estudios de alfabetización informacional. Específicamente, se desarrolló el módulo NEURONE Student Simulator Interface, un ambiente dedicado a gestionar simulaciones de estudiantes con múltiples propósitos. Se trabajó en la totalidad del proyecto, abarcando frontend, backend, motor de base de datos y comunicación con otros módulos preexistentes de NEURONE.",
-    "slides": ["neurone1.jpg"],
+    "images": ["neurone1.jpg"],
     "technologies": ["Angular", "JointJS", "Node.js", "Express", "MongoDB"],
     "links": [
       {"url": "https://neurone.info/", "caption": "Sitio web de NEURONE"}

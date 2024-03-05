@@ -11,12 +11,12 @@ import { Project } from './../../interfaces/project.interface';
 })
 export class ProjectComponent implements OnInit {
   project: Project | null = null;
-  slides: string[] = [];
-  currentSlide: number = 0;
-  zIndexSlide: number = 0;
-  firstSlide: boolean = false;
-  lastSlide: boolean = false;
-  displaySlides: boolean[] = []
+  images: string[] = [];
+  currentImage: number = 0;
+  zIndexImage: number = 0;
+  firstImage: boolean = false;
+  lastImage: boolean = false;
+  displayImages: boolean[] = []
   displayCaptions: boolean[] = []
   carouselIntervalId: any = null;
   carouselDirection: string = 'forward';
@@ -34,11 +34,11 @@ export class ProjectComponent implements OnInit {
         this.router.navigate(['/page-not-found']);
       } else {
         this.project = project;
-        this.slides = this.project.slides;
-        this.displaySlides = Array(this.slides.length).fill(false);
-        this.displayCaptions = Array(this.slides.length).fill(false);
-        this.handleSlideChange(this.currentSlide);
-        if (this.slides.length > 1) {
+        this.images = this.project.images;
+        this.displayImages = Array(this.images.length).fill(false);
+        this.displayCaptions = Array(this.images.length).fill(false);
+        this.handleImageChange(this.currentImage);
+        if (this.images.length > 1) {
           this.updateCarousel = this.updateCarousel.bind(this);
           this.startCarousel();
         }
@@ -49,77 +49,77 @@ export class ProjectComponent implements OnInit {
     });
   }
 
-  handleSlideChange(slideIndex: number): void {
-    if ((slideIndex < 0) || (slideIndex > this.slides.length - 1)) {
+  handleImageChange(imageIndex: number): void {
+    if ((imageIndex < 0) || (imageIndex > this.images.length - 1)) {
       return;
     }
-    var currentSlideSnapshot = this.currentSlide;
-    this.currentSlide = slideIndex;
-    for (let i = 0; i < this.displaySlides.length; i++) {
-      if (i <= this.currentSlide) {
-        this.displaySlides[i] = true;
+    var currentImageSnapshot = this.currentImage;
+    this.currentImage = imageIndex;
+    for (let i = 0; i < this.displayImages.length; i++) {
+      if (i <= this.currentImage) {
+        this.displayImages[i] = true;
       } else {
-        this.displaySlides[i] = false;
+        this.displayImages[i] = false;
       }
     }
     for (let i = 0; i < this.displayCaptions.length; i++) {
-      if (i === this.currentSlide) {
+      if (i === this.currentImage) {
         this.displayCaptions[i] = true;
       } else {
         this.displayCaptions[i] = false;
       }
     }
-    this.checkFirstLastSlide();
-    this.changeZIndex(currentSlideSnapshot, slideIndex);
+    this.checkFirstLastImage();
+    this.changeZIndex(currentImageSnapshot, imageIndex);
   }
 
-  checkFirstLastSlide(): void {
-    if (this.slides.length === 1) {
-      this.firstSlide = true;
-      this.lastSlide = true;
+  checkFirstLastImage(): void {
+    if (this.images.length === 1) {
+      this.firstImage = true;
+      this.lastImage = true;
     } else {
-      if (this.currentSlide === 0) {
-        this.firstSlide = true;
-        this.lastSlide = false;
-      } else if (this.currentSlide === this.slides.length - 1) {
-        this.firstSlide = false;
-        this.lastSlide = true;
+      if (this.currentImage === 0) {
+        this.firstImage = true;
+        this.lastImage = false;
+      } else if (this.currentImage === this.images.length - 1) {
+        this.firstImage = false;
+        this.lastImage = true;
       } else {
-        this.firstSlide = false;
-        this.lastSlide = false;
+        this.firstImage = false;
+        this.lastImage = false;
       }
     }
   }
 
-  changeZIndex(currentSlideSnapshot: number, slideIndex: number): void {
-    if (slideIndex > currentSlideSnapshot) {
-      this.zIndexSlide = this.currentSlide;
+  changeZIndex(currentImageSnapshot: number, imageIndex: number): void {
+    if (imageIndex > currentImageSnapshot) {
+      this.zIndexImage = this.currentImage;
     } else {
       setTimeout(() => {
-        this.zIndexSlide = this.currentSlide;
+        this.zIndexImage = this.currentImage;
       }, 500);
     }
   }
 
-  nextSlide(): void {
+  nextImage(): void {
     clearInterval(this.carouselIntervalId);
-    this.handleSlideChange(this.currentSlide + 1);
+    this.handleImageChange(this.currentImage + 1);
     this.carouselDirection = 'forward';
   }
 
-  previousSlide(): void {
+  previousImage(): void {
     clearInterval(this.carouselIntervalId);
-    this.handleSlideChange(this.currentSlide - 1);
+    this.handleImageChange(this.currentImage - 1);
     this.carouselDirection = 'backward';
   }
 
-  changeSlide(slideIndex: number): void {
-    if (slideIndex > this.currentSlide) {
+  changeImage(imageIndex: number): void {
+    if (imageIndex > this.currentImage) {
       this.carouselDirection = 'forward';
-    } else if (slideIndex < this.currentSlide) {
+    } else if (imageIndex < this.currentImage) {
       this.carouselDirection = 'backward';
     }
-    this.handleSlideChange(slideIndex);
+    this.handleImageChange(imageIndex);
   }
 
   startCarousel(): void {
@@ -132,16 +132,16 @@ export class ProjectComponent implements OnInit {
 
   updateCarousel(): void {
     if (this.carouselDirection === 'forward') {
-      if (this.currentSlide === this.slides.length - 1) {
-        this.handleSlideChange(0);
+      if (this.currentImage === this.images.length - 1) {
+        this.handleImageChange(0);
       } else {
-        this.handleSlideChange(this.currentSlide + 1);
+        this.handleImageChange(this.currentImage + 1);
       }
     } else {
-      if (this.currentSlide === 0) {
-        this.handleSlideChange(this.slides.length - 1);
+      if (this.currentImage === 0) {
+        this.handleImageChange(this.images.length - 1);
       } else {
-        this.handleSlideChange(this.currentSlide - 1);
+        this.handleImageChange(this.currentImage - 1);
       }
     }
   }

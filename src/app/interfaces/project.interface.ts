@@ -16,7 +16,7 @@ export interface Project {
     endDate: Date;
     dateString?: string;
     description: string;
-    slides: string[];
+    images: string[];
     technologies: string[];
     links: Link[];
     tags: string[];

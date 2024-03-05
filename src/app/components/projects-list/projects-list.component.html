@@ -2,7 +2,7 @@
   <h1>Proyectos</h1>
   <div class="block">
     <img src="assets/project-management.png">
-    <p>Estos son algunos de mis proyectos. Estos trabajos abarcan, entre otros ámbitos, el desarrollo de aplicaciones web mediante diferentes lenguajes y frameworks, el procesamiento de datos en streaming en tiempo real, y el uso de machine learning para análisis de datos.</p>
+    <p>Estos son algunos de mis proyectos. Estos trabajos abarcan, entre otros ámbitos, el desarrollo de aplicaciones web mediante diferentes lenguajes y frameworks, y el procesamiento de streaming de datos en tiempo real.</p>
   </div>
 
   <div class="project-section fade-in" *ngIf="projects !== null">
@@ -27,7 +27,7 @@
 
     <div class="project-list" [class.fade-in]="projectsFadeIn">
       <a class="project" *ngFor="let project of projectsFiltered" [routerLink]="'/project/' + project.shortTitle">
-        <img [src]="'assets/projects/' + project.shortTitle + '/' + project.slides[0]">
+        <img [src]="'assets/projects/' + project.shortTitle + '/' + project.images[0]">
         <div class="project-name">
           <p>{{ project.longTitle }}</p>
         </div>
