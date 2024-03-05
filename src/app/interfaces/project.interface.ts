@@ -3,11 +3,6 @@ export interface Date {
     year: number;
 }
 
-export interface Slide {
-    imageFile: string;
-    caption: string;
-}
-
 export interface Link {
     url: string;
     caption: string;
@@ -21,7 +16,7 @@ export interface Project {
     endDate: Date;
     dateString?: string;
     description: string;
-    slides: Slide[];
+    slides: string[];
     technologies: string[];
     links: Link[];
     tags: string[];

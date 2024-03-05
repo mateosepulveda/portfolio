@@ -15,15 +15,10 @@
   <p class="mouse-slideshow-info" *ngIf="slides.length > 1 && hoverEnabled === true"><i>Ponga el cursor sobre la imagen para pausar la galería</i></p>
 
   <div class="slideshow" (mouseenter)="slides.length > 1 ? pauseCarousel() : null" (mouseleave)="(hoverEnabled === true) && (slides.length > 1) ? startCarousel() : null">
-    <img [src]="'assets/projects/' + project.shortTitle + '/' + slide.imageFile" *ngFor="let slide of slides; let i = index" [class.image-fade-in]="displaySlides[i]" [class.image-fade-out]="!displaySlides[i]" [style.z-index]="zIndexSlide === i ? 3 : 0">
+    <img [src]="'assets/projects/' + project.shortTitle + '/' + slide" *ngFor="let slide of slides; let i = index" [class.image-fade-in]="displaySlides[i]" [class.image-fade-out]="!displaySlides[i]" [style.z-index]="zIndexSlide === i ? 3 : 0">
     <div class="prev-next" *ngIf="slides.length > 1">
       <button class="prev" (click)="previousSlide()" [hidden]="firstSlide">&#10094;</button>
       <button class="next" (click)="nextSlide()" [hidden]="lastSlide">&#10095;</button>
-    </div>
-    <div class="caption-container">
-      <div class="caption">
-        <p>{{ slides[currentSlide].caption }}</p>
-      </div>
     </div>
   </div>
   
@@ -32,7 +27,7 @@
   </div>
 
   <div class="technologies-and-links">
-    <h3 *ngIf="project.technologies.length > 0">Tecnologías</h3>
+    <h3 *ngIf="project.technologies.length > 0">Tecnologías trabajadas</h3>
     <ul>
       <li *ngFor="let technology of project.technologies">{{ technology }}</li>
     </ul>

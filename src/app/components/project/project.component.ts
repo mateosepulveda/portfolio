@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectService } from '../../services/project.service';
-import Project, { Slide } from './../../interfaces/project.interface';
+import { Project } from './../../interfaces/project.interface';
 
 @Component({
   selector: 'app-project',
@@ -11,7 +11,7 @@ import Project, { Slide } from './../../interfaces/project.interface';
 })
 export class ProjectComponent implements OnInit {
   project: Project | null = null;
-  slides: Slide[] = [];
+  slides: string[] = [];
   currentSlide: number = 0;
   zIndexSlide: number = 0;
   firstSlide: boolean = false;

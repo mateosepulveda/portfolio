@@ -27,7 +27,7 @@
 
     <div class="project-list" [class.fade-in]="projectsFadeIn">
       <a class="project" *ngFor="let project of projectsFiltered" [routerLink]="'/project/' + project.shortTitle">
-        <img [src]="'assets/projects/' + project.shortTitle + '/' + project.slides[0].imageFile">
+        <img [src]="'assets/projects/' + project.shortTitle + '/' + project.slides[0]">
         <div class="project-name">
           <p>{{ project.longTitle }}</p>
         </div>

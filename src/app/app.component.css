@@ -186,6 +186,7 @@
 .menu-content-wrapper {
   height: 100vh;
   display: flex;
+  padding-right: 25px;
   flex-direction: column;
   justify-content: center;
   text-align: center;
