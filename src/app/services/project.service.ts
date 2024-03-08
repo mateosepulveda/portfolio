@@ -76,7 +76,23 @@ export class ProjectService {
         }
       }
     }
-    this.projectTags.sort();
+    this.sortProjectTags();
+  }
+
+  sortProjectTags(): void {
+    this.projectTags.sort((a, b) => {
+      if (a === "Frontend") {
+        return -1;
+      } else if (b === "Frontend") {
+        return 1;
+      }
+      if (a === "Backend") {
+        return -1;
+      } else if (b === "Backend") {
+        return 1;
+      }
+      return a.localeCompare(b);
+    });
   }
 
   getProjects(): Project[] {

@@ -18,9 +18,9 @@
 
 .tag {
   position: relative;
-  margin: 10px;
+  margin: 5px;
   padding: 0px 20px;
-  min-height: 60px;
+  min-height: 50px;
   background-color: var(--tagcolor);
   color: white;
   display: flex;
