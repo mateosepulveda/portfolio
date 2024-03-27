@@ -33,13 +33,42 @@ export class ProjectService {
     const response = await fetch(this.projectFile);
     const json = await response.json();
     this.projects = json;
-    this.sortProjects();
     this.addDateStrings();
+    this.addCompletedTags();
+    this.sortProjects();
     this.setProjectTags();
   }
 
   async dataReady(): Promise<void> {
     return this.dataPromise;
+  }
+
+  addDateStrings(): void {
+    for (let i = 0; i < this.projects.length; i++) {
+      var dateString = '';
+      if (this.projects[i].completed === true) {
+        const startDate = this.projects[i].startDate;
+        const endDate = this.projects[i].endDate;
+        if (startDate.month === endDate!.month && startDate.year === endDate!.year) {
+          dateString = dateString.concat(`${this.monthsDictionary[startDate.month]} ${startDate.year}`);
+        } else {
+          dateString = dateString.concat(`${this.monthsDictionary[startDate.month]} ${startDate.year} — ${this.monthsDictionary[endDate!.month]} ${endDate!.year}`);
+        }
+      } else {
+        dateString = dateString.concat('En desarrollo');
+      }
+      this.projects[i]['dateString'] = dateString;
+    }
+  }
+
+  addCompletedTags(): void {
+    for (let i = 0; i < this.projects.length; i++) {
+      if (this.projects[i].completed === true) {
+        this.projects[i].tags.push('Completados');
+      } else {
+        this.projects[i].tags.push('En desarrollo');
+      }
+    }
   }
 
   sortProjects(): void {
@@ -53,21 +82,6 @@ export class ProjectService {
     });
   }
 
-  addDateStrings(): void {
-    for (let i = 0; i < this.projects.length; i++) {
-      var dateString = '';
-      if ((this.projects[i].startDate.month === this.projects[i].endDate.month) &&
-          (this.projects[i].startDate.year === this.projects[i].endDate.year)) {
-        dateString = dateString.concat(`${this.monthsDictionary[this.projects[i].startDate.month]} ${this.projects[i].startDate.year}`);
-      } else {
-        dateString = dateString.concat(`${this.monthsDictionary[this.projects[i].startDate.month]} ${this.projects[i].startDate.year}`);
-        dateString = dateString.concat(' - ');
-        dateString = dateString.concat(`${this.monthsDictionary[this.projects[i].endDate.month]} ${this.projects[i].endDate.year}`);
-      }
-      this.projects[i]['dateString'] = dateString;
-    }
-  }
-
   setProjectTags(): void {
     for (let i = 0; i < this.projects.length; i++) {
       for (let j = 0; j < this.projects[i].tags.length; j++) {
@@ -76,11 +90,22 @@ export class ProjectService {
         }
       }
     }
+
     this.sortProjectTags();
   }
 
   sortProjectTags(): void {
     this.projectTags.sort((a, b) => {
+      if (a === "Completados") {
+        return -1;
+      } else if (b === "Completados") {
+        return 1;
+      }
+      if (a === "En desarrollo") {
+        return -1;
+      } else if (b === "En desarrollo") {
+        return 1;
+      }
       if (a === "Frontend") {
         return -1;
       } else if (b === "Frontend") {

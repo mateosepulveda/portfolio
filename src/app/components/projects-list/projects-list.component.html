@@ -22,13 +22,15 @@
 
     <div class="filter-info">
       <p *ngIf="currentFilter === ''"><i>Mostrando todos los proyectos</i></p>
-      <p *ngIf="currentFilter !== ''"><i>Mostrando proyectos filtrados por: {{ currentFilter }}</i></p>
+      <p *ngIf="currentFilter === 'Completados'"><i>Mostrando proyectos completados</i></p>
+      <p *ngIf="currentFilter === 'En desarrollo'"><i>Mostrando proyectos en desarrollo</i></p>
+      <p *ngIf="(currentFilter !== '') && (currentFilter !== 'Completados') && (currentFilter !== 'En desarrollo')"><i>Mostrando proyectos filtrados por: {{ currentFilter }}</i></p>
     </div>
 
     <div class="project-list" [class.fade-in]="projectsFadeIn">
-      <a class="project" *ngFor="let project of projectsFiltered" [routerLink]="'/project/' + project.shortTitle">
+      <a class="project" *ngFor="let project of projectsFiltered" [routerLink]="'/project/' + project.shortTitle" [class.project-in-development]="!project.completed">
         <img [src]="'assets/projects/' + project.shortTitle + '/' + project.images[0]">
-        <div class="project-name">
+        <div class="project-title">
           <p>{{ project.longTitle }}</p>
         </div>
       </a>

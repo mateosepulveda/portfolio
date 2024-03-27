@@ -12,6 +12,7 @@ export interface Project {
     id: number;
     shortTitle: string;
     longTitle: string;
+    completed: boolean;
     startDate: Date;
     endDate: Date;
     dateString?: string;

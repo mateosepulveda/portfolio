@@ -17,7 +17,7 @@ export class ProjectComponent implements OnInit {
   firstImage: boolean = false;
   lastImage: boolean = false;
   displayImages: boolean[] = []
-  displayCaptions: boolean[] = []
+  highlightDots: boolean[] = []
   carouselIntervalId: any = null;
   carouselDirection: string = 'forward';
   hoverEnabled: boolean = true;
@@ -36,8 +36,9 @@ export class ProjectComponent implements OnInit {
         this.project = project;
         this.images = this.project.images;
         this.displayImages = Array(this.images.length).fill(false);
-        this.displayCaptions = Array(this.images.length).fill(false);
-        this.handleImageChange(this.currentImage);
+        this.displayImages[0] = true;
+        this.highlightDots = Array(this.images.length).fill(false);
+        this.highlightDots[0] = true;
         if (this.images.length > 1) {
           this.updateCarousel = this.updateCarousel.bind(this);
           this.startCarousel();
@@ -50,27 +51,16 @@ export class ProjectComponent implements OnInit {
   }
 
   handleImageChange(imageIndex: number): void {
-    if ((imageIndex < 0) || (imageIndex > this.images.length - 1)) {
+    if ((imageIndex < 0) || (imageIndex > this.images.length - 1) || (imageIndex === this.currentImage)) {
       return;
     }
-    var currentImageSnapshot = this.currentImage;
+    this.displayImages[this.currentImage] = false;
+    this.displayImages[imageIndex] = true;
+    this.highlightDots[this.currentImage] = false;
+    this.highlightDots[imageIndex] = true;
     this.currentImage = imageIndex;
-    for (let i = 0; i < this.displayImages.length; i++) {
-      if (i <= this.currentImage) {
-        this.displayImages[i] = true;
-      } else {
-        this.displayImages[i] = false;
-      }
-    }
-    for (let i = 0; i < this.displayCaptions.length; i++) {
-      if (i === this.currentImage) {
-        this.displayCaptions[i] = true;
-      } else {
-        this.displayCaptions[i] = false;
-      }
-    }
     this.checkFirstLastImage();
-    this.changeZIndex(currentImageSnapshot, imageIndex);
+    this.changeZIndex();
   }
 
   checkFirstLastImage(): void {
@@ -91,14 +81,10 @@ export class ProjectComponent implements OnInit {
     }
   }
 
-  changeZIndex(currentImageSnapshot: number, imageIndex: number): void {
-    if (imageIndex > currentImageSnapshot) {
+  changeZIndex(): void {
+    setTimeout(() => {
       this.zIndexImage = this.currentImage;
-    } else {
-      setTimeout(() => {
-        this.zIndexImage = this.currentImage;
-      }, 500);
-    }
+    }, 500);
   }
 
   nextImage(): void {

@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.renderer2.setStyle(document.body, 'margin', '0');
     this.renderer2.setStyle(document.body, 'overflow-y', 'scroll');
 

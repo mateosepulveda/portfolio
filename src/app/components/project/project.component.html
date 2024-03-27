@@ -15,7 +15,7 @@
   <p class="mouse-slideshow-info" *ngIf="images.length > 1 && hoverEnabled === true"><i>Ponga el cursor sobre la imagen para pausar la galería</i></p>
 
   <div class="slideshow" (mouseenter)="images.length > 1 ? pauseCarousel() : null" (mouseleave)="(hoverEnabled === true) && (images.length > 1) ? startCarousel() : null">
-    <img *ngFor="let image of images; let i = index" [src]="'assets/projects/' + project.shortTitle + '/' + image" [class.image-fade-in]="displayImages[i]" [class.image-fade-out]="!displayImages[i]" [style.z-index]="zIndexImage === i ? 3 : 0">
+    <img *ngFor="let image of images; let i = index" [src]="'assets/projects/' + project.shortTitle + '/' + image" [hidden]="!displayImages[i]" [class.img-fade-in]="displayImages[i]" [style.z-index]="zIndexImage === i ? 3 : 0">
     <div class="prev-next" *ngIf="images.length > 1">
       <button class="prev" (click)="previousImage()" [hidden]="firstImage">&#10094;</button>
       <button class="next" (click)="nextImage()" [hidden]="lastImage">&#10095;</button>
@@ -23,7 +23,7 @@
   </div>
   
   <div class="dot-container" *ngIf="images.length > 1">
-    <button class="dot" *ngFor="let image of images; let i = index" (click)="currentImage !== i ? changeImage(i) : null" (mouseenter)="images.length > 1 ? pauseCarousel() : null" (mouseleave)="(hoverEnabled === true) && (images.length > 1) ? startCarousel() : null" [class.dot-active]="displayCaptions[i]"></button> 
+    <button class="dot" *ngFor="let image of images; let i = index" (click)="currentImage !== i ? changeImage(i) : null" (mouseenter)="images.length > 1 ? pauseCarousel() : null" (mouseleave)="(hoverEnabled === true) && (images.length > 1) ? startCarousel() : null" [class.dot-active]="highlightDots[i]"></button> 
   </div>
 
   <div class="technologies-and-links">

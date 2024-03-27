@@ -18,15 +18,15 @@
 
 .tag {
   position: relative;
-  margin: 5px;
-  padding: 0px 20px;
-  min-height: 50px;
+  margin: 3px;
+  padding: 5px 10px;
   background-color: var(--tagcolor);
+  font-size: 0.7rem;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 3px;
   user-select: none;
 }
 
@@ -59,6 +59,10 @@
   cursor: pointer;
 }
 
+.project-in-development {
+  font-style: italic;
+}
+
 .project:hover {
   background-color: var(--linkcolor2);
   color: black;
@@ -71,7 +75,7 @@
   border-radius: 1% / 1.77%;
 }
 
-.project-name {
+.project-title {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,10 +108,6 @@
   .block img {
     margin-top: 30px;
     padding-right: 0px;
-  }
-
-  .tag {
-    min-height: 40px;
   }
 }
 

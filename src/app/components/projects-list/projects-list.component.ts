@@ -14,6 +14,7 @@ export class ProjectsListComponent implements OnInit {
   currentFilter: string = '';
   projectsFadeIn: boolean = false;
   hoverEnabled: boolean = true;
+  fadeInTime: number = 1000;
 
   constructor(private projectService: ProjectService) {
   }
@@ -39,7 +40,7 @@ export class ProjectsListComponent implements OnInit {
       if (this.hoverEnabled === true) {
         setTimeout(() => {
           this.projectsFadeIn = false;
-        }, 1000);
+        }, this.fadeInTime);
       }
     }
   }
@@ -54,7 +55,7 @@ export class ProjectsListComponent implements OnInit {
       if (this.hoverEnabled === true) {
         setTimeout(() => {
           this.projectsFadeIn = false;
-        }, 1000);
+        }, this.fadeInTime);
       }
     }
   }
