@@ -3,9 +3,10 @@
     "id": 1,
     "shortTitle": "tbdseries",
     "longTitle": "TBD Series",
+    "completed": true,
     "startDate": {"month": 5, "year": 2019},
     "endDate": {"month": 7, "year": 2019},
-    "description": "Proyecto enfocado en tuits sobre series de televisión, en el cual se buscaba hacer un análisis de sentimiento sobre los gustos y tendencias del público en esta materia, para luego presentar esta información mediante una plataforma web. En el proyecto, se trabajó en el frontend, diseñando las vistas mediante Vue.js y la biblioteca Highcharts. Además, fue necesario elegir las representaciones visuales adecuadas que hicieran que el análisis fuese intuitivo y comprensible para el usuario.",
+    "description": "Proyecto enfocado en tuits sobre series de televisión, en el cual se buscaba hacer un análisis de sentimiento sobre los gustos y tendencias del público en esta materia, para luego presentar los resultados mediante una plataforma web. En el proyecto, se trabajó en el frontend, diseñando las vistas mediante Vue.js y la biblioteca Highcharts. Para tal efecto, se elaboraron gráficos interactivos que, de forma intuitiva y comprensible para el usuario, permitieran consultar la polaridad de los tuits y la popularidad de los tuiteros, entre otros ámbitos.",
     "images": ["tbdseries1.jpg", "tbdseries2.jpg", "tbdseries3.jpg"],
     "technologies": ["Vue.js", "Highcharts"],
     "links": [
@@ -17,9 +18,10 @@
     "id": 2,
     "shortTitle": "happ",
     "longTitle": "Hotel App",
+    "completed": true,
     "startDate": {"month": 10, "year": 2019},
     "endDate": {"month": 10, "year": 2019},
-    "description": "Plataforma para gestión de reservas de habitaciones de hotel. Incluye creación de usuarios (huéspedes), con su respectivo login, así como creación de habitaciones, y asignación de habitaciones a usuarios. Se trabajó tanto en backend como en frontend. En backend, como parte del patrón MVC, se desarrolló código para los modelos y controladores usando Spring Boot en conexión con MySQL, y en frontend se trabajó en la lógica y diseño de todas las vistas mediante Vue.js.",
+    "description": "Plataforma para gestión de reservas de habitaciones de hotel. Incluye creación de usuarios (huéspedes) con su respectivo login, así como creación de habitaciones y asignación de habitaciones a usuarios. En frontend, se trabajó en la lógica y diseño de todas las vistas mediante Vue.js, y en backend, como parte del patrón MVC, se desarrolló código para los modelos y controladores usando Spring Boot en conexión con MySQL.",
     "images": ["happ1.jpg"],
     "technologies": ["Vue.js", "Spring Boot", "MySQL"],
     "links": [
@@ -32,6 +34,7 @@
     "id": 3,
     "shortTitle": "sanalyzer",
     "longTitle": "Sentiment Analyzer",
+    "completed": true,
     "startDate": {"month": 12, "year": 2020},
     "endDate": {"month": 3, "year": 2021},
     "description": "Pipeline de análisis de sentimiento de publicaciones en Reddit. El proceso comienza con la obtención de las publicaciones en un stream de datos, utilizando la API de Reddit. Posteriormente, las publicaciones son filtradas y se les aplica un procesamiento de lenguaje, a partir del cual se puede realizar el análisis de sentimiento en sí, mediante la herramienta VADER para Python. Tanto las publicaciones como los resultados del análisis son almacenados en bases de datos, las cuales pueden ser consultadas por el usuario mediante una plataforma web. Se trabajó en el frontend de esta plataforma y en la configuración de las diferentes etapas del pipeline.",
@@ -46,11 +49,12 @@
     "id": 4,
     "shortTitle": "cvirtual",
     "longTitle": "Comisaría Virtual",
+    "completed": true,
     "startDate": {"month": 3, "year": 2021},
     "endDate": {"month": 3, "year": 2021},
     "description": "Desarrollo de plataforma web que simula el proceso de solicitud de permisos otorgados durante la pandemia de COVID-19, desde el sitio web de Comisaría Virtual. Se trabajó tanto en frontend como en backend (aplicando el patrón MVC en este último), para luego dockerizar el software desarrollado. Además, se implementó el envío de correos electrónicos de confirmación a la dirección especificada por el usuario.",
     "images": ["cvirtual1.jpg", "cvirtual2.jpg"],
-    "technologies": ["Vue.js", "Spring Boot", "PostgreSQL", "Docker", "Artillery"],
+    "technologies": ["Vue.js", "Spring Boot", "PostgreSQL", "Docker"],
     "links": [
       {"url": "https://github.com/mateosepulveda/comisariaVirtual", "caption": "Repositorio en GitHub"}
     ],
@@ -60,6 +64,7 @@
     "id": 5,
     "shortTitle": "vehicleye",
     "longTitle": "VehiclEye",
+    "completed": true,
     "startDate": {"month": 4, "year": 2021},
     "endDate": {"month": 8, "year": 2021},
     "description": "Proyecto de dispositivo tecnológico para frustrar robo de vehículos mediante tecnología de reconocimiento facial. Se trabajó en la planificación y evaluación del proyecto a lo largo de todas sus etapas, contemplando la creación de una empresa ficticia, análisis de mercado para el producto, ingeniería para el desarrollo y producción (considerando código fuente y dispositivo físico), aspectos legales, y evaluación financiera y económica. Además, se diseñaron los flujos de proceso del producto y de las operaciones de la empresa, y se realizó un análisis de relación con proveedores tecnológicos para la manufactura del producto.",
@@ -72,14 +77,28 @@
     "id": 6,
     "shortTitle": "neurone",
     "longTitle": "NEURONE",
+    "completed": true,
     "startDate": {"month": 3, "year": 2022},
     "endDate": {"month": 9, "year": 2022},
-    "description": "Este proyecto se realizó en el contexto de la plataforma de software NEURONE, la cual ofrece un ambiente de investigación y captura de datos para estudios de alfabetización informacional. Específicamente, se desarrolló el módulo NEURONE Student Simulator Interface, un ambiente dedicado a gestionar simulaciones de estudiantes con múltiples propósitos. Se trabajó en la totalidad del proyecto, abarcando frontend, backend, motor de base de datos y comunicación con otros módulos preexistentes de NEURONE.",
+    "description": "NEURONE es una plataforma de software que ofrece un ambiente de investigación y captura de datos para estudios de alfabetización informacional. En el contexto de NEURONE, se desarrolló el módulo NEURONE Student Simulator Interface, un ambiente que tiene como fin configurar, gestionar y desplegar simulaciones de comportamiento de estudiantes, las cuales tienen múltiples propósitos, desde entrenamiento hasta pruebas de rendimiento. Este módulo hace uso de una herramienta de simulación preexistente, de tipo línea de comandos, a la que se le entregan los parámetros de configuración requeridos, de forma transparente para el usuario. Se trabajó en la totalidad del ambiente, abarcando frontend, backend y conexión con el motor de base de datos, además de prototipado (realizado en Figma) y validación de interfaz (realizada en Maze). Además, se elaboró una herramienta gráfica tipo drag and drop para la creación de modelos de comportamiento de estudiantes, los cuales son necesarios para las simulaciones.",
     "images": ["neurone1.jpg", "neurone2.jpg", "neurone3.jpg", "neurone4.jpg", "neurone5.jpg", "neurone6.jpg", "neurone7.jpg"],
     "technologies": ["Angular", "JointJS", "Node.js", "Express", "MongoDB"],
     "links": [
       {"url": "https://neurone.info/", "caption": "Sitio web de NEURONE"}
     ],
     "tags": ["Frontend", "Backend", "Angular", "Node.js", "MongoDB"]
+  },
+  {
+    "id": 7,
+    "shortTitle": "mindflow",
+    "longTitle": "Mindflow",
+    "completed": false,
+    "startDate": {"month": 6, "year": 2023},
+    "endDate": {},
+    "description": "Extensión de productividad y administración del tiempo para Google Chrome, con la cual el usuario puede configurar y cronometrar un conjunto de sesiones de trabajo intercaladas con periodos de descanso, siguiendo, por ejemplo, la técnica Pomodoro. Además, la extensión permite reproducir sonidos relajantes para una mayor concentración, y ofrece elementos visuales para motivar al usuario a completar las sesiones planificadas. El trabajo realizado para esta extensión incluye su menú desplegable (desarrollado en Angular), y el service worker que gestiona tanto las sesiones como la reproducción de los sonidos, pudiendo escucharse varios de forma simultánea.",
+    "images": ["mindflow1.jpg"],
+    "technologies": ["Angular", "Javascript", "Python"],
+    "links": [],
+    "tags": ["Frontend", "Backend", "Angular", "Python"]
   }
 ]
