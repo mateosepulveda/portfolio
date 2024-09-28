@@ -52,7 +52,7 @@
     "completed": true,
     "startDate": {"month": 3, "year": 2021},
     "endDate": {"month": 3, "year": 2021},
-    "description": "Desarrollo de plataforma web que simula el proceso de solicitud de permisos otorgados durante la pandemia de COVID-19, desde el sitio web de Comisaría Virtual. Se trabajó tanto en frontend como en backend (aplicando el patrón MVC en este último), para luego dockerizar el software desarrollado. Además, se implementó el envío de correos electrónicos de confirmación a la dirección especificada por el usuario.",
+    "description": "Desarrollo de plataforma web que simula el proceso de solicitud de permisos otorgados durante la pandemia de COVID-19, desde el sitio web de Comisaría Virtual, incluyendo el envío de correos electrónicos de confirmación a la dirección especificada por el usuario. Se trabajó tanto en frontend como en backend (aplicando el patrón MVC en este último), para luego dockerizar el software desarrollado.",
     "images": ["cvirtual1.jpg", "cvirtual2.jpg"],
     "technologies": ["Vue.js", "Spring Boot", "PostgreSQL", "Docker"],
     "links": [
@@ -95,7 +95,7 @@
     "completed": false,
     "startDate": {"month": 6, "year": 2023},
     "endDate": {},
-    "description": "Extensión de productividad y administración del tiempo para Google Chrome, con la cual el usuario puede configurar y cronometrar un conjunto de sesiones de trabajo intercaladas con periodos de descanso, siguiendo, por ejemplo, la técnica Pomodoro. Además, la extensión permite reproducir sonidos relajantes para una mayor concentración, y ofrece elementos visuales estimulantes para motivar al usuario a completar las sesiones planificadas. El trabajo realizado para esta extensión incluye su menú desplegable (desarrollado en Angular), y el service worker que gestiona tanto las sesiones como la reproducción de los sonidos, pudiendo escucharse varios de forma simultánea.",
+    "description": "Extensión de productividad y administración del tiempo para Google Chrome, con la cual el usuario puede configurar y cronometrar un conjunto de sesiones de trabajo intercaladas con periodos de descanso, siguiendo, por ejemplo, la técnica Pomodoro. Además, la extensión permite reproducir sonidos relajantes para una mayor concentración, y ofrece elementos visuales estimulantes para motivar al usuario a completar las sesiones planificadas. El trabajo realizado para esta extensión incluye su menú desplegable desarrollado en React; el service worker escrito en TypeScript, el cual gestiona tanto las sesiones como la reproducción de los sonidos (mediante Web Audio API); y un script de apoyo realizado en Python, para facilitar la preparación de contenido visual.",
     "images": ["mindflow1.jpg"],
     "technologies": ["React", "TypeScript", "Python"],
     "links": [],
