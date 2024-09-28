@@ -97,7 +97,7 @@
     "endDate": {},
     "description": "Extensión de productividad y administración del tiempo para Google Chrome, con la cual el usuario puede configurar y cronometrar un conjunto de sesiones de trabajo intercaladas con periodos de descanso, siguiendo, por ejemplo, la técnica Pomodoro. Además, la extensión permite reproducir sonidos relajantes para una mayor concentración, y ofrece elementos visuales estimulantes para motivar al usuario a completar las sesiones planificadas. El trabajo realizado para esta extensión incluye su menú desplegable (desarrollado en Angular), y el service worker que gestiona tanto las sesiones como la reproducción de los sonidos, pudiendo escucharse varios de forma simultánea.",
     "images": ["mindflow1.jpg"],
-    "technologies": ["Angular", "Javascript", "Python"],
+    "technologies": ["React", "Typescript", "Python"],
     "links": [],
     "tags": ["Frontend", "Backend", "Angular", "Python"]
   }
