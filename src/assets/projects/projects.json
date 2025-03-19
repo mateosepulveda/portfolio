@@ -61,6 +61,19 @@
     "tags": ["Frontend", "Backend", "Vue.js", "Spring Boot", "PostgreSQL"]
   },
   {
+    "id": 4,
+    "shortTitle": "hermes",
+    "longTitle": "Proyecto Hermes",
+    "completed": true,
+    "startDate": {"month": 3, "year": 2021},
+    "endDate": {"month": 7, "year": 2021},
+    "description": "Software de reconocimiento de emociones mediante microexpresiones faciales. Se contribuyó en la funcionalidad de reproducción de videos con superposición de puntos y cuerdas, así como la identificación de frames específicos con activaciones faciales. Además se calcularon estadísticas sobre los tiempos de procesamiento de video.",
+    "images": ["hermes1.jpg"],
+    "technologies": ["Python"],
+    "links": [],
+    "tags": ["Python"]
+  },
+  {
     "id": 5,
     "shortTitle": "vehicleye",
     "longTitle": "VehiclEye",
